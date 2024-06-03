@@ -10,9 +10,69 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_100333) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_03_123615) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.bigint "couple_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["couple_id"], name: "index_chatrooms_on_couple_id"
+  end
+
+  create_table "children", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "age_range"
+    t.string "gender"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_children_on_user_id"
+  end
+
+  create_table "couples", force: :cascade do |t|
+    t.bigint "first_profile_id", null: false
+    t.bigint "second_profile_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["first_profile_id"], name: "index_couples_on_first_profile_id"
+    t.index ["second_profile_id"], name: "index_couples_on_second_profile_id"
+  end
+
+  create_table "flat_perks", force: :cascade do |t|
+    t.bigint "flat_id", null: false
+    t.bigint "perk_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_flat_perks_on_flat_id"
+    t.index ["perk_id"], name: "index_flat_perks_on_perk_id"
+  end
+
+  create_table "flats", force: :cascade do |t|
+    t.integer "rooms"
+    t.boolean "is_furnished"
+    t.string "style"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "perks", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "profile_researches", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "flat_id", null: false
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["flat_id"], name: "index_profile_researches_on_flat_id"
+    t.index ["user_id"], name: "index_profile_researches_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +82,27 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_100333) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "avatar_url"
+    t.string "alternance"
+    t.string "rythm"
+    t.text "long_description"
+    t.string "job_title"
+    t.string "tagline"
+    t.float "min_budget"
+    t.float "max_budget"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chatrooms", "couples"
+  add_foreign_key "children", "users"
+  add_foreign_key "couples", "profile_researches", column: "first_profile_id"
+  add_foreign_key "couples", "profile_researches", column: "second_profile_id"
+  add_foreign_key "flat_perks", "flats"
+  add_foreign_key "flat_perks", "perks"
+  add_foreign_key "profile_researches", "flats"
+  add_foreign_key "profile_researches", "users"
 end
