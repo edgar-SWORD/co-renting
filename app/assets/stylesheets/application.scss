@@ -10,3 +10,46 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// Global styles
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Heading styles
+
+
+.heading-style-h1 {
+  font-size: 47px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.heading-style-h2 {
+  font-size: 39px;
+  font-weight: 600;
+}
+
+.heading-style-h3 {
+  font-size: 33px;
+  font-weight: 600;
+}
+
+.heading-style-h4 {
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.heading-style-h5 {
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.heading-style-h6 {
+  font-size: 18px;
+  font-weight: 600;
+}
