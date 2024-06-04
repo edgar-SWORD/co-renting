@@ -1,4 +1,62 @@
 <h1>Users#show</h1>
+
+<div class="container">
+<div class="header">
+<div class="avatar-img">
+<% if @user.photo.attached? %>
+          <%= cl_image_tag @user.avatar_url, class: "absolute_img", alt: "Image of an accomodation" %>
+          <% else %>
+          <img class="absolute_img" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
+        <% end %>
+</div>
+
+    <div class="banner-profil">
+    <h1><%= @user.first_name %></h1>
+    <div class="d-flex">
+    <span class="alternance"><%= @user.alternance %></span>
+    <span class="rythm"><%= @user.rythm %></span>
+    </div>
+    </div>
+
+</div>
+
+<div class="profile-description d-flex">
+<div class="col">
+<div class="row">
+  <div class="description">
+    <%= @user.long_description %>
+  </div>
+</div>
+</div>
+<div class="col">
+<div class="row">
+  <div class="user-children">
+  <h3>My children</h3>
+    <ul>
+      <% @user.children.each do |child| %>
+        <li>
+          <%= child.first_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+
+div
+<div class="searching-location">
+</div>
+
+
+
+
+
+
+</div>
+
+
+
 <p>Find me in app/views/users/show.html.erb</p>
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
