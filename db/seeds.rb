@@ -202,9 +202,6 @@ perks = Perk.create!([
     { name: 'peeling paint',
       status: 'negative'},
 
-    { name: 'park nearby',
-      status: 'negative'}
-
 ])
 
 flats = Flat.create!([
@@ -229,4 +226,18 @@ flats = Flat.create!([
     style: 'no opinion'
    }
 
+])
+
+flats_perks = FlatsPerks.create!([
+    {flat_id: flat[1],
+    perk_id:  [perk[1],perk[3], perk[6], perk[12], perk[15], perk[18]]},
+
+    {flat_id: flat[2],
+    perk_id: [perk[1],perk[3], perk[6], perk[12], perk[15], perk[18]]},
+
+    {flat_id: flat[3],
+    perk_id: [perk[4],perk[7], perk[8], perk[13], perk[14], perk[16]]},
+
+    {flat_id: flat[3],
+    perk_id: [perk[4],perk[7], perk[8], perk[13], perk[14], perk[16]]}
 ])
