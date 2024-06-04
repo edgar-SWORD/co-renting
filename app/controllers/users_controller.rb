@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    set_user
     @children = @user.children
+
   end
 
   def new
