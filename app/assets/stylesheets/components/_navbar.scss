@@ -1,12 +1,26 @@
-.navbar-lewagon {
+.nav {
+    padding: 16px 0;
+    height: 5.1rem;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--grey-2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+}
+
+.nav-layout {
+  width: 100%;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 1px solid var(--caribbean);
 }

@@ -9,10 +9,35 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/navbar";
 @import "pages/index";
+@import "pages/form";
 
+
+// Colors
+
+:root {
+  --caribbean: #006D77;
+  --tiffany-blue: #83C5BE;
+  --alice-blue: #F5FDFF;
+  --pale: #FFDDD2;
+  --tangerine: #E29578;
+  --white: #FFFFFF;
+  --grey-1: #F2F2F2;
+  --grey-2: #CCCCCC;
+  --grey-3: #A5A5A5;
+  --grey-4: #7F7F7F;
+  --black: #1D1D1D;
+}
 
 // Global styles
+
+
+body {
+  background-color: var(--white);
+  font-family: 'Inter', sans-serif;
+  color: var(--grey-4);
+}
 
 * {
   margin: 0;
@@ -20,7 +45,48 @@
   box-sizing: border-box;
 }
 
-// Heading styles
+.container {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 80px;
+}
+
+.padding-section-medium {
+  padding: 80px 0;
+}
+
+
+.text-style-allcaps {
+  text-transform: uppercase;
+}
+
+// Heading & Body styles
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--black);
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: var(--grey-4);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.input-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--black);
+}
 
 
 .heading-style-h1 {
@@ -52,4 +118,110 @@
 .heading-style-h6 {
   font-size: 18px;
   font-weight: 600;
+}
+
+
+// Body Size
+
+.text-size-small {
+  font-size: 14px;
+}
+
+.text-size-regular {
+  font-size: 16px;
+}
+
+.text-size-medium {
+  font-size: 18px;
+}
+
+
+// Font colors
+
+.text-color-blue {
+  color: var(--caribbean);
+}
+
+.text-color-primary {
+  color: var(--grey-4);
+}
+
+.text-color-secondary {
+  color: var(--black);
+}
+
+.text-color-white {
+  color: var(--white);
+}
+
+
+// Font Weights
+
+.text-weight-regular {
+  font-weight: 400;
+}
+
+.text-weight-medium {
+  font-weight: 500;
+}
+
+.text-weight-semibold {
+  font-weight: 600;
+}
+
+
+// Buttons
+
+.button-primary {
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--caribbean);
+  gap: 8px;
+  background-color: var(--caribbean);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #00383D;
+}
+
+
+.button-secondary {
+  border: 1px solid var(--caribbean);
+  padding: 12px 24px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  background-color: var(--white);
+  color: var(--caribbean);
+  transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+  background-color: var(--caribbean);
+  color: var(--white);
+}
+
+
+.button-text {
+  font-weight: 500;
+  text-decoration: underline;
+  color: var(--caribbean);
+  padding: 12px 24px;
+  border-radius: 4px;
+}
+
+.button-text:hover {
+  background-color: var(--grey-1);
+}
+
+.button-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
 }

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   devise_for :users
   root to: "pages#home"
+  get "form", to: "pages#form"
 
   resources :users
   resources :children, only: [:index, :create, :new, :edit, :update, :destroy]
