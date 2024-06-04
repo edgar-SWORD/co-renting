@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_03_134319) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_04_084620) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -90,6 +90,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_134319) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   create_table "profile_researches", force: :cascade do |t|
@@ -121,6 +122,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_03_134319) do
     t.string "tagline"
     t.float "min_budget"
     t.float "max_budget"
+    t.string "cleanliness"
+    t.string "lifestyle"
+    t.string "sharing"
+    t.string "cooking"
+    t.string "storage"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
