@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @children = @user.children
+    c = ProfileResearch.find(params[:user_id])
   end
 
   def new
