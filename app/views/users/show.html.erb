@@ -4,7 +4,7 @@
   <div class="container">
     <div class="avatar-img">
       <% if @user.avatar_url? %>
-          <img class="absolute_img" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
+          <img class="profil-picture" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
       <% end %>
     </div>
     <div class="banner-img">
@@ -147,12 +147,75 @@
 </div>
 
 <div class="ideal-flat">
-<h4>My ideal flat</h4>
-<div class="col">
-<div class="row">
-<%= @profile_research.flat%>
-</div>
-</div>
+  <div class="container d-flex">
+    <div class="col">
+      <div class="row">
+      <h4>My ideal flat</h4>
+      <%if @flat.style == "scandinavian" %>
+        <img src="https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="scandinavian style">
+      <%elsif @flat.style == "industrial" %>
+        <img src="https://images.unsplash.com/photo-1563891315366-4606cd73a33f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="indutrial style">
+      <%elsif @flat.style == "boheme" %>
+        <img src="https://images.unsplash.com/photo-1600493504591-aa1849716b36?q=80&w=3000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="boheme style">
+      <%elsif @flat.style == "vintage" %>
+        <img src="https://images.unsplash.com/photo-1604314325417-c021aacfc1c5?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="vintage style">
+      <%elsif @flat.style == "art deco" %>
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art deco style">
+      <%else%>
+        <img src="https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art deco style">
+      <%end %>
+      <span><%= @flat.style%></span>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="row">
+    <div class="container d-flex">
+      <div class="number-room">
+      <p>Number of room : <%= @flat.rooms %></p>
+      </div>
+      <div class="furnished-flat d-flex">
+      <div class="furnished-title">
+      <p>My ideal flat is furnished : </p>
+      </div>
+     <div class="response-furnished">
+      <%if @flat.is_furnished = 'true' %>
+        <p>Yes</p>
+      <%elsif @flat.is_furnished = 'false' %>
+        <p>No</p>
+      <%else%>
+        <p>No opinion</p>
+      <%end %>
+     </div>
+
+      </div>
+      </div>
+    </div>
+
+
+      <div class="row">
+     <% if @perks.any? %>
+    <ul>
+      <div class="d-flex">
+    <% @perks.each do |perk| %>
+    <% if perk.status == 'positive' %>
+    <div class="positive-color perk">
+      <li><%= perk.name %></li>
+    </div>
+    <%else%>
+     <div class="negative-color perk">
+      <li><%= perk.name %></li>
+    </div>
+    <%end %>
+    <% end %>
+      </div>
+    <% end %>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
 </div>
 </div>
 <p>Find me in app/views/users/show.html.erb</p>
