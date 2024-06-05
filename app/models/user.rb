@@ -8,7 +8,6 @@ class User < ApplicationRecord
 
   has_many :couples, through: :profile_researches
   has_one_attached :photo
-  has_many :couples, through: :profile_researches
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -19,3 +18,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+
