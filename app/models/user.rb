@@ -10,12 +10,10 @@ class User < ApplicationRecord
   has_many :couples, through: :profile_researches
   has_one_attached :photo
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true, uniqueness: true
-  validates :alternance, presence: true
-  validates :rythm, presence: true
+  # validates :alternance, presence: true
+  # validates :rythm, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+
