@@ -21,6 +21,15 @@ class UsersController < ApplicationController
   def show
     set_user
     @children = @user.children
+    profile_research = ProfileResearch.find_by(user_id: @user.id)
+
+    if profile_research
+      @flat = Flat.find(profile_research.flat_id)
+      @perks = @flat.perks
+    else
+      @flat = nil
+      @perks = [] # ou une autre valeur par défaut si nécessaire
+    end
   end
 
   def new

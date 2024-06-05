@@ -1,0 +1,61 @@
+.user-description {
+  background-color: #F2F2F2;
+  margin: 6em 0;
+  border-radius: 5px;
+  padding: 3em;
+
+  .budget {
+  background-color: #83C5BE;
+  border-radius: 50px;
+  padding: 0.5em;
+  margin: 1em auto;
+  text-align: center;
+  }
+  .children-user {
+     margin-left: 3em;
+    ul{
+      list-style: none;
+    }
+
+    .child {
+      width: 5em;
+      height: 5em;
+      background-color: white;
+      color: #006D77;
+      border-radius: 3px;
+      margin: 0 3em;
+      text-align: center;
+      padding: 1.7em 0;
+
+    }
+  }
+}
+
+.personnality-section {
+  background-color: #F2F2F2;
+  margin:0px;
+  // margin: 6em 1em;
+  border-radius: 5px;
+  padding: 3em;
+
+  .personnality-tag {
+    align-items: center;
+    justify-content: center;
+  }
+  .icon {
+    color: #83C5BE;
+    margin:0 0.5em;
+
+    padding: 0.5em 0;
+  }
+}
+
+.ideal-flat {
+  background-color: #F2F2F2;
+  img {
+    width: 30vw;
+    padding: 3em;
+    margin: 3em auto;
+    object-fit: cover;
+  }
+}
