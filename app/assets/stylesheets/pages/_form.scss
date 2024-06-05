@@ -24,6 +24,11 @@
   max-height: 100vh;
 }
 
+.form-step3 {
+  padding: 0px 0px;
+  margin-top: 16px;
+}
+
 .question-form-wrap {
   display: flex;
   flex-direction: column;
@@ -33,6 +38,10 @@
   align-items: center;
   width: 100%;
   max-width: 632px;
+}
+
+.question-form-wrap-step3 {
+  max-width: 800px;
 }
 
 
@@ -88,11 +97,27 @@
   color: var(--grey-4);
 }
 
+.input-field-step3 {
+  flex-grow: none;
+  margin-right: 1px;
+  margin-left: 1px;
+}
+
+.input-field-step3-submit {
+  flex-grow: none;
+  margin-right: 1px;
+  margin-left: 1px;
+  background-color:var(--tiffany-blue);
+  color: white;
+}
+
+.gap-input {
+  gap: 16px;
+}
+
 .input-field:focus {
   border: 1px solid var(--caribbean);
 }
-
-
 
 .form-label {
   margin: 0;
@@ -115,6 +140,90 @@
   justify-content: space-between;
 }
 
+.children-placeholder {
+  flex-grow: 1;
+  width: 100%;
+  height: 180px;
+  border: 1px solid var(--caribbean);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  color: var(--caribbean);
+  background-color: var(--alice-blue);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+
+.children-placeholder-text {
+  position: absolute;
+  text-align: center;
+}
+
+.children-wrapper {
+  flex-grow: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+  gap: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.child-card {
+  border: 1px solid var(--caribbean);
+  border-radius: 0.25rem;
+  padding: 24px;
+  background-color: white;
+}
+
+
+.button-form {
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--tiffany-blue);
+  background-color: var(--tiffany-blue);
+  color: var(--white);
+  transition: background-color 0.3s ease;
+}
+
+.button-form:hover {
+  background-color: var(--caribbean);
+}
+
+.button-form-icon {
+  padding: 0.5rem;
+  font-size: 12px;
+  background-color: var(--caribbean);
+}
+
+.button-form-icon:hover {
+  background-color: var(--tiffany-blue);
+}
+
+.position-absolute {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.incrementation-button {
+
+}
+
+.room-input {
+
+}
+
+.increment {
+  
 .form-next-button {
   position: fixed;
   bottom: 40px;
