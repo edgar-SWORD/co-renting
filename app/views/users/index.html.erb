@@ -34,8 +34,8 @@
                 <p class="card-price"><%= number_to_currency(user.max_budget || 750, unit: "€") %>/mois</p>
               </div>
               <p class="card-text"><%= user.children.count %> enfants</p>
-              <p class="card-text">Occupe la location <%= user.rythm %></p>
-              <div class="tags">
+              <p class="card-text mt-1">Occupe la location <%= user.rythm %></p>
+              <div class="tags mt-3">
                 <% user.profile_researches.first&.flat&.flat_perks&.each do |flat_perk| %>
                   <span class="badge badge-secondary"><%= flat_perk.perk.name %></span>
                 <% end %>
