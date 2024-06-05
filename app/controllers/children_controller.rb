@@ -4,15 +4,18 @@ class ChildrenController < ApplicationController
   end
 
   def create
+    @user = current_user
     @child = Child.new(child_params)
+    @child.user = @user
     if @child.save
-      redirect_to "users/new", notice: "Child created successfully."
+      redirect_to "/children/new"
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
   def new
+    @user = current_user
     @child = Child.new
   end
 
@@ -23,7 +26,7 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find(params[:id])
     if @child.update(child_params)
-      redirect_to children_path, notice: "Child updated successfully."
+      redirect_to user_path
     else
       render :edit
     end
@@ -32,12 +35,12 @@ class ChildrenController < ApplicationController
   def destroy
     @child = Child.find(params[:id])
     @child.destroy
-    redirect_to children_path, notice: "Child deleted successfully."
+    redirect_to new_child_path, status: :see_other
   end
 
   private
 
   def child_params
-    params.require(:child).permit(:name, :age, :gender)
+    params.require(:child).permit(:first_name, :last_name, :gender, :age_range)
   end
 end
