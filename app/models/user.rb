@@ -6,9 +6,8 @@ class User < ApplicationRecord
   has_many :chatrooms
   has_many :messages, through: :chatrooms
 
-  has_many :couples, through: :profile_researches, dependent: :destroy
-  has_one_attached :photo
   has_many :couples, through: :profile_researches
+  has_one_attached :photo
 
   # validates :alternance, presence: true
   # validates :rythm, presence: true
@@ -16,3 +15,4 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+
