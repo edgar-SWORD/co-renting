@@ -1,0 +1,22 @@
+<div class="form-slide">
+  <div class="question-form-wrap">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 4 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">What is your shift pattern?</h2>
+        <p>When do you have custody of your children?</p>
+      </div>
+    </div>
+    <%= simple_form_for @user_shift, html: { class: 'form' } do |f| %>
+        <%= f.error_notification %>
+          <div class="alternance-radio-wrap">
+            <%= f.input :alternance, as: :radio_buttons, collection: [['Even weeks', 'even', {checked: true}],['Odd weeks', 'odd']], label: false, html: { class: 'radio-alternance' } %>
+          </div>
+          <div class="rythm-radio-wrap">
+            <%= f.input :rythm, as: :radio_buttons, collection: [['Weeks', 'all week', {checked: true}],['Weekdays', 'week-days'], ['Weekends',' week-ends']], label: false, html: { class: 'radio-rythm' } %>
+          </div>
+        <%= f.submit "Next", class: "form-next-button" %>
+    <% end %>
+    <%= link_to "Previous", "", :class => "form-previous-button button-secondary" %>
+  </div>
+</div>

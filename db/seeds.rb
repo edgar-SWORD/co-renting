@@ -10,10 +10,10 @@
 
 Child.destroy_all
 Couple.destroy_all
-User.destroy_all
 FlatPerk.destroy_all
-Flat.destroy_all
 ProfileResearch.destroy_all
+Flat.destroy_all
+User.destroy_all
 
 
 users = User.create!([

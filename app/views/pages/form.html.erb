@@ -1,0 +1,55 @@
+<div class="form-slide">
+  <div class="form-bar-outer">
+    <div class="form-bar-inner"></div>
+  </div>
+  <div class="question-form-wrap">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 1 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">Let’s get to know each other!</h2>
+        <p>Let's start with some basic information</p>
+      </div>
+    </div>
+    <div class="form">
+      <div class="form-row">
+
+        <div class="input-wrap">
+          <label for="" class="form-label">First name</label>
+          <input type="text" class="input-field" placeholder="Jean">
+        </div>
+        <div class="input-wrap">
+          <label for="" class="form-label">Last name</label>
+          <input type="text" class="input-field" placeholder="Martel">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-wrap">
+          <label for="" class="form-label">Email address</label>
+          <input type="email" class="input-field" placeholder="jean.martel@gmail.com">
+        </div>
+        <div class="input-wrap">
+          <label for="" class="form-label">Address</label>
+          <input type="text" class="input-field" placeholder="80, rue de la paix, 75001, Paris">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="input-wrap">
+          <label for="" class="form-label">Job title</label>
+          <input type="text" class="input-field" placeholder="Entrepreneur">
+        </div>
+        <div class="input-wrap">
+          <label for="avatar" class="form-label">Profile picture</label>
+          <input type="text" class="input-field" placeholder="Add a file" id="avatar" name="avatar" accept="image/png, image/jpeg" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-navigation">
+    <div class="container">
+      <div class="form-navigation-layout">
+          <%= link_to "Next", "/form", :class => "button-primary margin-left-auto" %>
+      </div>
+    </div>
+  </div>
+</div>

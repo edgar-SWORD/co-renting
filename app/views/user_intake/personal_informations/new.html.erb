@@ -1,0 +1,18 @@
+<div class="form-slide">
+  <div class="question-form-wrap">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 2 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">Make other parents want to discover your profile!</h2>
+        <p>Tell them who you are</p>
+      </div>
+    </div>
+    <%= simple_form_for @personal_information, html: { class: 'form' } do |f| %>
+        <%= f.error_notification %>
+          <%= f.input :tagline, as: :string, input_html: {class:"input-field", placeholder: "Looking for a cool co-parent in Marseille"}, wrapper_html: { class: 'input-wrap' }, label: "Profile title" %>
+          <%= f.input :long_description, as: :text, input_html: {class:"text-area-field", placeholder: "Tell other parents more about yourself and your family"}, wrapper_html: { class: 'input-wrap' }, label: "Profile description" %>
+        <%= f.submit "Next", class: "form-next-button" %>
+    <% end %>
+    <%= link_to "Previous", "", :class => "form-previous-button button-secondary" %>
+  </div>
+</div>
