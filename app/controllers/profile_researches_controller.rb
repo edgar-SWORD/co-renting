@@ -1,5 +1,16 @@
 class ProfileResearchesController < ApplicationController
 
+  def index
+    @profile_researches = ProfileResearch.all
+    @markers = @profile_researches.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude,
+        info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+      }
+    end
+  end
+  
   skip_before_action :authenticate_user!, only: %i[new create]
 
   def new
