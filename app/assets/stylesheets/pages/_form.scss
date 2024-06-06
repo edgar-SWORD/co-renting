@@ -74,8 +74,6 @@
 }
 
 
-
-
 .input-wrap {
   flex-grow: 1;
   display: flex;
@@ -214,16 +212,63 @@
   position: relative;
 }
 
-.incrementation-button {
+.step4-wrapper {
+  margin-top: 40px;
+  gap: 16px;
+}
 
+.room-card {
+  width: 50%;
+  height: 200px;
+  border: 1px solid var(--caribbean);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  color: var(--caribbean);
+  background-color: var(--alice-blue);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-wrapper {
+  width: 120px;
 }
 
 .room-input {
-
+  font-size: 67px;
+  font-weight: 600;
+  color: var(--caribbean);
 }
 
-.increment {
-  
+.incrementation-btn {
+  background-color: var(--tiffany-blue);
+  border: var(--tiffany-blue);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin: auto 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
+}
+
+.incrementation-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--caribbean);
+  font-weight: 600;
+}
+
+.furnish-wrapper {
+  width: 50%;
+}
+
 .form-next-button {
   position: fixed;
   bottom: 40px;
