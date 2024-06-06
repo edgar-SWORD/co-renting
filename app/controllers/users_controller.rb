@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
   def index
     @users = User.all
     # @profile_research = ProfileResearch.find_by(user_id: @user.id)
@@ -16,7 +15,7 @@ class UsersController < ApplicationController
     if params[:alternance].present?
       @users = @users.where(alternance: params[:alternance])
     end
-    
+
     @users.each do |user|
       @markers = user.profile_researches.geocoded.map do |a|
         {
