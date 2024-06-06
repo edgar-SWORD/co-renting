@@ -3,14 +3,33 @@ class UsersController < ApplicationController
 
 
   def index
-    @users = User.all
-    @user = User.new
+    @users = User.includes(:children).all
+
+    if params[:location].present?
+      @users = @users.joins(:profile_researches).where('profile_researches.location LIKE ?', "%#{params[:location]}%")
+    end
+
+    if params[:rythm].present?
+      @users = @users.where(rythm: params[:rythm])
+    end
+
+    if params[:alternance].present?
+      @users = @users.where(alternance: params[:alternance])
+    end
   end
 
   def show
     set_user
     @children = @user.children
+    profile_research = ProfileResearch.find_by(user_id: @user.id)
 
+    if profile_research
+      @flat = Flat.find(profile_research.flat_id)
+      @perks = @flat.perks
+    else
+      @flat = nil
+      @perks = [] # ou une autre valeur par défaut si nécessaire
+    end
   end
 
   def new
@@ -33,9 +52,9 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user)
+      # redirect_to user_path(@user)
     else
-      render :edit
+      render 'children/new', status: :unprocessable_entity
     end
   end
 
@@ -49,7 +68,6 @@ class UsersController < ApplicationController
   def set_user
     @user = User.find(params[:id])
   end
-
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm)
