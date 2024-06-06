@@ -323,7 +323,7 @@ DEPENDENCIES
   dotenv-rails
   error_highlight (>= 0.4.0)
   font-awesome-sass (~> 6.1)
-  geocoder
+
   importmap-rails (~> 1.2.3)
   jbuilder
   pg (~> 1.1)

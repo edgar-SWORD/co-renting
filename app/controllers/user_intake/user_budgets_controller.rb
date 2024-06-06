@@ -1,16 +1,16 @@
 module UserIntake
-  class UserShiftsController < ApplicationController
+  class UserBudgetsController < ApplicationController
     skip_before_action :authenticate_user!, only: %i[new create]
     def new
-      @user_shift = UserShift.new
+      @user_budget = UserBudget.new
     end
 
     def create
-      @user_shift = UserShift.new(user_params)
+      @user_budget = UserBudget.new(user_params)
       @user = current_user
-      if @user_shift.valid?
+      if @user_budget.valid?
         @user.update(user_params)
-        redirect_to new_profile_research_path
+
       else
         render :new, status: :unprocessable_entity
       end
@@ -19,7 +19,7 @@ module UserIntake
     private
 
     def user_params
-      params.require(:user_intake_user_shift).permit(:alternance, :rythm)
+      params.require(:user_intake_user_budget).permit(:min_budget, :max_budget)
     end
   end
 end
