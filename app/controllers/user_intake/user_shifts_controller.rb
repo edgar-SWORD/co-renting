@@ -10,7 +10,7 @@ module UserIntake
       @user = current_user
       if @user_shift.valid?
         @user.update(user_params)
-
+        redirect_to new_profile_research_path
       else
         render :new, status: :unprocessable_entity
       end

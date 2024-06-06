@@ -8,7 +8,7 @@
       </div>
     </div>
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: 'form' }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: user_registration_path, html: { class: 'form' }) do |f| %>
 
         <%= f.error_notification %>
         <div class="form-row">
@@ -24,17 +24,11 @@
           <%= f.input :avatar_url, as: :file, input_html: {class:"input-field", placeholder: "Select a picture"}, wrapper_html: { class: 'input-wrap' }, label:"Profile picture" %>
         </div>
         <div class="form-row">
-          <%= f.input :password,
-                        as: :password,
+          <%= f.input :current_password,
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        hint: ("We need your current password to confirm your changes"),
                         input_html: { autocomplete: "new-password", class:"input-field" },
                         wrapper_html: {class:"input-wrap"} %>
-          <%= f.input :password_confirmation,
-                        as: :password,
-                        required: true,
-                        input_html: { autocomplete: "new-password", class:"input-field" },
-                        wrapper_html: {class: "input-wrap"} %>
         </div>
 
 

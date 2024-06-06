@@ -437,3 +437,13 @@ font-weight: 400;
 color: var(--grey-4);
 font-family: 'Inter', sans-serif;
 }
+
+.map-wrap {
+  width: 100%;
+  height: 369px;
+  overflow: hidden;
+  border-radius: 0.25;
+  position: relative;
+  background-color: var(--alice-blue);
+  padding: 1rem;
+}
