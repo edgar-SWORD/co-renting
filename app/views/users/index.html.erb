@@ -13,10 +13,18 @@
           <%= select_tag :alternance, options_for_select([['Alternance', ''], ['Even', 'even'], ['Odd', 'odd']], params[:alternance]), class: "form-control custom-input" %>
         </div>
         <div class="col-md-3">
-          <%= submit_tag "Affiner ma recherche", class: "btn btn-dark" %>
+          <%= submit_tag "Affiner ma recherche", class: "button-form" %>
         </div>
       </div>
     <% end %>
+
+<div class="container col-5 mx-2">
+    <div class="top-sticky" style="width: 100%; height: 460px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 
 <div class="layout mt-5">
   <div class="row">
@@ -25,8 +33,8 @@
         <%= link_to user_path(user), class:"card-link" do  %>
           <div class="card h-100">
             <div class="card-img-top" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px; position: relative;">
-              <span class="badge badge-light position-absolute top-10 start-10">Semaine <%= user.alternance %></span>
-                <span class="favorite-icon position-absolute top-10 end-10"><i class="far fa-heart"></i></span>
+              <span class="badge badge-light top-10 start-10">Semaine <%= user.alternance %></span>
+                <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
             </div>
             <div class="card-body">
               <div class="card-body-top">

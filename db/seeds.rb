@@ -454,5 +454,4 @@ profile_researches = ProfileResearch.create!([
     flat: flats[6],
     location: '75019 Paris'
    },
-
 ])
