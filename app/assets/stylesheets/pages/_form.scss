@@ -35,6 +35,9 @@
   max-width: 632px;
 }
 
+.question-form-wrap.question-4 {
+  max-width: 950px;
+}
 
 .question-form-header {
   display: flex;
@@ -182,10 +185,11 @@ legend {
 
 .form-check {
   padding: 0;
+  flex-grow: 1;
 }
 
 
-#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd {
+#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends {
   position: absolute;
   transform: scale(0);
 }
@@ -234,4 +238,92 @@ legend {
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
+}
+
+#user_intake_user_shift_rythm_all_week + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+
+#user_intake_user_shift_rythm_all_week:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm_all_week:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+
+#user_intake_user_shift_rythm_week-days + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+#user_intake_user_shift_rythm_week-days:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm_week-days:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm__week-ends + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+#user_intake_user_shift_rythm__week-ends:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm__week-ends:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+
+.radio-description {
+font-size: 1rem;
+font-weight: 400;
+color: var(--grey-4);
+font-family: 'Inter', sans-serif;
 }
