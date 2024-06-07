@@ -13,6 +13,6 @@
           <%= f.input :long_description, as: :text, input_html: {class:"text-area-field", placeholder: "Tell other parents more about yourself and your family"}, wrapper_html: { class: 'input-wrap' }, label: "Profile description" %>
         <%= f.submit "Next", class: "form-next-button" %>
     <% end %>
-    <%= link_to "Previous", "", :class => "form-previous-button button-secondary" %>
+    <%= link_to "Previous", edit_user_registration_path, :class => "form-previous-button button-secondary" %>
   </div>
 </div>
