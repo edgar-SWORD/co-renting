@@ -8,41 +8,38 @@
       </div>
     </div>
     <%= simple_form_for @user_personality do |f| %>
-      <div class="range-input-wrap">
-        <p>Relax</p>
-        <%= f.input :cleanliness, as: :range, input_html: { min: 1, max: 3, step: 3 }, label: false, class:"input-range" %>
-        <p>Maniac</p>
+      <div class="ranges-wrap">
+        <div class="range-input-wrap">
+          <p>Relax</p>
+          <%= f.input :cleanliness, as: :range, input_html: { min: 1, max: 3, step: 1 }, label: false, class:"input-range" %>
+          <p>Maniac</p>
+        </div>
+        <div class="range-input-wrap">
+          <p>Indoor person</p>
+          <%= f.input :lifestyle, as: :range, input_html: { min: 1, max: 3, step: 1 }, label: false, class:"input-range" %>
+          <p>Outdoor person</p>
+        </div>
+        <div class="range-input-wrap">
+          <p>Possessive</p>
+          <%= f.input :sharing, as: :range, input_html: { min: 1, max: 3, step: 1 }, label: false, class:"input-range" %>
+          <p>Love to share</p>
+        </div>
+        <div class="range-input-wrap">
+          <p>Take away food</p>
+          <%= f.input :cooking, as: :range, input_html: { min: 1, max: 3, step: 1 }, label: false, class:"input-range" %>
+          <p>Homemade food</p>
+        </div>
+        <div class="range-input-wrap">
+          <p>I pack light</p>
+          <%= f.input :storage, as: :range, input_html: { min: 1, max: 3, step: 1 }, label: false, class:"input-range" %>
+          <p>I store a lot</p>
+        </div>
       </div>
       <div class="form-group">
         <%= f.submit "Next", class: "form-next-button" %>
       </div>
     <% end %>
 
-    <div class="range-input-wrap">
-      <label for="cleanliness">Relax</label>
-      <input type="range" id="cleanliness" name="cleanliness" min="1" max="3" class="input-range" />
-      <label for="cleanliness">Maniac</label>
-    </div>
-    <div class="range-input-wrap">
-      <label for="lifestyle">Indoor person</label>
-      <input type="range" id="lifestyle" name="lifestyle" min="1" max="3" class="input-range" />
-      <label for="lifestyle">Outdoor person</label>
-    </div>
-    <div class="range-input-wrap">
-      <label for="sharing">Possessive</label>
-      <input type="range" id="sharing" name="sharing" min="1" max="3" class="input-range" />
-      <label for="sharing">Love to share</label>
-    </div>
-     <div class="range-input-wrap">
-      <label for="cooking">Take away food</label>
-      <input type="range" id="cooking" name="cooking" min="1" max="3" class="input-range" />
-      <label for="cooking">Homemade food</label>
-    </div>
-    <div class="range-input-wrap">
-      <label for="storage">I pack light</label>
-      <input type="range" id="storage" name="storage" min="1" max="3" class="input-range" />
-      <label for="storage">Store a lot</label>
-    </div>
 
     <%= link_to "Previous", edit_user_registration_path, :class => "form-previous-button button-secondary" %>
   </div>
