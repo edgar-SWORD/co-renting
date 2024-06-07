@@ -45,15 +45,17 @@
             </div>
           </div>
         <% end %>
-      </div>  
+      </div>
     </div>
   </div>
 
    <div class="form-navigation">
     <div class="container">
       <div class="form-navigation-layout">
-          <%= link_to "Previous", "/user_intake/upersonal_informations/new", :class => "button-secondary margin-left-auto" %>
-          <%= link_to "Next", "/user_intake/user_shifts/new", :class => "button-primary margin-left-auto" %>
+
+          <%= link_to "Previous", new_user_intake_personal_information_path, :class => "button-secondary margin-left-auto" %>
+          <%= link_to "Next", new_user_intake_user_shift_path, :class => "button-primary margin-left-auto" %>
+       
       </div>
     </div>
   </div>

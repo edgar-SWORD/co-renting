@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   namespace :user_intake do
     resources :personal_informations, only: %i[new create]
     resources :user_shifts, only: %i[new create]
+    resources :user_budgets, only: %i[new create]
   end
 
 end

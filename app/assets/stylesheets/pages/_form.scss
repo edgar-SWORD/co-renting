@@ -40,6 +40,11 @@
   max-width: 632px;
 }
 
+
+.question-form-wrap.question-4 {
+  max-width: 950px;
+}
+
 .question-form-wrap-step3 {
   max-width: 800px;
 }
@@ -72,8 +77,6 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto;
 }
-
-
 
 
 .input-wrap {
@@ -214,21 +217,65 @@
   position: relative;
 }
 
-.incrementation-button {
+.step4-wrapper {
+  margin-top: 40px;
+  gap: 16px;
+}
 
+.room-card {
+  width: 50%;
+  height: 200px;
+  border: 1px solid var(--caribbean);
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  color: var(--caribbean);
+  background-color: var(--alice-blue);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.room-wrapper {
+  width: 120px;
 }
 
 .room-input {
-
+  font-size: 67px;
+  font-weight: 600;
+  color: var(--caribbean);
 }
 
-.increment {}
-
-.form-next-button {
-  position: fixed;
-  bottom: 40px;
-  right: 80px;
+.incrementation-btn {
+  background-color: var(--tiffany-blue);
+  border: var(--tiffany-blue);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  margin: auto 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 600;
 }
+
+
+
+.incrementation-text {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--caribbean);
+  font-weight: 600;
+}
+
+.furnish-wrapper {
+  width: 50%;
+}
+
 
 .form-next-button {
   padding: 12px 24px;
@@ -240,6 +287,9 @@
   background-color: var(--caribbean);
   color: var(--white);
   transition: background-color 0.3s ease;
+  position: fixed;
+  bottom: 40px;
+  right: 80px;
 }
 
 .form-previous-button {
@@ -291,10 +341,11 @@ legend {
 
 .form-check {
   padding: 0;
+  flex-grow: 1;
 }
 
 
-#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd {
+#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends {
   position: absolute;
   transform: scale(0);
 }
@@ -343,4 +394,102 @@ legend {
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
+}
+
+#user_intake_user_shift_rythm_all_week + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+
+#user_intake_user_shift_rythm_all_week:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm_all_week:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+
+#user_intake_user_shift_rythm_week-days + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+#user_intake_user_shift_rythm_week-days:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm_week-days:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm__week-ends + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--black);
+}
+
+#user_intake_user_shift_rythm__week-ends:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#user_intake_user_shift_rythm__week-ends:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+
+.radio-description {
+font-size: 1rem;
+font-weight: 400;
+color: var(--grey-4);
+font-family: 'Inter', sans-serif;
+}
+
+.map-wrap {
+  width: 100%;
+  height: 369px;
+  overflow: hidden;
+  border-radius: 0.25;
+  position: relative;
+  background-color: var(--alice-blue);
+  padding: 1rem;
 }
