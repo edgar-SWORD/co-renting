@@ -10,15 +10,16 @@
 
     <div class="form step4-wrapper">
       <div data-controller="rooms" class="room-card">
-          <%= simple_form_for @flat do |f| %>
-            <div class='d-none'><%= f.input :rooms, input_html: { value: 1, data: {rooms_target:'room'}, readonly: true}, label: false %></div>
+        <%= simple_form_for @flat_furniture, url: flat_intake_rooms_furnisheds_path do |f| %>
+            <div class='d-none'>
+              <%= f.input :rooms, input_html: { value: 1, data: {rooms_target:'room'}, readonly: true}, label: false %>
+            </div>
             <div class="room-wrapper d-flex flex-row justify-content-between align-items-center">
               <button type="button" class="incrementation-btn" data-action="click->rooms#decrement">-</button>
               <div data-rooms-target="display" class="room-input" >1</div>
               <button type="button" class="incrementation-btn" data-action="click->rooms#increment">+</button>
             </div>
             <h4 data-rooms-target="count" class="incrementation-text">room</h4>
-      </div>
 
       <div class="furnish-wrapper">
           <%= f.input :is_furnished, as: :radio_buttons, collection: [['Furnished', 'true', 'fa-suitcase', 'I need a furnished and fully equipped flat', {checked: true}], ['Unfurnished', 'false', 'fa-house', "I'll bring my own furniture and equipment"]], label: false, html:{class:"radio-rythm"},
@@ -30,21 +31,18 @@
           %>
       </div>
 
+          <div class="form-navigation">
+            <div class="container">
+              <div class="form-navigation-layout">
+                <div><%= link_to "Previous", "/user_intake/user_budgets/new", :class => "button-secondary margin-left-auto" %></div>
+                <div>
+                  <%= f.submit "Next", class: "button-primary margin-left-auto" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-
-   <div class="form-navigation">
-    <div class="container">
-      <div class="form-navigation-layout">
-        <div><%= link_to "Previous", "/user_intake/user_budgets/new", :class => "button-secondary margin-left-auto" %></div>
-        <div>
-          <%= link_to "/perks" do %>
-            <%= f.submit "Next", class: "button-primary margin-left-auto" %>
-          <% end %>
-        </div>
-      </div>
-      </div>
-    </div>
-        <% end %>
 </div>
