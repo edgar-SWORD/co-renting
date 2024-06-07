@@ -1,12 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
-import mapboxgl from 'mapbox-gl' // Don't forget this
+
+import mapboxgl from 'mapbox-gl'
 import MapboxGeocoder from 'mapbox-gl-geocoder'
 
 // Connects to data-controller="map"
 export default class extends Controller {
   static targets = ["address"]
   static values = {
-    apiKey: String
+    apiKey: String,
   }
 
   connect() {
@@ -19,9 +20,9 @@ export default class extends Controller {
 
     this.map.addControl(
       this.geocoder = new MapboxGeocoder({
-          accessToken: mapboxgl.accessToken,
-          zoom: 14,
-          mapboxgl: mapboxgl
+        accessToken: mapboxgl.accessToken,
+        zoom: 14,
+        mapboxgl: mapboxgl
       })
     );
 
