@@ -1,0 +1,49 @@
+<div class="form-slide">
+  <div class="question-form-wrap question-4">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 9 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">How would you describe yourself?</h2>
+        <p>Rank each field from 1 to 3</p>
+      </div>
+    </div>
+    <%= simple_form_for @user_personality do |f| %>
+      <div class="range-input-wrap">
+        <p>Relax</p>
+        <%= f.input :cleanliness, as: :range, input_html: { min: 1, max: 3, step: 3 } %>
+        <p>Maniac</p>
+      </div>
+      <div class="form-group">
+        <%= f.button :submit, "Create Product" %>
+      </div>
+    <% end %>
+
+    <div class="range-input-wrap">
+      <label for="cleanliness">Relax</label>
+      <input type="range" id="cleanliness" name="cleanliness" min="1" max="3" class="input-range" />
+      <label for="cleanliness">Maniac</label>
+    </div>
+    <div class="range-input-wrap">
+      <label for="lifestyle">Indoor person</label>
+      <input type="range" id="lifestyle" name="lifestyle" min="1" max="3" class="input-range" />
+      <label for="lifestyle">Outdoor person</label>
+    </div>
+    <div class="range-input-wrap">
+      <label for="sharing">Possessive</label>
+      <input type="range" id="sharing" name="sharing" min="1" max="3" class="input-range" />
+      <label for="sharing">Love to share</label>
+    </div>
+     <div class="range-input-wrap">
+      <label for="cooking">Take away food</label>
+      <input type="range" id="cooking" name="cooking" min="1" max="3" class="input-range" />
+      <label for="cooking">Homemade food</label>
+    </div>
+    <div class="range-input-wrap">
+      <label for="storage">I pack light</label>
+      <input type="range" id="storage" name="storage" min="1" max="3" class="input-range" />
+      <label for="storage">Store a lot</label>
+    </div>
+
+    <%= link_to "Previous", edit_user_registration_path, :class => "form-previous-button button-secondary" %>
+  </div>
+</div>

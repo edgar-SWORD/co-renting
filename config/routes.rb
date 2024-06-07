@@ -11,12 +11,13 @@ Rails.application.routes.draw do
     resources :messages, only: :create
   end
   resources :flats, only: [:new, :create, :edit, :update, :show, :destroy]
-  resources :perks, only: [:index]
+  resources :perks, only: [:new, :create]
 
   namespace :user_intake do
     resources :personal_informations, only: %i[new create]
     resources :user_shifts, only: %i[new create]
     resources :user_budgets, only: %i[new create]
+    resources :user_personalities, only: %i[new create]
   end
 
 end
