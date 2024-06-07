@@ -10,7 +10,7 @@ class ProfileResearchesController < ApplicationController
       }
     end
   end
-  
+
   skip_before_action :authenticate_user!, only: %i[new create]
 
   def new
@@ -21,7 +21,7 @@ class ProfileResearchesController < ApplicationController
     @profile_research = ProfileResearch.new(location_params)
     @profile_research.user = current_user
     if @profile_research.save
-      redirect_to some_path, notice: 'Profile research was successfully created.'
+      redirect_to  new_user_intake_user_budget_path, notice: 'Profile research was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end

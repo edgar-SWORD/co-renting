@@ -10,7 +10,7 @@ module UserIntake
       @user = current_user
       if @user_budget.valid?
         @user.update(user_params)
-
+        redirect_to new_flat_intake_rooms_furnished_path
       else
         render :new, status: :unprocessable_entity
       end

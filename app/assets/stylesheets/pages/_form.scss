@@ -721,8 +721,9 @@ font-family: 'Inter', sans-serif;
   object-fit: cover;
   margin-top: 2px;
   margin-bottom: 1px;
+}
 
-  .map-wrap {
+.map-wrap {
   width: 100%;
   height: 369px;
   overflow: hidden;
@@ -823,4 +824,18 @@ input[type=range].input-range::-webkit-slider-thumb {
   border-radius: 100rem;
   background: var(--caribbean);
 }
+
+
+
+.user_intake_user_personality_cleanliness {
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+
+#user_intake_user_personality_cleanliness {
+  min-width: 416px;
+  height: 1rem;
+  border-radius: 100rem;
 }
