@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_06_06_095348) do
+ActiveRecord::Schema[7.1].define(version: 2024_06_07_103522) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -95,7 +95,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_06_06_095348) do
 
   create_table "profile_researches", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "flat_id", null: false
+    t.bigint "flat_id"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
