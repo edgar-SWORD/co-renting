@@ -1,0 +1,20 @@
+<div class="form-slide">
+  <div class="question-form-wrap">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 6 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">What is your monthly rent budget?</h2>
+        <p>CoRent will automatically match you with other parents with the same budget</p>
+      </div>
+    </div>
+    <%= simple_form_for @user_budget, html: { class: 'form' } do |f| %>
+        <%= f.error_notification %>
+        <div class="form-row">
+          <%= f.input :min_budget, as: :float, input_html: {class:"input-field", placeholder: "700€"}, wrapper_html: { class: 'input-wrap' }, label: "Min budget" %>
+          <%= f.input :max_budget, as: :float, input_html: {class:"input-field", placeholder: "1500€"}, wrapper_html: { class: 'input-wrap' }, label: "Max budget" %>
+        </div>
+        <%= f.submit "Next", class: "form-next-button" %>
+    <% end %>
+    <%= link_to "Previous", "", :class => "form-previous-button button-secondary" %>
+  </div>
+</div>

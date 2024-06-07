@@ -1,32 +1,40 @@
 <h1>Users#show</h1>
 <div class="container">
 <div class="banner">
-  <div class="container d-flex">
-    <div class="avatar-img">
-      <% if @user.avatar_url? %>
+<div class="avatar-img">
+<% if @user.photo.attached? %>
+          <%= cl_image_tag @user.avatar_url, class: "profil-picture", alt: "avatar" %>
+          <% else %>
           <img class="profil-picture" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
-      <% end %>
-    </div>
-    <div class="user-name">
-      <h1><%= @user.first_name %></h1>
-    </div>
-    <div class="d-flex flex-wrap">
-    <div class="tag-rythm">
-      <span><%= @user.rythm %></span>
-    </div>
-    <div class="tag-rythm">
-      <span><%= @user.alternance %></span>
-    </div>
-    </div>
-  </div>
+        <% end %>
 </div>
+
+    <div class="user-name">
+      <h1><%= @user.first_name.capitalize %></h1>
+    </div>
+    <div class="flex-wrap">
+    <div class="banner-tags d-flex ">
+    <div class="tag-rythm">
+      <span><%= @user.rythm.capitalize %></span>
+    </div>
+    <div class="tag-rythm">
+      <span><%= @user.alternance.capitalize %></span>
+    </div>
+    </div>
+    <div class="send-message-button button-primary show_hero">
+    <%= link_to 'Send a message', root_path %></div>
+    </div>
+
+  </div>
 
 <div class="user-description">
   <div class="container d-flex flex-wrap">
     <div class="col">
       <div class="row">
       <h3>My description</h3>
+      <p class="text-size-medium description-container">
         <%= @user.long_description %>
+      </p>
 
 
       <div class="budget">
@@ -44,13 +52,35 @@
       <div class="row">
       <div class="children-user">
         <h3>My children</h3>
+        <div class="description-container">
         <ul>
-        <div class="d-flex flex-wrap">
+        <div class="d-flex flex-wrap align-items-center">
+        <div class="child-container">
         <% @children.each do |child|  %>
-          <li class="child"><%= child.first_name %></li>
+        <div class="child-gender-icon">
+        <% if child.gender == "male" %>
+        <i class="fa-solid fa-mars"></i>
+        <% else %>
+        <i class="fa-solid fa-venus"></i>
         <% end %>
         </div>
+          <li ><%= child.first_name %></li>
+          <div class="child-age-icon">
+          <% if child.age_range == "baby"  %>
+          <i class="fa-solid fa-baby-carriage"></i>
+          <%elsif child.age_range == "toddler" %>
+          <i class="fa-solid fa-baby"></i>
+          <%elsif child.age_range == "child" %>
+          <i class="fa-solid fa-child"></i>
+           <%else %>
+           <i class="fa-solid fa-person"></i>
+           <%end  %>
+          </div>
+        <% end %>
+        </div>
+        </div>
         </ul>
+        </div>
       </div>
       </div>
     </div>
@@ -73,94 +103,71 @@
       <h3>My personality</h3>
   </div>
 
-       <div class="row">
-       <div class="personnality-tag">
-       <div class="d-flex">
-      <h4>Cleanliness</h4>
-        <% if @user.cleanliness == '3'%>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%elsif @user.cleanliness == '2' %>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%else  %>
-          <i class="fa-solid fa-star icon"></i>
-        <%end %>
-       </div>
-       </div>
-      </div>
+<div data-controller="jauge" data-jauge-ratio-value="<%= @user.cleanliness %>">
+  <div class="jauge-item">
+    <h5>Cleanliness:</h5>
+     <div class="d-flex justify-content-between">
+    <p class="legend-bar left"> Relax</p>
+    <p class="legend-bar right"> Maniac</p>
+    </div>
+    <div class="outer-bar">
+      <div data-jauge-target="innerBar" class="inner-bar"></div>
+    </div>
+  </div>
+</div>
 
-      <div class="row">
-       <div class="personnality-tag">
-       <div class="d-flex">
-      <h4>Lifestyle</h4>
-        <% if @user.lifestyle == '3'%>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%elsif @user.lifestyle == '2' %>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%else  %>
-          <i class="fa-solid fa-star icon"></i>
-        <%end %>
-       </div>
-       </div>
-      </div>
+<div data-controller="jauge" data-jauge-ratio-value="<%= @user.lifestyle %>">
+  <div class="jauge-item">
+    <h5>Lifestyle:</h5>
+     <div class="d-flex justify-content-between">
+    <p class="legend-bar left"> Indoor person</p>
+    <p class="legend-bar right"> Outdoor person</p>
+    </div>
+    <div class="outer-bar">
+      <div data-jauge-target="innerBar" class="inner-bar"></div>
+    </div>
+  </div>
+</div>
 
-        <div class="row">
-       <div class="personnality-tag">
-       <div class="d-flex">
-      <h4>Sharing</h4>
-        <% if @user.sharing == '3'%>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%elsif @user.sharing == '2' %>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%else  %>
-          <i class="fa-solid fa-star icon"></i>
-        <%end %>
-       </div>
-       </div>
-      </div>
+<div data-controller="jauge" data-jauge-ratio-value="<%= @user.sharing %>">
+  <div class="jauge-item">
+    <h5>Sharing:</h5>
+     <div class="d-flex justify-content-between">
+    <p class="legend-bar left"> Sharing</p>
+    <p class="legend-bar right"> Protective</p>
+    </div>
+    <div class="outer-bar">
+      <div data-jauge-target="innerBar" class="inner-bar"></div>
+    </div>
+  </div>
+</div>
 
-     <div class="row">
-       <div class="personnality-tag">
-       <div class="d-flex">
-      <h4>Cooking</h4>
-        <% if @user.cooking == '3'%>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%elsif @user.cooking == '2' %>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%else  %>
-          <i class="fa-solid fa-star icon"></i>
-        <%end %>
-       </div>
-       </div>
-      </div>
+<div data-controller="jauge" data-jauge-ratio-value="<%= @user.cooking %>">
+  <div class="jauge-item">
+    <h5>Cooking:</h5>
+     <div class="d-flex justify-content-between">
+    <p class="legend-bar left">Take away Food</p>
+    <p class="legend-bar right">Homemade Food</p>
+    </div>
+    <div class="outer-bar">
+      <div data-jauge-target="innerBar" class="inner-bar"></div>
+    </div>
+  </div>
+</div>
 
-       <div class="row">
-       <div class="personnality-tag">
-       <div class="d-flex">
-      <h4>Storage</h4>
-        <% if @user.storage == '3'%>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%elsif @user.storage == '2' %>
-          <i class="fa-solid fa-star icon"></i>
-          <i class="fa-solid fa-star icon"></i>
-        <%else  %>
-          <i class="fa-solid fa-star icon"></i>
-        <%end %>
-       </div>
-       </div>
+<div data-controller="jauge" data-jauge-ratio-value="<%= @user.storage %>">
+  <div class="jauge-item">
+    <h5>Storage:</h5>
+    <div class="d-flex justify-content-between">
+    <p class="legend-bar left"> Light packing</p>
+    <p class="legend-bar right"> Heavy storage</p>
+    </div>
+    <div class="outer-bar">
+      <div data-jauge-target="innerBar" class="inner-bar"></div>
+    </div>
+  </div>
+</div>
+
       </div>
      </div>
     </div>
@@ -169,12 +176,12 @@
   </div>
 </div>
 
-<div class="container d-flex flex-wrap">
-    <div class="ideal-flat">
-  <div class="d-flex">
+<div class="container d-flex">
+    <div class="ideal-flat d-flex ">
       <div class="col">
         <div class="row">
-      <h4>My ideal flat</h4>
+      <h3>My ideal flat</h3>
+      <div class="image-style flex-wrap">
       <%if @flat.style == "scandinavian" %>
         <img src="https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="scandinavian style">
       <%elsif @flat.style == "industrial" %>
@@ -188,7 +195,8 @@
       <%else%>
         <img src="https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art deco style">
       <%end %>
-      <span><%= @flat.style%></span>
+      <span class="flat-style"><%= @flat.style%></span>
+      </div>
       </div>
     </div>
 
@@ -244,53 +252,8 @@
 </div>
 </div>
 
-<div class="container">
-<div class="header">
-<div class="avatar-img">
-<% if @user.photo.attached? %>
-          <%= cl_image_tag @user.avatar_url, class: "absolute_img", alt: "Image of an accomodation" %>
-          <% else %>
-          <img class="absolute_img" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
-        <% end %>
-</div>
 
-    <div class="banner-profil">
-    <h1><%= @user.first_name %></h1>
-    <div class="d-flex">
-    <span class="alternance"><%= @user.alternance %></span>
-    <span class="rythm"><%= @user.rythm %></span>
-    </div>
-    </div>
 
-</div>
-
-<div class="profile-description d-flex">
-<div class="col">
-<div class="row">
-  <div class="description">
-    <%= @user.long_description %>
-  </div>
-</div>
-</div>
-<div class="col">
-<div class="row">
-  <div class="user-children">
-  <h3>My children</h3>
-    <ul>
-      <% @user.children.each do |child| %>
-        <li>
-          <%= child.first_name %>
-        </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
-</div>
-</div>
-
-div
-<div class="searching-location">
-</div>
 
 
 

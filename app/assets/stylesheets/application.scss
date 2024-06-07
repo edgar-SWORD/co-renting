@@ -6,6 +6,9 @@
 // External libraries
 @import "bootstrap";
 @import "font-awesome";
+@import url("https://api.mapbox.com/mapbox-gl-js/v3.1.2/mapbox-gl.css");
+@import url("https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css");
+
 
 // Your CSS partials
 @import "components/index";
@@ -89,6 +92,7 @@ p {
   color: var(--grey-4);
   margin: 0;
   padding: 0;
+  font-size: 1rem;
 }
 
 a {
@@ -239,4 +243,3 @@ a {
   align-items: center;
   gap: 12px;
 }
-

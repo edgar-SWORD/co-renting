@@ -1,20 +1,35 @@
 .banner {
   background-color: #F2F2F2;
-  border-radius: 70px 70px 5px 5px;
+  border-radius: 5px;
   padding: 2em;
+  gap: 2rem;
+  position: relative;
+  margin-top: 10%;
 h1 {
-// position: relative;
-// margin: 50px auto;
-padding-left: 5em;
-margin-right: 1em;
+  margin: 0.3rem 1rem;
+  text-align: left;
+  padding-left: 12rem;
+
+}
+
+.banner-tags {
+  margin: 0.3rem 0;
+  text-align: left;
+  padding-left: 12rem;
 }
 .tag-rythm {
   background-color: #006D77;
   border-radius: 50px;
-  padding: 0.5em;
+  padding: 0.7em;
   margin: 0.5em;
+  min-width: 8.5rem;
   color: white;
   text-align: center;
 }
 
+.button-primary.show_hero {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
 }

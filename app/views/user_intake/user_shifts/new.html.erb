@@ -1,5 +1,5 @@
 <div class="form-slide">
-  <div class="question-form-wrap">
+  <div class="question-form-wrap question-4">
     <div class="question-form-header">
       <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 4 / 10</p>
       <div class="question-form-title">
@@ -13,10 +13,17 @@
             <%= f.input :alternance, as: :radio_buttons, collection: [['Even weeks', 'even', {checked: true}],['Odd weeks', 'odd']], label: false, html: { class: 'radio-alternance' } %>
           </div>
           <div class="rythm-radio-wrap">
-            <%= f.input :rythm, as: :radio_buttons, collection: [['Weeks', 'all week', {checked: true}],['Weekdays', 'week-days'], ['Weekends',' week-ends']], label: false, html: { class: 'radio-rythm' } %>
+            <%= f.input :rythm, as: :radio_buttons, collection: [['Weeks', 'all week', 'From Monday to Sunday', {checked: true}],['Weekdays', 'week-days', 'From Monday to Friday'], ['Weekends',' week-ends', 'From Friday to Sunday']], label: false, html: { class: 'radio-rythm' },
+              wrapper_html: {class: "rythm_wrapper"},
+              input_html: {class: "rythm_radio"},
+              label_method: ->(rythm){
+                "<div>#{rythm.first} <p class='radio-description'>#{rythm[2]}</p> </div>".html_safe
+              }
+
+            %>
           </div>
         <%= f.submit "Next", class: "form-next-button" %>
     <% end %>
-    <%= link_to "Previous", "", :class => "form-previous-button button-secondary" %>
+    <%= link_to "Previous", new_child_path, :class => "form-previous-button button-secondary" %>
   </div>
 </div>
