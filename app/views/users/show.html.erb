@@ -1,4 +1,3 @@
-<h1>Users#show</h1>
 <div class="container">
 <div class="banner">
 <div class="avatar-img">
@@ -93,6 +92,11 @@
         <div class="row">
           <div class="map-location">
           <h3>My searching location</h3>
+          <div class="map_contain"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
           </div>
         </div>
       </div>
@@ -176,12 +180,13 @@
   </div>
 </div>
 
-<div class="container d-flex">
-    <div class="ideal-flat d-flex ">
-      <div class="col">
-        <div class="row">
+<div class="container flex-wrap">
+<div class="ideal-flat" >
       <h3>My ideal flat</h3>
-      <div class="image-style flex-wrap">
+      <div class="d-flex">
+  <div class="image-style container" >
+    <div class="col">
+    <div class="row">
       <%if @flat.style == "scandinavian" %>
         <img src="https://images.unsplash.com/photo-1605774337664-7a846e9cdf17?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="scandinavian style">
       <%elsif @flat.style == "industrial" %>
@@ -193,17 +198,18 @@
       <%elsif @flat.style == "art deco" %>
         <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art deco style">
       <%else%>
-        <img src="https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="art deco style">
+        <img src="https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="no preference style">
       <%end %>
       <span class="flat-style"><%= @flat.style%></span>
-      </div>
-      </div>
     </div>
+      </div>
+  </div>
 
+  <div class="flat-specifics container">
+  <div class="col">
+  <div class="row">
 
-    <div class="col">
-      <div class="row">
-    <div class="container d-flex">
+    <div class="d-flex">
       <div class="number-room">
       <p>Number of room : <%= @flat.rooms %></p>
       </div>
@@ -223,7 +229,6 @@
 
       </div>
       </div>
-    </div>
 
 
       <div class="row">
@@ -243,28 +248,15 @@
     <% end %>
       </div>
     <% end %>
-      </div>
+    </div>
       </div>
     </div>
-    </div>
-</div>
-  </div>
-</div>
-</div>
+      </div>
+      </div>
+      </div>
+      </div>
 
 
-
-
-
-
-
-
-
-</div>
-
-
-
-<p>Find me in app/views/users/show.html.erb</p>
 <%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Delete', user_path(@user), method: :delete, data: { confirm: 'Are you sure you want to delete this user?' } %>
 <br>
