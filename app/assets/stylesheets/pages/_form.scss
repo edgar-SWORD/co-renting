@@ -220,11 +220,16 @@
 .step4-wrapper {
   margin-top: 40px;
   gap: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
 .room-card {
   width: 50%;
-  height: 200px;
+  height: 310px;
+  min-height: 100%;
   border: 1px solid var(--caribbean);
   border-radius: 0.25rem;
   padding: 0 1rem;
@@ -344,8 +349,7 @@ legend {
   flex-grow: 1;
 }
 
-
-#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends {
+#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends #flat_is_furnished_true, #flat_is_furnished_false {
   position: absolute;
   transform: scale(0);
 }
@@ -414,7 +418,6 @@ legend {
   color: var(--black);
 }
 
-
 #user_intake_user_shift_rythm_all_week:checked + label {
   border: 1px solid var(--caribbean);
 }
@@ -422,7 +425,6 @@ legend {
 #user_intake_user_shift_rythm_all_week:hover + label {
   border: 1px solid var(--caribbean);
 }
-
 
 #user_intake_user_shift_rythm_week-days + label {
   cursor: pointer;
@@ -476,7 +478,6 @@ legend {
   border: 1px solid var(--caribbean);
 }
 
-
 .radio-description {
 font-size: 1rem;
 font-weight: 400;
@@ -484,7 +485,244 @@ color: var(--grey-4);
 font-family: 'Inter', sans-serif;
 }
 
-.map-wrap {
+#flat_is_furnished_true + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+}
+
+#flat_is_furnished_true:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_is_furnished_true:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_is_furnished_false + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_is_furnished_false:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_is_furnished_false:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_scandinavian + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_scandinavian:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_scandinavian:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_industrial + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_industrial:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_industrial:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_bohemian + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_bohemian:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_bohemian:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_art_deco + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_art_deco:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_art_deco:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_vintage + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_vintage:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_vintage:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_no_opinion + label {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 24px;
+  border-radius: 0.25rem;
+  text-align: center;
+  border: 1px solid var(--grey-2);
+  height: 145px;
+  width: 100%;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: "Quicksand";
+  color: var(--caribbean);
+  margin-top: 1rem;
+}
+
+#flat_style_no_opinion:checked + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_no_opinion:hover + label {
+  border: 1px solid var(--caribbean);
+}
+
+#flat_style_no_opinion, #flat_style_scandinavian, #flat_style_bohemian, #flat_style_industrial, #flat_style_vintage, #flat_style_art_deco {
+  position: absolute;
+  transform: scale(0);
+}
+
+.step10-wrapper {
+  margin-top: 40px;
+}
+
+.style_wrapper {
+  gap: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.style-size {
+  height: 90px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: 2px;
+  margin-bottom: 1px;
+
+  .map-wrap {
   width: 100%;
   height: 369px;
   overflow: hidden;

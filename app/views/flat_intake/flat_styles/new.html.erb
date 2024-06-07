@@ -1,0 +1,35 @@
+<div class="form-slide">
+  <div class="question-form-wrap-step3">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 10 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">What's your favourite flat style ?</h2>
+        <p>Please select a style or "no preference"</p>
+      </div>
+    </div>
+
+    <div class="form step10-wrapper">
+          <%= simple_form_for @flat do |f| %>
+              <%= f.input :style, as: :radio_buttons, collection: [['Scandinavian', 'scandinavian', 'https://plus.unsplash.com/premium_photo-1670360211643-e9fff4b41628?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'], ['Industrial', 'industrial', 'https://plus.unsplash.com/premium_photo-1682125921736-04133d6a5b39?q=80&w=1946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'], ['Bohemian', 'bohemian', 'https://media.listquicker.com/users/schulz/post-140-64374d24ed768-1807x797.webp'], ['Art Deco', 'art deco', 'https://as1.ftcdn.net/v2/jpg/05/74/24/48/1000_F_574244811_kMONv4ZdIT9HBIilBvZiPqmzZozxqPyK.jpg'], ['Vintage', 'vintage', 'https://www.christiesrealestate.com/blog/wp-content/uploads/2018/08/banner_supericabuckhead.jpg'], ['No preference', 'no opinion', 'https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&f[%E2%80%A6]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', {checked: true}]], label: false,
+              wrapper_html: {class: "style_wrapper"},
+                  input_html: {class: "style_radio"},
+                  label_method: ->(style){
+                    "<div><img src= '#{style[2]}' alt='>#{style.first}' class='style-size'></img>#{style.first}</div>".html_safe
+                  }
+              %>
+    </div>
+  </div>
+
+   <div class="form-navigation">
+    <div class="container">
+      <div class="form-navigation-layout">
+        <div><%= link_to "Previous", "user_intake/user_personalities/new", :class => "button-secondary margin-left-auto" %></div>
+        <div>
+          <%= link_to "/users" do %>
+            <%= f.submit "Next", class: "button-primary margin-left-auto" %>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+        <% end %>

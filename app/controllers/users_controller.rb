@@ -16,15 +16,13 @@ class UsersController < ApplicationController
       @users = @users.where(alternance: params[:alternance])
     end
 
-    @users.each do |user|
-      @markers = user.profile_researches.geocoded.map do |a|
+      @markers = ProfileResearch.all.geocoded.map do |a|
         {
           lat: a.latitude,
           lng: a.longitude,
-          info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+          # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
         }
       end
-    end
   end
 
   def show
