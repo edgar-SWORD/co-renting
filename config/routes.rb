@@ -19,4 +19,9 @@ Rails.application.routes.draw do
     resources :user_budgets, only: %i[new create]
   end
 
+  namespace :flat_intake do
+    resources :rooms_furnished, only: %i[new create]
+    resources :flat_styles, only: %i[new create]
+  end
+
 end

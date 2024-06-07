@@ -11,7 +11,9 @@ export default class extends Controller {
     const newValue = parseInt(this.roomTarget.value) + 1
     this.roomTarget.value = newValue
     this.displayTarget.innerHTML = this.roomTarget.value
-    this.countTarget.innerText = "rooms"
+    if (newValue > 1) {
+      this.countTarget.innerText = "rooms"
+    }
   }
 
   decrement() {
