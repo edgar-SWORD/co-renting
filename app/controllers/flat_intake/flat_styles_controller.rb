@@ -10,7 +10,7 @@ module FlatIntake
       @flat = Flat.find(params[:id])
       if @flat.save
         @profile_research = ProfileResearch.update(user: @user, flat: @flat)
-        redirect_to user_path
+        redirect_to users_path
       else
         render :new, status: :unprocessable_entity
       end

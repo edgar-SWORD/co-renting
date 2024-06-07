@@ -8,28 +8,31 @@
       </div>
     </div>
 
-    <div class="form step4-wrapper">
-      <div data-controller="rooms" class="room-card">
         <%= simple_form_for @flat_furniture, url: flat_intake_rooms_furnisheds_path do |f| %>
-            <div class='d-none'>
-              <%= f.input :rooms, input_html: { value: 1, data: {rooms_target:'room'}, readonly: true}, label: false %>
+          <div class="form step4-wrapper">
+            <div data-controller="rooms" class="room-card">
+              <div class='d-none'>
+                <%= f.input :rooms, input_html: { value: 1, data: {rooms_target:'room'}, readonly: true}, label: false %>
+              </div>
+            <div>
+              <div class="room-wrapper d-flex flex-row justify-content-between align-items-center">
+                <button type="button" class="incrementation-btn" data-action="click->rooms#decrement">-</button>
+                <div data-rooms-target="display" class="room-input" >1</div>
+                <button type="button" class="incrementation-btn" data-action="click->rooms#increment">+</button>
+                <h4 data-rooms-target="count" class="incrementation-text">room</h4>
+              </div>
             </div>
-            <div class="room-wrapper d-flex flex-row justify-content-between align-items-center">
-              <button type="button" class="incrementation-btn" data-action="click->rooms#decrement">-</button>
-              <div data-rooms-target="display" class="room-input" >1</div>
-              <button type="button" class="incrementation-btn" data-action="click->rooms#increment">+</button>
             </div>
-            <h4 data-rooms-target="count" class="incrementation-text">room</h4>
+              <div class="furnish-wrapper">
+                  <%= f.input :is_furnished, as: :radio_buttons, collection: [['Furnished', 'true', 'fa-suitcase', 'I need a furnished and fully equipped flat', {checked: true}], ['Unfurnished', 'false', 'fa-house', "I'll bring my own furniture and equipment"]], label: false, html:{class:"radio-rythm"},
+                  wrapper_html: {class: "rythm_wrapper"},
+                      input_html: {class: "rythm_radio"},
+                      label_method: ->(is_furnished){
+                        "<div><p class='text-color-blue'><i class='fa-solid #{is_furnished[2]}'></i></p>#{is_furnished.first} <p class='radio-description text-color-blue'>#{is_furnished[3]}</p> </div>".html_safe
+                      }
+                  %>
+              </div>
 
-      <div class="furnish-wrapper">
-          <%= f.input :is_furnished, as: :radio_buttons, collection: [['Furnished', 'true', 'fa-suitcase', 'I need a furnished and fully equipped flat', {checked: true}], ['Unfurnished', 'false', 'fa-house', "I'll bring my own furniture and equipment"]], label: false, html:{class:"radio-rythm"},
-          wrapper_html: {class: "rythm_wrapper"},
-              input_html: {class: "rythm_radio"},
-              label_method: ->(is_furnished){
-                "<div><p class='text-color-blue'><i class='fa-solid #{is_furnished[2]}'></i></p>#{is_furnished.first} <p class='radio-description text-color-blue'>#{is_furnished[3]}</p> </div>".html_safe
-              }
-          %>
-      </div>
 
           <div class="form-navigation">
             <div class="container">
@@ -41,8 +44,7 @@
               </div>
             </div>
           </div>
-        <% end %>
       </div>
-    </div>
+        <% end %>
   </div>
 </div>
