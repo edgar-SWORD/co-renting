@@ -349,7 +349,7 @@ legend {
   flex-grow: 1;
 }
 
-#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends #flat_is_furnished_true, #flat_is_furnished_false {
+#user_intake_user_shift_alternance_even, #user_intake_user_shift_alternance_odd, #user_intake_user_shift_rythm_all_week, #user_intake_user_shift_rythm_week-days, #user_intake_user_shift_rythm__week-ends, #flat_intake_room_furnished_is_furnished_true, #flat_intake_room_furnished_is_furnished_false {
   position: absolute;
   transform: scale(0);
 }
@@ -485,7 +485,7 @@ color: var(--grey-4);
 font-family: 'Inter', sans-serif;
 }
 
-#flat_is_furnished_true + label {
+#flat_intake_room_furnished_is_furnished_true + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -503,15 +503,16 @@ font-family: 'Inter', sans-serif;
   color: var(--caribbean);
 }
 
-#flat_is_furnished_true:checked + label {
+
+#flat_intake_room_furnished_is_furnished_true:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_is_furnished_true:hover + label {
+#flat_intake_room_furnished_is_furnished_true:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_is_furnished_false + label {
+#flat_intake_room_furnished_is_furnished_false + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -530,11 +531,12 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_is_furnished_false:checked + label {
+
+#flat_intake_room_furnished_is_furnished_false:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_is_furnished_false:hover + label {
+#flat_intake_room_furnished_is_furnished_false:hover + label {
   border: 1px solid var(--caribbean);
 }
 
@@ -571,7 +573,7 @@ font-family: 'Inter', sans-serif;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 12px 24px;
+  padding: 1rem;
   border-radius: 0.25rem;
   text-align: center;
   border: 1px solid var(--grey-2);
@@ -793,6 +795,11 @@ font-family: 'Inter', sans-serif;
   font-weight: 500;
  }
 
+ .range-input-wrap p {
+  color: var(--black);
+  font-weight: 500;
+ }
+
 
  .input-range {
   min-width: 416px;
@@ -813,10 +820,77 @@ font-family: 'Inter', sans-serif;
   cursor: pointer;
 }
 
+<<<<<<< HEAD
 input[type=range].input-range::-webkit-slider-thumb {
+=======
+
+
+
+
+input[type=range]#user_intake_user_personality_cleanliness::-webkit-slider-thumb {
+>>>>>>> 508e61a7083eaa272a8d5062edaf5e52b5e5d0b3
   -webkit-appearance: none;
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 100rem;
   background: var(--caribbean);
+  transform: translateY(-22%);
+}
+
+input[type=range]#user_intake_user_personality_lifestyle::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100rem;
+  background: var(--caribbean);
+  transform: translateY(-22%);
+}
+
+input[type=range]#user_intake_user_personality_storage::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100rem;
+  background: var(--caribbean);
+  transform: translateY(-22%);
+}
+
+
+input[type=range]#user_intake_user_personality_cooking::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100rem;
+  background: var(--caribbean);
+  transform: translateY(-22%);
+}
+
+input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 100rem;
+  background: var(--caribbean);
+  transform: translateY(-22%);
+}
+
+
+.user_intake_user_personality_cleanliness, .user_intake_user_personality_lifestyle, .user_intake_user_personality_sharing, .user_intake_user_personality_cooking, .user_intake_user_personality_storage {
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+
+#user_intake_user_personality_cleanliness, #user_intake_user_personality_lifestyle, #user_intake_user_personality_sharing, #user_intake_user_personality_cooking, #user_intake_user_personality_storage {
+  min-width: 416px;
+  height: 1rem;
+  border-radius: 100rem;
+}
+
+
+.ranges-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }

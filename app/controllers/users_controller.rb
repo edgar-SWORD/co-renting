@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: :index
 
   def index
     @users = User.all
@@ -31,10 +32,15 @@ class UsersController < ApplicationController
     profile_research = ProfileResearch.find_by(user_id: @user.id)
 
 
-
     if profile_research
       @flat = Flat.find(profile_research.flat_id)
       @perks = @flat.perks
+      @markers =
+        {
+          lat: profile_research.latitude,
+          lng: profile_research.longitude,
+          # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+        }
     else
       @flat = nil
       @perks = [] # ou une autre valeur par défaut si nécessaire

@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-
 import mapboxgl from 'mapbox-gl'
 import MapboxGeocoder from 'mapbox-gl-geocoder'
 
@@ -30,13 +29,6 @@ export default class extends Controller {
     this.geocoder.on("result", (event) => this.#setInputValue(event))
     this.geocoder.on("clear", () => this.#clearInputValue())
 
-    this.map = new mapboxgl.Map({
-      container: this.element,
-      style: "mapbox://styles/mapbox/light-v11"
-    })
-
-    this.#addMarkersToMap()
-    this.#fitMapToMarkers()
   }
 
   disconnect() {
