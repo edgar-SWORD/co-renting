@@ -11,7 +11,7 @@ module UserIntake
       if @personal_information.valid?
         @user.update(user_params)
         # TODO définir le prochain step et faire le redirect_to
-        redirect_to new_child_path
+        redirect_to new_user_intake_user_shift_path
       else
         render :new, status: :unprocessable_entity
       end

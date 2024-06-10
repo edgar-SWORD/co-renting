@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: "users#index"
+  root to: "pages#home"
   get "form", to: "pages#form"
+  get "home", to: "pages#home"
+
 
   resources :users
   resources :children, only: [:index, :create, :new, :edit, :update, :destroy]

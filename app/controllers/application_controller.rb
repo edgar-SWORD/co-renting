@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    new_user_intake_personal_information_path
+    new_child_path
   end
 
   def after_update_path_for(resource)
-    new_user_intake_personal_information_path
+    new_child_path
   end
 
   def user_root_path

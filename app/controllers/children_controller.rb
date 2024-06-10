@@ -8,7 +8,7 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     @child.user = @user
     if @child.save
-      redirect_to "/children/new"
+      redirect_to new_user_intake_personal_information_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -26,7 +26,7 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find(params[:id])
     if @child.update(child_params)
-      redirect_to user_path
+      redirect_to new_user_intake_personal_information_path
     else
       render :edit
     end

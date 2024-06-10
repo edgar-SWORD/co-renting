@@ -10,7 +10,7 @@ module UserIntake
       @user = current_user
       if @user_personality.valid?
         @user.update(user_personality_params)
-        redirect_to new_flat_intake_flat_style_path
+        redirect_to new_user_intake_user_shift_path
       else
         render :new, status: :unprocessable_entity
       end
