@@ -6,7 +6,7 @@
         <div class="sticky-top">
           <%= form_with url: users_path, method: :get, local: true, class: "mb-4" do %>
             <div class="mb-3">
-              <%= text_field_tag :location, params[:location], placeholder: "Localisation", class: "form-control custom-input" %>
+              <%= text_field_tag :location, params[:location], placeholder: "Location", class: "form-control custom-input" %>
             </div>
             <div class="mb-3">
               <%= select_tag :rythm, options_for_select([['Rythme', ''], ['All Week', 'all week'], ['Week-Days', 'week-days'], ['Week-Ends', 'week-ends']], params[:rythm]), class: "form-control custom-input" %>

@@ -1,0 +1,43 @@
+<div class="banner-home" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.istockphoto.com/id/1351204753/fr/photo/ouvrez-la-porte-et-la-poign%C3%A9e-de-porte-avec-une-cl%C3%A9-et-un-porte-cl%C3%A9s-en-forme-de-maison.jpg?s=612x612&w=0&k=20&c=fbjk9E7J4SlKvQkrHlPbeg2R-U_xGxiHrisIKPJWcqI=)">
+  <div class="banner-wrapper">
+    <h1>CoRent</h1>
+    <p>Find the perfect invisible flatmate to share a long-term rental for you shared custody</p>
+    <%= form_with url: users_path, method: :get do %>
+      <div class="search-wrapper">
+        <div data-controller="address-autocomplete"
+          data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
+          <%= text_field_tag :location, params[:location],
+          data: {address_autocomplete_target: "location"},
+          class: "form-control custom-input d-none",
+          placeholder: "Paris, France" %>
+        </div>
+        <%= select_tag(:alternance, options_for_select([['Even weeks', 'even'], ['Odd weeks', 'odd']], params[:alternance]), placeholder: "Even / Odd", class: "form-control custom-input") %>
+        <%= submit_tag "Find a CoRenter", class: "button-form" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="container p-5">
+  <div class="home-block-wrapper">
+    <div class="text-card">
+      <h2 class="text-color-blue">Long-term Part-time renting</h2>
+      <p class="mt-4">Mary lives in Bordeaux but shares custody of her children in Paris. She needs a flat there on even weeks. Recently divorced, Kate plans to leave Paris to go back to Rouen next to her family but cannot afford two houses. She has custody of her kids on odd weeks. Thanks to CoRent, Mary and Kate will be able to meet and rent a flat together to live there alternately.</p>
+    </div>
+    <div class="image-frame">
+      <div class="image-height">
+        <img src="https://plus.unsplash.com/premium_photo-1661752229232-96232a11c62b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="corenting_contract" class="absolute-img">
+      </div>
+    </div>
+  </div>
+  <div class="home-block-wrapper">
+    <div class="image-frame">
+      <div class="image-height">
+        <img src="https://media.istockphoto.com/id/1616061434/fr/photo/une-m%C3%A8re-heureuse-qui-tisse-des-liens-avec-ses-enfants-sur-le-canap%C3%A9.jpg?s=612x612&w=0&k=20&c=KfEJPs1aeztRokvot9sDfLXB6gjCTDmTKQSlcjEKWTQ=" alt="corenting_family" class="absolute-img">
+      </div>
+    </div>
+    <div class="text-card-right">
+      <h2 class="text-color-blue">Find the best Co-Renter</h2>
+      <p class="mt-4">You don't want your alternating colocation to end up like your marriage. That is why CoRent enables you to find someone who has similar habits and matching needs. Maniac or laid-back? How much storage do you need? Want to share food or toys? Birds of a feather flock together…</p>
+    </div>
+  </div>
+</div>
