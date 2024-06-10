@@ -26,6 +26,7 @@ class ChatroomsController < ApplicationController
     # l'id de l'autre : params[:user_id]
 
 
+
     @couple = Couple.where(
       "(first_profile_id = :current_user_id AND second_profile_id = :other_user_id)
       OR
@@ -33,12 +34,12 @@ class ChatroomsController < ApplicationController
       current_user_id: current_user.id,
       other_user_id:   params[:user_id]
     ).first
-
     @couple ||= Couple.create!(first_profile_id: current_user.id, second_profile_id: params[:user_id])
 
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
 
     redirect_to chatroom_path(@chatroom)
+
   end
 
   private
