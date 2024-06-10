@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-    # @profile_research = ProfileResearch.find_by(user_id: @user.id)
+
     if params[:location].present?
       @users = @users.joins(:profile_researches).where('profile_researches.location LIKE ?', "%#{params[:location]}%")
     end
@@ -17,13 +17,29 @@ class UsersController < ApplicationController
       @users = @users.where(alternance: params[:alternance])
     end
 
-      @markers = ProfileResearch.all.geocoded.map do |a|
-        {
-          lat: a.latitude,
-          lng: a.longitude,
-          # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
-        }
-      end
+    if params[:min_budget].present?
+      @users = @users.where('min_budget >= ?', params[:min_budget].to_i)
+    end
+
+    if params[:max_budget].present?
+      @users = @users.where('max_budget <= ?', params[:max_budget].to_i)
+    end
+
+    if params[:cleanliness].present? && params[:cleanliness].to_i > 0
+      @users = @users.where(cleanliness: params[:cleanliness])
+    end
+
+    if params[:cooking].present? && params[:cooking].to_i > 0
+      @users = @users.where(cooking: params[:cooking])
+    end
+
+    @markers = ProfileResearch.all.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude,
+        # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+      }
+    end
   end
 
   def show
@@ -31,16 +47,15 @@ class UsersController < ApplicationController
     @children = @user.children
     profile_research = ProfileResearch.find_by(user_id: @user.id)
 
-
     if profile_research
       @flat = Flat.find(profile_research.flat_id)
       @perks = @flat.perks
       @markers =
-        {
+        [{
           lat: profile_research.latitude,
           lng: profile_research.longitude,
           # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
-        }
+        }]
     else
       @flat = nil
       @perks = [] # ou une autre valeur par défaut si nécessaire
@@ -85,6 +100,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm)
+    params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm, :min_budget, :max_budget, :cleanliness, :cooking)
   end
 end
+

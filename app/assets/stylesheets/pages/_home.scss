@@ -87,3 +87,18 @@
   height: 100%;
   object-fit: cover;
 }
+
+#cleanliness-range::-webkit-slider-thumb,
+#cooking-range::-webkit-slider-thumb {
+  background: #006d77;
+}
+
+#cleanliness-range::-moz-range-thumb,
+#cooking-range::-moz-range-thumb {
+  background: #006d77;
+}
+
+.refine-reset-buttons {
+  display: flex;
+  justify-content: space-around;
+}

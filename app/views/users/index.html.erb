@@ -1,50 +1,71 @@
 <div class="padding-section-large">
   <div class="container">
-    <h1 class="mb-5"><%= @users.count %> profils similaires</h1>
+    <h1 class="mb-5"><%= @users.count %> similar profiles</h1>
     <div class="row">
       <div class="col-md-3 mt-3">
-        <div class="sticky-top">
+        <div class="sticky-top p-3 bg-light rounded shadow-sm">
           <%= form_with url: users_path, method: :get, local: true, class: "mb-4" do %>
             <div class="mb-3">
-              <%= text_field_tag :location, params[:location], placeholder: "Location", class: "form-control custom-input" %>
+              <label for="location" class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Location</label>
+              <%= text_field_tag :location, params[:location], placeholder: "", class: "form-control custom-input" %>
             </div>
             <div class="mb-3">
-              <%= select_tag :rythm, options_for_select([['Rythme', ''], ['All Week', 'all week'], ['Week-Days', 'week-days'], ['Week-Ends', 'week-ends']], params[:rythm]), class: "form-control custom-input" %>
+              <label for="rythm" class="form-label"><i class="fas fa-calendar-alt me-2"></i>Rhythm</label>
+              <%= select_tag :rythm, options_for_select([['', ''], ['All Week', 'all week'], ['Week-Days', 'week-days'], ['Week-Ends', 'week-ends']], params[:rythm]), class: "form-control custom-input" %>
             </div>
             <div class="mb-3">
-              <%= select_tag :alternance, options_for_select([['Alternance', ''], ['Even', 'even'], ['Odd', 'odd']], params[:alternance]), class: "form-control custom-input" %>
+              <label for="alternance" class="form-label"><i class="fas fa-sync-alt me-2"></i>Alternance</label>
+              <%= select_tag :alternance, options_for_select([['', ''], ['Even', 'even'], ['Odd', 'odd']], params[:alternance]), class: "form-control custom-input" %>
             </div>
-            <div>
-              <%= submit_tag "Affiner ma recherche", class: "button-form" %>
+            <div class="mb-3">
+              <label for="min_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i>Minimum budget</label>
+              <%= number_field_tag :min_budget, params[:min_budget], placeholder: "", class: "form-control custom-input" %>
+            </div>
+            <div class="mb-3">
+              <label for="max_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i>Maximum budget</label>
+              <%= number_field_tag :max_budget, params[:max_budget], placeholder: "", class: "form-control custom-input" %>
+            </div>
+            <div class="mb-3">
+              <label for="cleanliness" class="form-label"><i class="fas fa-broom me-2"></i>Cleanliness</label>
+              <%= range_field_tag :cleanliness, params[:cleanliness] || 0, min: 0, max: 3, step: 1, class: "form-range", id: "cleanliness-range" %>
+            </div>
+            <div class="mb-3">
+              <label for="cooking" class="form-label"><i class="fas fa-utensils me-2"></i>Cooking</label>
+              <%= range_field_tag :cooking, params[:cooking] || 0, min: 0, max: 3, step: 1, class: "form-range", id: "cooking-range" %>
+            </div>
+            <div class="refine-reset-buttons">
+              <%= submit_tag "Refine my search", class: "button-form" %>
+              <%= link_to "Reset", users_path, class: "btn ms-2" %>
             </div>
           <% end %>
-
-          <div class="mt-4" style="width: 100%; height: 432px;"
-              data-controller="index-show-map"
-              data-index-show-map-markers-value="<%= @markers.to_json %>"
-              data-index-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+          <div class="mt-4" style="width: 100%; height: 400px;"
+               data-controller="index-show-map"
+               data-index-show-map-markers-value="<%= @markers.to_json %>"
+               data-index-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
           </div>
         </div>
       </div>
-
       <div class="col-md-9">
         <div class="layout">
           <div class="row">
             <% @users.each do |user| %>
               <div class="col-lg-4 col-md-6 col-sm-12 my-3">
-                <%= link_to user_path(user), class:"card-link" do  %>
-                  <div class="card h-100">
-                    <div class="card-img-top" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px; position: relative;">
-                      <span class="badge badge-light top-10 start-10">Semaine <%= user.alternance %></span>
+                <%= link_to user_path(user), class:"card-link" do %>
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px;">
+                      <span class="badge badge-light top-10 start-10">Week <%= user.alternance %></span>
                       <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
                     </div>
                     <div class="card-body">
-                      <div class="card-body-top">
-                        <h5 class="card-title"><%= user.first_name %></h5>
-                        <p class="card-price"><%= number_to_currency(user.max_budget || 750, unit: "€") %>/mois</p>
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h5 class="card-title m-0"><%= user.first_name %></h5>
+                        <p class="card-price m-0"><%= number_to_currency(user.max_budget, unit: "€") %>/month</p>
                       </div>
-                      <p class="card-text"><%= user.children.count %> enfants</p>
-                      <p class="card-text mt-1">Occupe la location <%= user.rythm %></p>
+                      <p class="card-text mt-3 mb-2">
+                        <i class="fas fa-child me-2"></i>
+                        <%= user.children.count == 1 ? '1 child' : "#{user.children.count} children" %>
+                      </p>
+                      <p class="card-text mb-2"><i class="fas fa-clock me-2"></i>Occupies the loc' <%= user.rythm %></p>
                       <div class="tags mt-3">
                         <% user.profile_researches.first&.flat&.flat_perks&.each do |flat_perk| %>
                           <span class="badge badge-secondary"><%= flat_perk.perk.name %></span>
