@@ -6,6 +6,7 @@
       <img class="show-avatar" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
     <% end %>
   </div>
+
 </div>
 <div class="show-top-wrap">
   <div class="container">
@@ -14,6 +15,23 @@
         <div class="show-name-wrap">
           <h1 class="heading-style-h2"><%= @user.first_name %></h1>
           <p> <%= @user.tagline %> </p>
+
+
+    <div class="children-user">
+    <div class="col">
+      <div class="row">
+        <h3>My children</h3>
+        <div class="description-container">
+        <ul>
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+        <% @children.each do |child|  %>
+        <div class="child-container">
+        <div class="child-gender-icon">
+        <% if child.gender == "male" %>
+        <i class="fa-solid fa-mars"></i>
+        <% else %>
+        <i class="fa-solid fa-venus"></i>
+        <% end %>
         </div>
         <div class="show-stat-wrap">
           <div class="show-stat-colum">
@@ -199,6 +217,17 @@
               </div>
             </div>
           </div>
+
+
+  <div class="user-profil">
+      <div class="col">
+          <h3>My searching location</h3>
+          <div class="map-location" style="width: 100%; height: 432px;"
+              data-controller="index-show-map"
+              data-index-show-map-markers-value="<%= @markers.to_json %>"
+              data-index-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
+
         </div>
       </div>
       <div class="profile-specs-wrap">
