@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   root to: "users#index"
   get "form", to: "pages#form"
 
-  resources :users
+  resources :users do
+    resources :chatrooms, only: [:create]
+  end
+
   resources :children, only: [:index, :create, :new, :edit, :update, :destroy]
   resources :profile_researches
   resources :chatrooms, only: [:index, :show] do
