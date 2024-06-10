@@ -721,8 +721,9 @@ font-family: 'Inter', sans-serif;
   object-fit: cover;
   margin-top: 2px;
   margin-bottom: 1px;
+}
 
-  .map-wrap {
+.map-wrap {
   width: 100%;
   height: 369px;
   overflow: hidden;
@@ -811,10 +812,6 @@ font-family: 'Inter', sans-serif;
   transition: opacity .2s;
   cursor: pointer;
 }
-
-
-
-
 
 input[type=range].input-range::-webkit-slider-thumb {
   -webkit-appearance: none;
