@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: "pages#home"
+  root to: "users#index"
   get "form", to: "pages#form"
 
   resources :users
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   namespace :flat_intake do
-    resources :rooms_furnished, only: %i[new create]
+    resources :rooms_furnisheds, only: %i[new create]
     resources :flat_styles, only: %i[new create]
   end
 
