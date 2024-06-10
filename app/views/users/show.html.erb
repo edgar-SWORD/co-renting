@@ -47,7 +47,7 @@
       </div>
   </div>
 
-      <div class="children-user">
+    <div class="children-user">
     <div class="col">
       <div class="row">
         <h3>My children</h3>
@@ -87,17 +87,13 @@
 </div>
 
   <div class="user-profil">
-    <div class="d-flex">
       <div class="col">
-        <div class="row">
-          <div class="map-location">
           <h3>My searching location</h3>
-          <div class="map_contain"
-        data-controller="index-show-map"
-        data-index-show-map-markers-value="<%= @markers.to_json %>"
-        data-index-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-          </div>
+          <div class="map-location" style="width: 100%; height: 432px;"
+              data-controller="index-show-map"
+              data-index-show-map-markers-value="<%= @markers.to_json %>"
+              data-index-show-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+            </div>
         </div>
       </div>
 
