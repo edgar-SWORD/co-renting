@@ -18,22 +18,6 @@
           <p> <%= @user.tagline %> </p>
 
 
-    <div class="children-user">
-    <div class="col">
-      <div class="row">
-        <h3>My children</h3>
-        <div class="description-container">
-        <ul>
-        <div class="d-flex flex-wrap align-items-center justify-content-center">
-        <% @children.each do |child|  %>
-        <div class="child-container">
-        <div class="child-gender-icon">
-        <% if child.gender == "male" %>
-        <i class="fa-solid fa-mars"></i>
-        <% else %>
-        <i class="fa-solid fa-venus"></i>
-        <% end %>
-        </div>
         <div class="show-stat-wrap">
           <div class="show-stat-colum">
             <div class="show-stat-icon-wrap">
@@ -82,7 +66,7 @@
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6875 3.1875H16.3125V14.8125H1.6875V3.1875ZM2.8125 4.3125V5.63445L9 8.38445L15.1875 5.63445V4.3125H2.8125ZM15.1875 6.86555L9 9.61555L2.8125 6.86555V13.6875H15.1875V6.86555Z" fill="white"/>
           </svg>
-          Send a message
+          <%= link_to 'Send a message', user_chatrooms_path(@user), data: {turbo_method: :post} %></div>
         <% end %>
       </div>
     </div>
@@ -280,4 +264,3 @@
     </div>
   </div>
 </div>
-
