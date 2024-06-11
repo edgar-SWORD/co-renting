@@ -202,7 +202,50 @@
         </div>
       </div>
       <div class="profile-specs-wrap">
-        
+        <div class="profile-specs-left">
+          <h2 class="heading-style-h5"> <%= @user.first_name %>'s ideal flat</h2>
+          <div class="specs-wrap">
+            <p>Must have</p>
+            <div class="specs-tag-wrap">
+              <% @perks.each do |perk| %>
+                <% if perk.status == 'positive' %>
+                  <div class="positive-perk">
+                    <p> <%= perk.name.capitalize %> </p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+          <div class="specs-wrap">
+            <p>Deal breakers</p>
+            <div class="specs-tag-wrap">
+              <% @perks.each do |perk| %>
+                <% if perk.status == 'negative' %>
+                  <div class="negative-perk">
+                    <p> <%= perk.name.capitalize %> </p>
+                  </div>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="flat-style-img-frame">
+          <div class="flat-style-img-height">
+            <% if @flat.style == 'industrial' %>
+              <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% elsif @flat.style == 'scandinavian' %>
+              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% elsif @flat.style == 'boheme' %>
+              <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% elsif @flat.style == 'vintage' %>
+              <img src="https://images.unsplash.com/photo-1522871465649-53a34924fdcc?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% elsif @flat.style == 'art deco' %>
+              <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% else %>
+              <img src="https://images.unsplash.com/photo-1603792907191-89e55f70099a?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
