@@ -21,6 +21,7 @@ Couple.destroy_all
 FlatPerk.destroy_all
 Flat.destroy_all
 User.destroy_all
+Perk.destroy_all
 
 users = User.create!([
   { first_name: 'Etienne',

@@ -1,0 +1,19 @@
+<div class="form-slide">
+  <div class="question-form-wrap question-4">
+    <div class="question-form-header">
+      <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 8 / 10</p>
+      <div class="question-form-title">
+        <h2 class="heading-style-h4">What’s your ideal flat like?</h2>
+        <p>Let other parents know whare are your mush have and deal breakers</p>
+      </div>
+    </div>
+    <%= simple_form_for @flat_perk, html: { class: 'form' } do |f| %>
+      <div class="perk-checkbox-wrap">
+          <%= f.input :perk, collection: @good_perks, as: :check_boxes %>
+      </div>
+          <%= f.input :perk, collection: @bad_perks, as: :check_boxes %>
+        <%= f.submit "Next", class: "form-next-button" %>
+    <% end %>
+    <%= link_to "Previous", new_user_intake_personal_information_path, :class => "form-previous-button button-secondary" %>
+  </div>
+</div>
