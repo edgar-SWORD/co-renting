@@ -32,9 +32,8 @@ class ChatroomsController < ApplicationController
       OR
       (first_profile_id = :other_user_id AND second_profile_id = :current_user_id)",
       current_user_id: current_user.id,
-      other_user_id:   params[:user_id]
-    ).first
-    @couple ||= Couple.create!(first_profile_id: current_user.id, second_profile_id: params[:user_id])
+      other_user_id: params[:user_id]
+    ).first_or_create!(first_profile_id: current_user.id, second_profile_id: params[:user_id])
 
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
 
