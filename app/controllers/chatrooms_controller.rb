@@ -11,34 +11,22 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    # create_table "couples", force: :cascade do |t|
-    #   t.bigint "first_profile_id", null: false
-    #   t.bigint "second_profile_id", null: false
+    current_user_id = current_user.id
+    other_user_id = params[:user_id]
 
-    # create_table "chatrooms", force: :cascade do |t|
-    #   t.bigint "couple_id", null: false
+    # Assurez-vous que les profils existent dans la table profile_researches
+    current_user_profile = User.find(current_user_id)
+    current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
+    other_user_profile = User.find(other_user_id)
+    other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
 
-    # TODO: a modifier une fois que la feature de creation de Couple est fonctionnelle
+    # Cherchez ou créez le couple
+    @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
 
-    # nous meme : current_user
-    # notre id : current_user.id
-
-    # l'id de l'autre : params[:user_id]
-
-
-
-    @couple = Couple.where(
-      "(first_profile_id = :current_user_id AND second_profile_id = :other_user_id)
-      OR
-      (first_profile_id = :other_user_id AND second_profile_id = :current_user_id)",
-      current_user_id: current_user.id,
-      other_user_id: params[:user_id]
-    ).first_or_create!(first_profile_id: current_user.id, second_profile_id: params[:user_id])
-
+    # Cherchez ou créez le chatroom
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
 
     redirect_to chatroom_path(@chatroom)
-
   end
 
   private
