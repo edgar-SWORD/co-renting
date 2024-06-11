@@ -8,13 +8,20 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+# Child.destroy_all
+# Couple.destroy_all
+# FlatPerk.destroy_all
+# ProfileResearch.destroy_all
+# Flat.destroy_all
+# User.destroy_all
+
+ProfileResearch.destroy_all
 Child.destroy_all
 Couple.destroy_all
 FlatPerk.destroy_all
-ProfileResearch.destroy_all
 Flat.destroy_all
 User.destroy_all
-
+Perk.destroy_all
 
 users = User.create!([
   { first_name: 'Etienne',
@@ -175,6 +182,166 @@ users = User.create!([
     sharing: "1",
     cooking: "2",
     storage: "3"
+  },
+
+  { first_name: 'Lucas',
+    last_name: 'Bernard',
+    email: 'bernard.lucas@gmail.com',
+    password: '123456',
+    address: "12 Rue des Lilas, 34000 Montpellier",
+    long_description: "I am Lucas, a single dad with a 10-year-old son, Leo. I work as a graphic designer and enjoy a flexible schedule. I'm looking for a co-tenant who is creative, tidy, and enjoys a peaceful environment. Once we 'match', we'll search for an apartment that suits our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "Graphic Designer",
+    tagline: "I am Lucas, a creative single dad.",
+    alternance: "odd",
+    rythm: "all week",
+    min_budget: 450,
+    max_budget: 850,
+    cleanliness: "3",
+    lifestyle: "2",
+    sharing: "2",
+    cooking: "3",
+    storage: "2"
+  },
+
+  { first_name: 'Sophie',
+    last_name: 'Lefevre',
+    email: 'lefevre.sophie@gmail.com',
+    password: '123456',
+    address: "22 Rue de la Paix, 69002 Lyon",
+    long_description: "I am Sophie, a single mother with a 3-year-old daughter, Amélie. I work as a fashion designer and have a busy yet flexible schedule. I'm looking for a co-tenant who values cleanliness and enjoys a harmonious living environment. Together, we can find an apartment that meets both our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHdvbWFuJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+    job_title: "Fashion Designer",
+    tagline: "I am Sophie, a creative and tidy single mother.",
+    alternance: "even",
+    rythm: "week-days",
+    min_budget: 500,
+    max_budget: 900,
+    cleanliness: "3",
+    lifestyle: "3",
+    sharing: "2",
+    cooking: "2",
+    storage: "2"
+  },
+
+  { first_name: 'Antoine',
+    last_name: 'Dubois',
+    email: 'dubois.antoine@gmail.com',
+    password: '123456',
+    address: "18 Rue des Roses, 69003 Lyon",
+    long_description: "I am Antoine, a single father of a 7-year-old son, Gabriel. As a software engineer, I have a flexible schedule and often work from home. I'm looking for a co-tenant who is organized, respectful, and enjoys a quiet environment. Once we 'match', we'll look for an apartment that fits our lifestyle.",
+    avatar_url: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "Software Engineer",
+    tagline: "I am Antoine, a tech-savvy and organized dad.",
+    alternance: "odd",
+    rythm: "all week",
+    min_budget: 550,
+    max_budget: 950,
+    cleanliness: "3",
+    lifestyle: "1",
+    sharing: "3",
+    cooking: "1",
+    storage: "3"
+  },
+
+  { first_name: 'Clara',
+    last_name: 'Moreau',
+    email: 'moreau.clara@gmail.com',
+    password: '123456',
+    address: "20 Avenue Jean Médecin, 06000 Nice",
+    long_description: "I am Clara, a single mother with a 5-year-old son, Lucas. I work as a photographer and have a variable schedule. I'm looking for a co-tenant who is respectful, clean, and enjoys a calm environment. Together, we will find an apartment that meets our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1521252659862-eec69941b071?q=80&w=1872&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "Photographer",
+    tagline: "I am Clara, a creative and clean single mother.",
+    alternance: "even",
+    rythm: "week-ends",
+    min_budget: 400,
+    max_budget: 800,
+    cleanliness: "3",
+    lifestyle: "2",
+    sharing: "1",
+    cooking: "2",
+    storage: "2"
+  },
+
+  { first_name: 'Thomas',
+    last_name: 'Petit',
+    email: 'petit.thomas@gmail.com',
+    password: '123456',
+    address: "30 Rue de la Liberté, 21000 Dijon",
+    long_description: "I am Thomas, a single father with a 6-year-old daughter, Emma. I work as a journalist and have a flexible work schedule. I'm looking for a co-tenant who values privacy, cleanliness, and a peaceful living environment. Once we 'match', we can find an apartment that suits our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "Journalist",
+    tagline: "I am Thomas, a privacy-valuing single dad.",
+    alternance: "odd",
+    rythm: "week-days",
+    min_budget: 450,
+    max_budget: 850,
+    cleanliness: "3",
+    lifestyle: "1",
+    sharing: "1",
+    cooking: "2",
+    storage: "3"
+  },
+
+  { first_name: 'Julie',
+    last_name: 'Durand',
+    email: 'durand.julie@gmail.com',
+    password: '123456',
+    address: "25 Boulevard des Belges, 69006 Lyon",
+    long_description: "I am Julie, a single mother with a 2-year-old son, Maxime. I work as a school teacher and have a structured schedule. I'm looking for a co-tenant who is responsible, respectful, and appreciates a clean and orderly environment. Together, we can find an apartment that fits our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1550525811-e5869dd03032?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "School Teacher",
+    tagline: "I am Julie, a responsible and respectful single mom.",
+    alternance: "even",
+    rythm: "all week",
+    min_budget: 400,
+    max_budget: 750,
+    cleanliness: "3",
+    lifestyle: "2",
+    sharing: "1",
+    cooking: "3",
+    storage: "2"
+  },
+
+  { first_name: 'Benoit',
+    last_name: 'Gauthier',
+    email: 'gauthier.benoit@gmail.com',
+    password: '123456',
+    address: "32 Rue d'Espagne, 64100 Bayonne",
+    long_description: "I am Benoit, a single father with a 8-year-old son, Théo. I work as a chef and have irregular work hours. I'm looking for a co-tenant who enjoys a relaxed environment and is respectful of shared spaces. Together, we will find an apartment that meets our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1522529599102-193c0d76b5b6?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aG9tbWUlMjBwcm9maWxlfGVufDB8fDB8fHww",
+    job_title: "Chef",
+    tagline: "I am Benoit, a relaxed and respectful single father.",
+    alternance: "odd",
+    rythm: "week-days",
+    min_budget: 450,
+    max_budget: 900,
+    cleanliness: "2",
+    lifestyle: "2",
+    sharing: "3",
+    cooking: "3",
+    storage: "1"
+  },
+
+  { first_name: 'Amandine',
+    last_name: 'Martin',
+    email: 'martin.amandine@gmail.com',
+    password: '123456',
+    address: "28 Rue Victor Hugo, 76000 Rouen",
+    long_description: "I am Amandine, a single mother with a 4-year-old daughter, Chloé. I work as a nurse and have a variable schedule. I'm looking for a co-tenant who values cleanliness, respect, and a calm living environment. Once we 'match', we can find an apartment that suits our needs.",
+    avatar_url: "https://images.unsplash.com/photo-1589169011402-8b2cbd1ee593?q=80&w=3021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    job_title: "Nurse",
+    tagline: "I am Amandine, a clean and respectful single mother.",
+    alternance: "even",
+    rythm: "all week",
+    min_budget: 350,
+    max_budget: 750,
+    cleanliness: "3",
+    lifestyle: "2",
+    sharing: "1",
+    cooking: "2",
+    storage: "2"
   }
 ])
 
@@ -263,114 +430,148 @@ children = Child.create!([
     age_range: 'baby',
     gender: 'male',
     user: users[6]
-   }
+   },
+
+   { first_name: 'Leo',
+    last_name: 'Bernard',
+    age_range: 'child',
+    gender: 'male',
+    user: users[7]
+   },
+
+   { first_name: 'Amélie',
+    last_name: 'Lefevre',
+    age_range: 'toddler',
+    gender: 'female',
+    user: users[8]
+   },
+
+   { first_name: 'Gabriel',
+    last_name: 'Dubois',
+    age_range: 'child',
+    gender: 'male',
+    user: users[9]
+   },
+
+   { first_name: 'Lucas',
+    last_name: 'Moreau',
+    age_range: 'child',
+    gender: 'male',
+    user: users[10]
+   },
+
+   { first_name: 'Emma',
+    last_name: 'Petit',
+    age_range: 'child',
+    gender: 'female',
+    user: users[11]
+   },
+
+   { first_name: 'Maxime',
+    last_name: 'Durand',
+    age_range: 'toddler',
+    gender: 'male',
+    user: users[12]
+   },
+
+   { first_name: 'Théo',
+    last_name: 'Gauthier',
+    age_range: 'child',
+    gender: 'male',
+    user: users[13]
+   },
+
+   { first_name: 'Chloé',
+    last_name: 'Martin',
+    age_range: 'toddler',
+    gender: 'female',
+    user: users[14]
+   },
+
+   { first_name: 'Théodore',
+   last_name: 'Martin',
+   age_range: 'child',
+   gender: 'male',
+   user: users[14]
+  },
 ])
 
 perks = Perk.create!([
+    { name: 'large living area', status: 'positive' },
+    { name: 'cooking utensils', status: 'positive'},
+    { name: 'plenty of storage', status: 'positive'},
+    { name: 'well-equipped kitchen', status: 'positive'},
+    { name: 'washing machine', status: 'positive'},
+    { name: 'dishwasher', status: 'positive'},
+    { name: 'television', status: 'positive'},
+    { name: 'bathtub', status: 'positive'},
+    { name: 'designer furniture', status: 'positive'},
+    { name: 'decoration to my taste', status: 'positive'},
+    { name: 'park nearby', status: 'positive'},
+    { name: 'no elevator', status: 'negative'},
+    { name: 'fragile furniture', status: 'negative'},
+    { name: 'bunk beds', status: 'negative'},
+    { name: 'small children’s room(s)', status: 'negative'},
+    { name: 'open kitchen', status: 'negative'},
+    { name: 'children’s area in the living room', status: 'negative'},
+    { name: 'bedrooms without shutters', status: 'negative'},
+    { name: 'toilet in the bathroom', status: 'negative'},
+    { name: 'photos on the walls', status: 'negative'},
+    { name: 'peeling paint', status: 'negative'},
+    { name: 'balcony', status: 'positive'},
+    { name: 'pet-friendly', status: 'positive'},
+    { name: 'high-speed internet', status: 'positive'},
+    { name: '24/7 security', status: 'positive'},
+    { name: 'garden', status: 'positive'},
+    { name: 'central heating', status: 'positive'},
+    { name: 'air conditioning', status: 'positive'},
+    { name: 'garage', status: 'positive'},
+    { name: 'fireplace', status: 'positive'},
+    { name: 'natural light', status: 'positive'},
+    { name: 'modern appliances', status: 'positive'},
+    { name: 'built-in closets', status: 'positive'},
+    { name: 'gym access', status: 'positive'},
+    { name: 'rooftop access', status: 'positive'},
+    { name: 'public transportation nearby', status: 'positive'},
+    { name: 'close to schools', status: 'positive'},
+    { name: 'close to supermarkets', status: 'positive'},
+    { name: 'quiet neighborhood', status: 'positive'},
+    { name: 'laundry facilities', status: 'positive'},
+    { name: 'guest parking', status: 'positive'},
+    { name: 'community events', status: 'positive'},
+    { name: 'yoga studio', status: 'positive'},
+    { name: 'playground', status: 'positive'},
+    { name: 'library', status: 'positive'},
+    { name: 'barbecue area', status: 'positive'},
+    { name: 'game room', status: 'positive'},
+    { name: 'pet park', status: 'positive'},
+    { name: 'sauna', status: 'positive'},
+    { name: 'dog walking service', status: 'positive'},
+    { name: 'bike storage', status: 'positive'},
+    { name: 'concierge service', status: 'positive'},
+    { name: 'on-site maintenance', status: 'positive'},
+  ])
 
-    { name: 'large living area',
-      status: 'positive' },
 
-    { name: 'cooking utensils',
-      status: 'positive'},
-
-    { name: 'plenty of storage',
-      status: 'positive'},
-
-    { name: 'well-equipped kitchen',
-      status: 'positive'},
-
-    { name: 'washing machine',
-      status: 'positive'},
-
-    { name: 'dishwasher',
-      status: 'positive'},
-
-    { name: 'television',
-      status: 'positive'},
-
-    { name: 'bathtub',
-      status: 'positive'},
-
-    { name: 'designer furniture',
-      status: 'positive'},
-
-    { name: 'decoration to my taste',
-      status: 'positive'},
-
-    { name: 'park nearby',
-      status: 'positive'},
-
-    { name: 'no elevator',
-      status: 'negative'},
-
-    { name: 'fragile furniture',
-      status: 'negative'},
-
-    { name: 'bunk beds',
-      status: 'negative'},
-
-    { name: 'small children’s room(s)',
-      status: 'negative'},
-
-    { name: 'open kitchen',
-      status: 'negative'},
-
-    { name: 'children’s area in the living room',
-      status: 'negative'},
-
-    { name: 'bedrooms without shutters',
-      status: 'negative'},
-
-    { name: 'toilet in the bathroom',
-      status: 'negative'},
-
-    { name: 'photos on the walls',
-      status: 'negative'},
-
-    { name: 'peeling paint',
-      status: 'negative'},
-
-])
-
-flats = Flat.create!([
-
-  { rooms: '3',
-    is_furnished: 'true',
-    style: 'industrial'
-   },
-
-   { rooms: '3',
-    is_furnished: 'neutral',
-    style: 'scandinavian'
-   },
-
-   { rooms: '2',
-    is_furnished: 'false',
-    style: 'boheme'
-   },
-
-   { rooms: '3',
-    is_furnished: 'true',
-    style: 'no opinion'
-   },
-
-   { rooms: '2',
-    is_furnished: 'neutral',
-    style: 'vintage'
-   },
-
-   { rooms: '2',
-    is_furnished: 'true',
-    style: 'art deco'
-   },
-
-   { rooms: '2',
-    is_furnished: 'neutral',
-    style: 'no opinion'
-   }
-
-])
+  flats = Flat.create!([
+    { rooms: '3', is_furnished: 'true', style: 'industrial' },
+    { rooms: '3', is_furnished: 'neutral', style: 'scandinavian' },
+    { rooms: '2', is_furnished: 'false', style: 'boheme' },
+    { rooms: '3', is_furnished: 'true', style: 'no opinion' },
+    { rooms: '2', is_furnished: 'neutral', style: 'vintage' },
+    { rooms: '2', is_furnished: 'true', style: 'art deco' },
+    { rooms: '2', is_furnished: 'neutral', style: 'no opinion' },
+    { rooms: '4', is_furnished: 'true', style: 'modern' },
+    { rooms: '2', is_furnished: 'true', style: 'minimalist' },
+    { rooms: '3', is_furnished: 'false', style: 'rustic' },
+    { rooms: '2', is_furnished: 'neutral', style: 'contemporary' },
+    { rooms: '3', is_furnished: 'true', style: 'urban' },
+    { rooms: '2', is_furnished: 'true', style: 'eclectic' },
+    { rooms: '4', is_furnished: 'false', style: 'traditional' },
+    { rooms: '1', is_furnished: 'true', style: 'mid-century modern' },
+    { rooms: '3', is_furnished: 'neutral', style: 'coastal' },
+    { rooms: '2', is_furnished: 'true', style: 'bohemian' }
+  ])
 
 flats_perks = FlatPerk.create!([
 
@@ -416,42 +617,65 @@ flats_perks = FlatPerk.create!([
     {flat: flats[6], perk: perks[14]},
     {flat: flats[6], perk: perks[12]},
     {flat: flats[6], perk: perks[15]},
+    {flat: flats[7], perk: perks[19]},
+    {flat: flats[7], perk: perks[20]},
+    {flat: flats[7], perk: perks[21]},
+    {flat: flats[7], perk: perks[12]},
+    {flat: flats[8], perk: perks[22]},
+    {flat: flats[8], perk: perks[23]},
+    {flat: flats[8], perk: perks[24]},
+    {flat: flats[8], perk: perks[8]},
+    {flat: flats[9], perk: perks[25]},
+    {flat: flats[9], perk: perks[26]},
+    {flat: flats[9], perk: perks[27]},
+    {flat: flats[9], perk: perks[6]},
+    {flat: flats[9], perk: perks[11]},
+    {flat: flats[10], perk: perks[28]},
+    {flat: flats[10], perk: perks[29]},
+    {flat: flats[10], perk: perks[30]},
+    {flat: flats[10], perk: perks[4]},
+    {flat: flats[11], perk: perks[31]},
+    {flat: flats[11], perk: perks[32]},
+    {flat: flats[11], perk: perks[33]},
+    {flat: flats[11], perk: perks[2]},
+    {flat: flats[12], perk: perks[34]},
+    {flat: flats[12], perk: perks[35]},
+    {flat: flats[12], perk: perks[36]},
+    {flat: flats[12], perk: perks[13]},
+    {flat: flats[13], perk: perks[37]},
+    {flat: flats[13], perk: perks[38]},
+    {flat: flats[13], perk: perks[39]},
+    {flat: flats[13], perk: perks[15]},
+    {flat: flats[14], perk: perks[40]},
+    {flat: flats[14], perk: perks[41]},
+    {flat: flats[14], perk: perks[42]},
+    {flat: flats[14], perk: perks[43]},
+    {flat: flats[15], perk: perks[44]},
+    {flat: flats[15], perk: perks[45]},
+    {flat: flats[15], perk: perks[46]},
+    {flat: flats[15], perk: perks[9]},
+    {flat: flats[16], perk: perks[47]},
+    {flat: flats[16], perk: perks[48]},
+    {flat: flats[16], perk: perks[49]},
+    {flat: flats[16], perk: perks[50]},
+    {flat: flats[16], perk: perks[1]},
+    {flat: flats[16], perk: perks[7]},
 ])
 
 profile_researches = ProfileResearch.create!([
-
-  { user: users[0],
-    flat: flats[0],
-    location: '75012 Paris'
-   },
-
-   { user: users[1],
-    flat: flats[1],
-    location: '75011 Paris'
-   },
-
-   { user: users[2],
-    flat: flats[2],
-    location: '75019 Paris'
-   },
-
-   { user: users[4-1],
-    flat: flats[3],
-    location: '75012 Paris'
-   },
-
-   { user: users[5-1],
-    flat: flats[4],
-    location: '75011 Paris'
-   },
-
-   { user: users[6-1],
-    flat: flats[5],
-    location: '75010 Paris'
-   },
-
-   { user: users[6],
-    flat: flats[6],
-    location: '75019 Paris'
-   },
+  { user: users[0], flat: flats[0], location: '75012 Paris' },
+  { user: users[1], flat: flats[1], location: '75011 Paris' },
+  { user: users[2], flat: flats[2], location: '75019 Paris' },
+  { user: users[3], flat: flats[3], location: '75012 Paris' },
+  { user: users[4], flat: flats[4], location: '75011 Paris' },
+  { user: users[5], flat: flats[5], location: '75010 Paris' },
+  { user: users[6], flat: flats[6], location: '75019 Paris' },
+  { user: users[7], flat: flats[7], location: '94100 Saint-Maur-des-Fossés' },
+  { user: users[8], flat: flats[8], location: '94000 Créteil' },
+  { user: users[9], flat: flats[9], location: '94300 Vincennes' },
+  { user: users[10], flat: flats[10], location: '94200 Ivry-sur-Seine' },
+  { user: users[11], flat: flats[11], location: '94500 Champigny-sur-Marne' },
+  { user: users[12], flat: flats[12], location: '94120 Fontenay-sous-Bois' },
+  { user: users[13], flat: flats[13], location: '94410 Saint-Maurice' },
+  { user: users[14], flat: flats[14], location: '94270 Le Kremlin-Bicêtre' },
 ])
