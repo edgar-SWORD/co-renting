@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :children, dependent: :destroy
 
   has_many :profile_researches, dependent: :destroy
-  has_many :chatrooms
+  has_many :chatrooms, through: :couples
   has_many :messages, through: :chatrooms
 
   has_many :couples, through: :profile_researches
@@ -16,4 +16,3 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
-

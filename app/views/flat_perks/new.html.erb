@@ -8,6 +8,7 @@
       </div>
     </div>
     <%= simple_form_for @flat_perk, html: { class: 'form' } do |f| %>
+
     <div class="form-perk-wrap">
       <div class="perk-checkbox-wrap positive">
           <div class="perk-checkbox-title-wrap">
@@ -31,6 +32,11 @@
             </div>
             <p>Please select <span class="text-weight-medium font-color-black">3 items</span></p>
           </div>
+
+      <div class="perk-checkbox-wrap">
+          <%= f.input :perk, collection: @good_perks, as: :check_boxes %>
+      </div>
+
           <%= f.input :perk, collection: @bad_perks, as: :check_boxes %>
       </div>
     </div>
