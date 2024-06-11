@@ -19,9 +19,16 @@
           <%= f.input :email, as: :email, input_html: {class:"input-field", placeholder: "jean.martel@gmail.com"}, wrapper_html: { class: 'input-wrap' } %>
           <%= f.input :job_title, as: :string, input_html: {class:"input-field", placeholder: "Entrepreneur"}, wrapper_html: { class: 'input-wrap' } %>
         </div>
-        <div class="form-row">
-          <%= f.input :address, as: :string, input_html: {class:"input-field", placeholder:"80 rue de la Paix, Paris"}, wrapper_html: { class: 'input-wrap' } %>
-          <%= f.input :photo, as: :file, input_html: {class:"input-field", placeholder: "Select a picture"}, wrapper_html: { class: 'input-wrap' }, label:"Profile picture" %>
+        <div class="form-row custo-address">
+          <%= f.input :address,
+                        as: :string,
+                        input_html: {data: {address_autocomplete_target: "location"}, class:"input-field d-none", placeholder:"80 rue de la Paix, Paris"},
+                        wrapper_html: { data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}, class: 'input-wrap' } %>
+          <%= f.input :photo,
+                        as: :file,
+                        input_html: {class:"input-field", placeholder: "Select a picture"},
+                        wrapper_html: { class: 'input-wrap' },
+                        label:"Profile picture" %>
         </div>
         <div class="form-row">
           <%= f.input :password,
@@ -41,7 +48,6 @@
         <%= f.submit "Next", class: "form-next-button" %>
 
     <% end %>
-
 
   </div>
 </div>

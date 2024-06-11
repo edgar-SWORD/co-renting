@@ -8,7 +8,9 @@
       </div>
     </div>
     <%= simple_form_for @flat_perk, html: { class: 'form' } do |f| %>
+      <div class="perk-checkbox-wrap">
           <%= f.input :perk, collection: @good_perks, as: :check_boxes %>
+      </div>
           <%= f.input :perk, collection: @bad_perks, as: :check_boxes %>
         <%= f.submit "Next", class: "form-next-button" %>
     <% end %>
