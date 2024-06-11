@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
   resources :flats, only: [:new, :create, :edit, :update, :show, :destroy]
   resources :perks, only: [:new, :create]
+  resources :flat_perks, only: [:new, :create]
+
 
   namespace :user_intake do
     resources :personal_informations, only: %i[new create]
