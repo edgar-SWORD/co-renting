@@ -14,6 +14,7 @@ FlatPerk.destroy_all
 ProfileResearch.destroy_all
 Flat.destroy_all
 User.destroy_all
+Perk.destroy_all
 
 
 users = User.create!([
