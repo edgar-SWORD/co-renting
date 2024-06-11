@@ -149,3 +149,264 @@
     position: relative;
   }
 }
+
+
+// Edgar Show
+
+
+.show-banner-wrap {
+  width: 100%;
+  height: 250px;
+  background-color: var(--caribbean);
+  position: relative;
+}
+
+.show-banner-layout {
+  position: relative;
+}
+
+.show-avatar-wrap {
+  position: absolute;
+  bottom: 0;
+  transform: translateY(50%);
+}
+
+
+.show-avatar {
+width: 112px;
+height: 112px;
+border-radius: 100%;
+border: 3px solid var(--white);
+transform: translateX(25%);
+object-fit: cover;
+}
+
+.show-top-layout {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+}
+
+.show-top-left {
+  max-width: 524px;
+}
+
+.show-top-wrap {
+  padding: 65px 0;
+}
+
+.show-name-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: left;
+}
+
+.show-stat-wrap {
+margin-top: 1rem;
+display: flex;
+flex-direction: row;
+gap: 1.5rem;
+}
+
+.show-stat-colum {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-shrink: 0;
+}
+
+
+.show-stat-icon-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--black);
+  flex-shrink: 0;
+}
+
+.show-btn-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.profile-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.profile-card {
+  padding: 2.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  .profile-card-description {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .profile-card-family {
+    margin-top: 2.5rem;
+  }
+  .profile-child-wrap {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: stretch;
+  }
+  .profile-child-item {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: var(--alice-blue);
+    color: var(--black);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .profile-child-left {
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .profile-child-tag {
+    padding: 0.25rem 0.5rem;
+    background-color: var(--caribbean);
+    border-radius: 0.25rem;
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .profile-range-wrap {
+    display: flex;
+    flex-direction: 2rem;
+    gap: 2rem;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: flex-start;
+    margin-top: 2rem;
+  }
+
+  .profile-range-item {
+    width: 100%;
+  }
+
+  .profile-range {
+    width: 100%;
+    height: 0.75rem;
+    border-radius: 100rem;
+    background-color: var(--alice-blue);
+    position: relative;
+  }
+  .range-cursor {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+    background-color: var(--caribbean);
+    position: absolute;
+  }
+
+  .range-cursor.is-1 {
+    bottom: 0;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .range-cursor.is-2 {
+    bottom: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .range-cursor.is-3 {
+    bottom: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .profile-range-label-wrap {
+    width: 100%;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    color: var(--black);
+  }
+}
+
+
+.profile-specs-wrap {
+  padding: 2.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid var(--grey-2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+
+
+.specs-wrap {
+  margin-top: 1rem;
+}
+
+
+.positive-perk {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--caribbean);
+  color: var(--white);
+  border-radius: 100rem;
+  flex-shrink: 0;
+}
+
+.negative-perk {
+  padding: 0.5rem 0.75rem;
+  background-color: var(--tangerine);
+  color: var(--white);
+  border-radius: 100rem;
+  flex-shrink: 0;
+}
+
+.specs-tag-wrap, .specs-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-specs-left {
+  max-width: 800px;
+}
+
+.flat-style-img-frame {
+  flex-grow: 1;
+  overflow: hidden;
+  border-radius: 0.25rem;
+}
+
+.flat-style-img-height {
+  position: relative;
+  width: 100%;
+  padding-top: 50%;
+  background-color: var(--caribbean);
+}

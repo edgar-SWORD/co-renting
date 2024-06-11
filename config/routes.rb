@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  root to: "users#index"
+  root to: "pages#home"
   get "form", to: "pages#form"
+  get "home", to: "pages#home"
+
 
   resources :users do
     resources :chatrooms, only: [:create]
@@ -15,6 +17,8 @@ Rails.application.routes.draw do
   end
   resources :flats, only: [:new, :create, :edit, :update, :show, :destroy]
   resources :perks, only: [:new, :create]
+  resources :flat_perks, only: [:new, :create]
+
 
   namespace :user_intake do
     resources :personal_informations, only: %i[new create]
