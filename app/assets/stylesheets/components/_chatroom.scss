@@ -7,6 +7,7 @@
   justify-content: space-between;
   flex-grow: 1;
 
+
   h1 {
     border-bottom: 1px solid $gray-200;
     margin-bottom: 0;
@@ -29,6 +30,50 @@
   }
 }
 
+.chatroom-show {
+  width: 22vw;
+  position: fixed;
+  bottom:0;
+  right: 4rem;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 2;
+  height: 60vh;
+
+
+  .messages {
+    height: 80%;
+    overflow: scroll;
+  }
+
+  form {
+    padding-left: 1rem;
+    height: 10%;
+
+    .button-primary {
+      height: 2rem;
+      padding: 0.2rem;
+    }
+
+    #message_content {
+      height: 2rem;
+    }
+  }
+
+}
+.chat-with {
+
+  color: white;
+  background-color: #006D77;
+
+  padding: 1rem;
+  height: 10%;
+
+
+  h5{
+    color:white;
+  }
+}
 .message_content{
 
   margin: 0 !important;
@@ -37,3 +82,38 @@
 #message_content {
   height: 4rem;
 }
+
+.chatroom-modal {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 300px;
+  max-height: 400px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+
+  .chatroom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .chatroom-messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+
+  .chatroom-form {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+  }
+}
+
+  
