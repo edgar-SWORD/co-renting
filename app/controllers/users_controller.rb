@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_chatroom, only: [:show]
   skip_before_action :authenticate_user!, only: :index
 
   def index
@@ -42,6 +43,7 @@ class UsersController < ApplicationController
     set_user
     @children = @user.children
     profile_research = ProfileResearch.where(user_id: @user.id).last
+
 
     if profile_research
       @flat = Flat.find(profile_research.flat_id)
@@ -90,6 +92,26 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def find_chatroom
+    current_user_id = current_user.id
+    other_user_id = params[:id]
+
+    # Assurez-vous que les profils existent dans la table profile_researches
+    current_user_profile = User.find(current_user_id)
+    current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
+    @other_user_profile = User.find(other_user_id)
+    other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
+
+    # Cherchez ou créez le couple
+    @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
+
+    # Cherchez ou créez le chatroom
+    @chatroom = Chatroom.find_or_create_by!(couple: @couple)
+
+    @message = Message.new
+
+  end
 
   def set_user
     @user = User.find(params[:id])

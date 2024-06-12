@@ -23,6 +23,7 @@ export default class extends Controller {
     this.subscription.unsubscribe()
   }
 
+
   #justifyClass(currentUserIsSender) {
     return currentUserIsSender ? "justify-content-end" : "justify-content-start"
   }
