@@ -1,0 +1,57 @@
+  .chatroom-list {
+    padding: 3rem 0;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 1em;
+  }
+
+  .chatroom-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  .chatroom-link:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .avatar-container {
+    flex-shrink: 0;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .chatroom-info {
+    flex-grow: 1;
+    margin-right: 1rem;
+  }
+
+  .chatroom-title {
+    font-size: 1.25em;
+    margin: 0;
+    color: #006D77;
+  }
+
+  .chatroom-last-message {
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+
+  .last-message-time {
+    font-size: 0.8em;
+  }

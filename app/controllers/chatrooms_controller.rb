@@ -2,7 +2,14 @@ class ChatroomsController < ApplicationController
   before_action :set_user
 
   def index
-    profile_research_ids = @profile_researches.ids
+    @couples = current_user.couples.includes(chatroom: :messages)
+    @last_messages = @couples.each_with_object({}) do |couple, hash|
+      last_message = couple.chatroom.messages.order(created_at: :desc).first
+      hash[couple.chatroom.id] = {
+        content: last_message&.content || "No messages yet",
+        created_at: last_message&.created_at
+      }
+    end
   end
 
   def show
@@ -14,20 +21,17 @@ class ChatroomsController < ApplicationController
     current_user_id = current_user.id
     other_user_id = params[:user_id]
 
-    # Assurez-vous que les profils existent dans la table profile_researches
     current_user_profile = User.find(current_user_id)
     current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
     other_user_profile = User.find(other_user_id)
     other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
 
-    # Cherchez ou créez le couple
     @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
-
-    # Cherchez ou créez le chatroom
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
 
     redirect_to chatroom_path(@chatroom)
   end
+
 
   private
 

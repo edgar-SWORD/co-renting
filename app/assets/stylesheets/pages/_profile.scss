@@ -410,3 +410,34 @@ gap: 1.5rem;
   padding-top: 50%;
   background-color: var(--caribbean);
 }
+
+
+// Signup form
+
+
+.singup-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(10.5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .signup-outer {
+    width: 874px;
+    border-radius: 18px;
+    background-color: var(--white);
+    padding: 10px;
+  }
+  .signup-inner {
+    width: 100%;
+    background-color: var(--caribbean);
+    border-radius: 0.5rem;
+    padding: 80px 40px;
+    position: relative;
+  }
+}
