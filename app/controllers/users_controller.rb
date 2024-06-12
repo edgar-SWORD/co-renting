@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   def show
     set_user
     @children = @user.children
-    profile_research = ProfileResearch.find_by(user_id: @user.id)
+    profile_research = ProfileResearch.where(user_id: @user.id).last
 
 
     if profile_research

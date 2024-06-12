@@ -8,7 +8,7 @@ class ChildrenController < ApplicationController
     @child = Child.new(child_params)
     @child.user = @user
     if @child.save
-      redirect_to new_user_intake_personal_information_path
+      redirect_to new_child_path
     else
       render :new, status: :unprocessable_entity
     end

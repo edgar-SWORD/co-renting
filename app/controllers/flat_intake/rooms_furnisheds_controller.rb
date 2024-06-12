@@ -11,7 +11,7 @@ module FlatIntake
       if @flat_furniture.valid?
         @flat = Flat.new(flat_params)
         @profile_research = @user.profile_researches.last.update(flat: @flat)
-        redirect_to new_user_intake_user_personality_path
+        redirect_to new_flat_perk_path
       else
         render :new, status: :unprocessable_entity
       end

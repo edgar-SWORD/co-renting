@@ -1,27 +1,17 @@
-.banner-footer {
-  background-color: var(--caribbean);
-  position: fixed;
-  max-height: 90px;
-  position: relative;
-  align-items: center;
-  display: flex;
-}
-
-.logo-wrapper {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-}
-
-.logo.size {
-  height: 70px;
-}
-
-.rs-wrapper {
+.footer-social-wrap {
+  width: 150px;
+  font-size: 24px;
   color: white;
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   justify-content: space-between;
+}
+
+
+.footer-wrap {
+  padding: 2.5rem 0;
+  background-color: var(--caribbean);
 }
