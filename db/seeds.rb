@@ -81,7 +81,7 @@ users = User.create!([
     As a nurse with changing schedules, I am looking for a co-tenant to share a future apartment on a part-time basis.
     I am seeking a reliable and respectful person who appreciates a well-maintained environment.
     Once we 'match', we will search together for an apartment that suits our respective needs.",
-    avatar_url: "https://plus.unsplash.com/premium_photo-1658527049634-15142565537a?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://media.istockphoto.com/id/1899502710/fr/photo/mom-enjoying-relaxing-morning-at-home-with-sleepy-and-happy-kids.jpg?s=612x612&w=0&k=20&c=ClBNMquvS7ZQ36UrhXH2JoQsN2o-u8p0AWwmEO8YvXE=",
     job_title: "Nurse",
     tagline: "My name is Laure, a single mother of two children, Lou (4 years old) and Max (2 years old).",
     alternance: "even",

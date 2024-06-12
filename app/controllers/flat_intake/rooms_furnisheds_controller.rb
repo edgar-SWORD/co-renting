@@ -20,7 +20,7 @@ module FlatIntake
     private
 
     def flat_params
-      params.require(:flat_intake_room_furnished).permit(:rooms, :is_furnished, :style)
+      params.require(:flat_intake_room_furnished).permit(:rooms, :is_furnished)
     end
   end
 end
