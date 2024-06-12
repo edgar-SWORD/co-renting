@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   get "form", to: "pages#form"
   get "home", to: "pages#home"
 
-
   resources :users do
     resources :chatrooms, only: [:create]
   end

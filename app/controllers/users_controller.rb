@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :find_chatroom, only: [:show]
-  skip_before_action :authenticate_user!, only: :index
+  before_action :find_chatroom, only: [:show], if: :user_logged
 
   def index
     @users = User.all
 
     if params[:location].present?
-      @users = @users.joins(:profile_researches).where('profile_researches.location LIKE ?', "%#{params[:location]}%")
+      ids = ProfileResearch.near(params[:location], 10).map(&:user_id)
+      @users = @users.where(id: ids)
     end
 
     if params[:rythm].present?
@@ -26,12 +27,8 @@ class UsersController < ApplicationController
       @users = @users.where('max_budget <= ?', params[:max_budget].to_i)
     end
 
-    if params[:cleanliness].present? && params[:cleanliness].to_i > 0
-      @users = @users.where(cleanliness: params[:cleanliness])
-    end
-
-    if params[:cooking].present? && params[:cooking].to_i > 0
-      @users = @users.where(cooking: params[:cooking])
+    if params[:rooms].present?
+      @users = @users.joins(profile_researches: :flat).where("flats.rooms <= ?", params[:rooms])
     end
 
     @markers = ProfileResearch.all.geocoded.map do |a|
@@ -119,6 +116,10 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def user_logged
+    return current_user
   end
 
   def user_params

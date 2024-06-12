@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   end
 
   def user_root_path
-    new_user_intake_personal_information_path
+    new_child_path
 
   end
 

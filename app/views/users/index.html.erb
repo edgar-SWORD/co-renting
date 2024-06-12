@@ -54,7 +54,7 @@
                 <%= link_to user_path(user), class:"card-link" do %>
                   <div class="card h-100 border-0 shadow-sm">
                     <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px;">
-                      <span class="badge badge-light top-10 start-10">Week <%= user.alternance %></span>
+                      <span class="blue-badge top-10 start-10">Week <%= user.alternance %></span>
                       <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
                     </div>
                     <div class="card-body">
@@ -68,8 +68,10 @@
                       </p>
                       <p class="card-text mb-2"><i class="fas fa-clock me-2"></i>Occupies the loc' <%= user.rythm %></p>
                       <div class="tags mt-3">
-                        <% user.profile_researches.first&.flat&.flat_perks&.each do |flat_perk| %>
-                          <span class="badge badge-secondary"><%= flat_perk.perk.name %></span>
+                        <% user.profile_researches.last&.flat&.perks&.each do |perk| %>
+                          <% if perk.status == "positive" %>
+                            <span class="badge"> <%= perk.name %> </span>
+                          <% end %>
                         <% end %>
                       </div>
                     </div>
@@ -83,3 +85,5 @@
     </div>
   </div>
 </div>
+
+<%= render partial: 'shared/footer' %>

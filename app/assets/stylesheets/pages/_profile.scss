@@ -159,6 +159,8 @@
   height: 250px;
   background-color: var(--caribbean);
   position: relative;
+  display:flex;
+  
 }
 
 .show-banner-layout {
@@ -439,5 +441,31 @@ gap: 1.5rem;
     border-radius: 0.5rem;
     padding: 80px 40px;
     position: relative;
+    text-align: center;
+  }
+  .signup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .signup-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 436px;
+  }
+  .signup-pattern-left {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+  .signup-pattern-right {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

@@ -183,7 +183,7 @@
 
 
 .button-form {
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0.375rem 0.75rem;
   display: flex;
   flex-direction: row;
@@ -285,7 +285,7 @@
 
 .form-next-button {
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   border: 1px solid var(--caribbean);
@@ -541,7 +541,7 @@ font-family: 'Inter', sans-serif;
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_scandinavian + label {
+#flat_intake_flat_style_style_scandinavian + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -560,15 +560,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_scandinavian:checked + label {
+#flat_intake_flat_style_style_scandinavian:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_scandinavian:hover + label {
+#flat_intake_flat_style_style_scandinavian:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_industrial + label {
+#flat_intake_flat_style_style_industrial + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -587,15 +587,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_industrial:checked + label {
+#flat_intake_flat_style_style_industrial:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_industrial:hover + label {
+#flat_intake_flat_style_style_industrial:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_bohemian + label {
+#flat_intake_flat_style_style_bohemian + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -614,15 +614,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_bohemian:checked + label {
+#flat_intake_flat_style_style_bohemian:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_bohemian:hover + label {
+#flat_intake_flat_style_style_bohemian:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_art_deco + label {
+#flat_intake_flat_style_style_art_deco + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -641,15 +641,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_art_deco:checked + label {
+#flat_intake_flat_style_style_art_deco:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_art_deco:hover + label {
+#flat_intake_flat_style_style_art_deco:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_vintage + label {
+#flat_intake_flat_style_style_vintage + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -668,15 +668,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_vintage:checked + label {
+#flat_intake_flat_style_style_vintage:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_vintage:hover + label {
+#flat_intake_flat_style_style_vintage:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_no_opinion + label {
+#flat_intake_flat_style_style_no_opinion + label {
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -695,15 +695,15 @@ font-family: 'Inter', sans-serif;
   margin-top: 1rem;
 }
 
-#flat_style_no_opinion:checked + label {
+#flat_intake_flat_style_style_no_opinion:checked + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_no_opinion:hover + label {
+#flat_intake_flat_style_style_no_opinion:hover + label {
   border: 1px solid var(--caribbean);
 }
 
-#flat_style_no_opinion, #flat_style_scandinavian, #flat_style_bohemian, #flat_style_industrial, #flat_style_vintage, #flat_style_art_deco {
+#flat_intake_flat_style_style_no_opinion, #flat_intake_flat_style_style_scandinavian, #flat_intake_flat_style_style_bohemian, #flat_intake_flat_style_style_industrial, #flat_intake_flat_style_style_vintage, #flat_intake_flat_style_style_art_deco {
   position: absolute;
   transform: scale(0);
 }
@@ -744,7 +744,10 @@ font-family: 'Inter', sans-serif;
 }
 
 .mapboxgl-ctrl-geocoder {
-  width: 100%;
+  min-width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  position: relative;
 }
 
 .mapboxgl-ctrl-top-right .mapboxgl-ctrl {

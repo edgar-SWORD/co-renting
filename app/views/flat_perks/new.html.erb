@@ -7,7 +7,7 @@
         <p>Let other parents know whare are your mush have and deal breakers</p>
       </div>
     </div>
-    <%= simple_form_for @flat_perk, html: { class: 'form' } do |f| %>
+    <%= simple_form_for @flat_perk, html: { class: 'form' }, data: { turbo: false } do |f| %>
 
     <div class="form-perk-wrap">
       <div class="perk-checkbox-wrap positive">
@@ -34,10 +34,9 @@
           </div>
 
       <div class="perk-checkbox-wrap">
-          <%= f.input :perk, collection: @good_perks, as: :check_boxes %>
-      </div>
 
           <%= f.input :perk, collection: @bad_perks, as: :check_boxes %>
+      </div>
       </div>
     </div>
         <%= f.submit "Next", class: "form-next-button" %>
