@@ -1,3 +1,5 @@
+<div data-controller="chatroom-toggle">
+
 <div class="show-banner-wrap">
  <div class="show-avatar-wrap container">
     <% if @user.photo.attached? %>
@@ -66,7 +68,7 @@
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6875 3.1875H16.3125V14.8125H1.6875V3.1875ZM2.8125 4.3125V5.63445L9 8.38445L15.1875 5.63445V4.3125H2.8125ZM15.1875 6.86555L9 9.61555L2.8125 6.86555V13.6875H15.1875V6.86555Z" fill="white"/>
           </svg>
-          <%= link_to 'Send a message', user_chatrooms_path(@user), data: {turbo_method: :post} %></div>
+          <%= link_to 'Send a message', "#", data: {action: "click->chatroom-toggle#toggle", turbo_method: :post } %></div>
         <% end %>
       </div>
     </div>
@@ -263,24 +265,25 @@
       </div>
     </div>
   </div>
-  <div data-controller="chatroom-toggle">
-  <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"style="right: 4rem; width: 22vw; position: fixed; bottom: 0;
-"> <h5>Chat with <%= @other_user_profile.first_name %></h5>
-  <i class="fa-solid fa-arrow-up"></i>
+  <div >
+    <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"
+       data-chatroom-toggle-target="chatButton" style="right: 4rem; width: 22vw; position: fixed; bottom: 0; height:6vh;">
+       <h5>Chat with <%= @other_user_profile.first_name %></h5>
+    <i class="fa-solid fa-arrow-up"></i>
   </div>
-  <div class="chatroom-show" data-chatroom-toggle-target="chatroom-show" data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-  data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-  <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"> <h5>Chat with <%= @other_user_profile.first_name %></h5>
-  <i class="fa-solid fa-xmark"></i>
+  <div class="chatroom-show d-none" data-chatroom-toggle-target="chatroom" data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+    <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"> <h5>Chat with <%= @other_user_profile.first_name %></h5>
+    <i class="fa-solid fa-xmark"></i>
   </div>
   <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
-       <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-    <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-      <%= render "messages/message", message: message %>
+        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+        <%= render "messages/message", message: message %>
+      </div>
     </div>
-  </div>
     <% end %>
   </div>
 
@@ -297,4 +300,5 @@
 </div>
   </div>
 
+</div>
 </div>
