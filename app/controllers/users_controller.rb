@@ -103,4 +103,3 @@ class UsersController < ApplicationController
     params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm, :min_budget, :max_budget, :cleanliness, :cooking)
   end
 end
-
