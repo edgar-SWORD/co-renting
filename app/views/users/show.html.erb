@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@user.first_name} #{@user.last_name} is on CoRent" %>
+<% content_for :meta_description, @user.tagline%>
+<% content_for :meta_image, cl_image_path(@user.avatar_url) %>
+
 <div data-controller="chatroom-toggle">
 
 <div class="show-banner-wrap">
@@ -291,6 +295,16 @@
 <% end %>
 <%= render partial: 'shared/footer' %>
 
+
+  </div>
+
+</div>
+
+<div class="singup-wrap">
+  <div class="signup-outer">
+    <div class="signup-inner">
+
+
 <% if !user_signed_in? %>
   <div class="singup-wrap">
     <div class="signup-outer">
@@ -309,6 +323,7 @@
           <path d="M49.2835 -87.1386C98.8524 -118.801 164.704 -104.285 196.366 -54.7166C228.029 -5.1477 213.513 60.7035 163.944 92.3661L74.1917 149.696L16.8614 59.944C-14.8012 10.3752 -0.285347 -55.476 49.2835 -87.1386Z" fill="#83C5BE"/>
         </svg>
       </div>
+
     </div>
   </div>
 <% end %>
