@@ -68,9 +68,8 @@
                       <p class="card-text mb-2"><i class="fas fa-clock me-2"></i>Occupies the loc' <%= user.rythm %></p>
                       <div class="tags mt-3">
                         <% user.profile_researches.last&.flat&.perks&.each do |perk| %>
-                          <span class="badge">
                           <% if perk.status == "positive" %>
-                            <%= perk.name %></span>
+                            <span class="badge"> <%= perk.name %> </span>
                           <% end %>
                         <% end %>
                       </div>
