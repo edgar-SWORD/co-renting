@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @users = User.all
 
     if params[:location].present?
-      @users = @users.joins(:profile_researches).where('profile_researches.location LIKE ?', "%#{params[:location]}%")
+      ids = ProfileResearch.near(params[:location], 10).map(&:user_id)
+      @users = @users.where(id: ids)
     end
 
     if params[:rythm].present?
