@@ -25,6 +25,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-text {
+  font-size: 14px;
+}
+
 .card-img-top {
   position: relative;
 }
@@ -40,7 +44,16 @@
 }
 
 .badge {
-  background-color: #006d77;
+  background-color: var(--alice-blue);
+  color: var(--caribbean);;
+  font-size: 12px;
+  font-weight: 400 !important;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
+
+.blue-badge {
+  background-color: var(--caribbean);
   color: white;
   font-size: 12px;
   padding: 5px 8px;
@@ -48,6 +61,12 @@
 }
 
 .card-img-top .badge {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.card-img-top .blue-badge {
   position: absolute;
   left: 10px;
   top: 10px;
