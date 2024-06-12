@@ -25,12 +25,8 @@ class UsersController < ApplicationController
       @users = @users.where('max_budget <= ?', params[:max_budget].to_i)
     end
 
-    if params[:cleanliness].present? && params[:cleanliness].to_i > 0
-      @users = @users.where(cleanliness: params[:cleanliness])
-    end
-
-    if params[:cooking].present? && params[:cooking].to_i > 0
-      @users = @users.where(cooking: params[:cooking])
+    if params[:rooms].present?
+      @users = @users.joins(profile_researches: :flat).where("flats.rooms <= ?", params[:rooms])
     end
 
     @markers = ProfileResearch.all.geocoded.map do |a|
