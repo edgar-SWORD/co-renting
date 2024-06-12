@@ -66,6 +66,7 @@ body {
   position: relative;
 }
 
+
 .padding-section-medium {
   padding: 80px 0;
 }
@@ -239,7 +240,7 @@ a {
 
 .button-primary {
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   border: 1px solid var(--caribbean);
@@ -248,8 +249,29 @@ a {
   color: var(--white);
   transition: background-color 0.3s ease;
   align-items: center;
-
+  font-weight: 500;
 }
+
+.button-primary.is-white {
+  background-color: var(--white);
+  color: var(--caribbean);
+}
+
+.button-primary.is-tiffany {
+  background-color: var(--tiffany-blue);
+  color: var(--caribbean);
+}
+
+.button-primary.is-tiffany:hover {
+  background-color: var(--white);
+  color: var(--caribbean);
+}
+
+
+.button-primary.is-white:hover {
+  color: var(--white);
+}
+
 
 .button-primary:hover {
   background-color: #00383D;
@@ -259,7 +281,7 @@ a {
 .button-secondary {
   border: 1px solid var(--caribbean);
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   gap: 8px;
@@ -309,4 +331,22 @@ a {
 
 .font-color-black {
   color: var(--black);
+}
+
+.font-color-white {
+  color: var(--white);
+}
+
+.font-color-grey-1 {
+  color: var(--grey-1);
+}
+
+
+.max-width-416 {
+  max-width: 416px;
+}
+
+
+.border-radius-12 {
+  border-radius: 12px;
 }

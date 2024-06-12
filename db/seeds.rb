@@ -7,21 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-
-# Child.destroy_all
-# Couple.destroy_all
-# FlatPerk.destroy_all
-# ProfileResearch.destroy_all
-# Flat.destroy_all
-# User.destroy_all
-
-ProfileResearch.destroy_all
+Message.destroy_all
+Chatroom.destroy_all
 Child.destroy_all
 Couple.destroy_all
 FlatPerk.destroy_all
+ProfileResearch.destroy_all
 Flat.destroy_all
 User.destroy_all
-Perk.destroy_all
 
 users = User.create!([
   { first_name: 'Etienne',
@@ -769,13 +762,13 @@ flats_perks = FlatPerk.create!([
     {flat: flats[0], perk: perks[6]},
     {flat: flats[0], perk: perks[12]},
     {flat: flats[0], perk: perks[15]},
-    {flat: flats[0], perk: perks[18]},
+    {flat: flats[0], perk: perks[13]},
     {flat: flats[1], perk: perks[1]},
     {flat: flats[1], perk: perks[4]},
     {flat: flats[1], perk: perks[8]},
     {flat: flats[1], perk: perks[13]},
     {flat: flats[1], perk: perks[15]},
-    {flat: flats[1], perk: perks[18]},
+    {flat: flats[1], perk: perks[17]},
     {flat: flats[2], perk: perks[4]},
     {flat: flats[2], perk: perks[7]},
     {flat: flats[2], perk: perks[8]},
@@ -927,5 +920,5 @@ profile_researches = ProfileResearch.create!([
   { user: users[19], flat: flats[19], location: '75001 Paris' },
   { user: users[20], flat: flats[20], location: '75010 Paris' },
   { user: users[21], flat: flats[21], location: '75014 Paris' },
-  { user: users[21], flat: flats[21], location: '75009 Paris' },
+  { user: users[22], flat: flats[22], location: '75009 Paris' },
 ])

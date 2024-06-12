@@ -183,7 +183,7 @@
 
 
 .button-form {
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 0.375rem 0.75rem;
   display: flex;
   flex-direction: row;
@@ -285,7 +285,7 @@
 
 .form-next-button {
   padding: 12px 24px;
-  border-radius: 4px;
+  border-radius: 8px;
   display: flex;
   flex-direction: row;
   border: 1px solid var(--caribbean);
@@ -744,7 +744,10 @@ font-family: 'Inter', sans-serif;
 }
 
 .mapboxgl-ctrl-geocoder {
-  width: 100%;
+  min-width: 100%;
+  background-color: transparent;
+  box-shadow: none;
+  position: relative;
 }
 
 .mapboxgl-ctrl-top-right .mapboxgl-ctrl {

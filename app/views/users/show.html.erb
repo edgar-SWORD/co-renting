@@ -255,6 +255,7 @@
     </div>
   </div>
   <div >
+  <% if user_signed_in? %>
     <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"
        data-chatroom-toggle-target="chatButton" style="right: 4rem; width: 22vw; position: fixed; bottom: 0; height:6vh;">
        <h5>Chat with <%= @other_user_profile.first_name %></h5>
@@ -287,16 +288,27 @@
     <%= f.submit "Send", class: "button-primary mx-2" %>
   <% end %>
 </div>
-
+<% end %>
 <%= render partial: 'shared/footer' %>
-  </div>
 
-</div>
-
-<div class="singup-wrap">
-  <div class="signup-outer">
-    <div class="signup-inner">
-
+<% if !user_signed_in? %>
+  <div class="singup-wrap">
+    <div class="signup-outer">
+      <div class="signup-inner">
+        <div class="signup-content">
+          <div class="signup-header">
+            <h3 class="heading-style-h3 font-color-white">Create an account now to discover the full profile</h3>
+            <p class="font-color-grey-1">Create your profile to discover other corenters</p>
+          </div>
+          <%= link_to "Create my profile", "/users/sign_up", :class => "button-primary is-white" %>
+        </div>
+        <svg class= "signup-pattern-left" width="157" height="144" viewBox="0 0 157 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M70.1628 230.444C12.4622 241.856 -43.5646 204.332 -54.9764 146.631C-66.3883 88.9304 -28.8637 32.9036 28.8369 21.4918L133.313 0.828868L153.976 105.305C165.388 163.006 127.863 219.033 70.1628 230.444Z" fill="#FFDDD2"/>
+        </svg>
+        <svg class= "signup-pattern-right" width="184" height="150" viewBox="0 0 184 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M49.2835 -87.1386C98.8524 -118.801 164.704 -104.285 196.366 -54.7166C228.029 -5.1477 213.513 60.7035 163.944 92.3661L74.1917 149.696L16.8614 59.944C-14.8012 10.3752 -0.285347 -55.476 49.2835 -87.1386Z" fill="#83C5BE"/>
+        </svg>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
