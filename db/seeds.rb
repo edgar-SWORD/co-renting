@@ -747,12 +747,13 @@ perks = Perk.create!([
     { rooms: '2', is_furnished: 'false', style: 'traditional' },
     { rooms: '1', is_furnished: 'true', style: 'mid-century modern' },
     { rooms: '3', is_furnished: 'neutral', style: 'coastal' },
-    { rooms: '2', is_furnished: 'true', style: 'bohemian' }
+    { rooms: '2', is_furnished: 'true', style: 'bohemian' },
     { rooms: '2', is_furnished: 'false', style: 'traditional' },
     { rooms: '1', is_furnished: 'true', style: 'mid-century modern' },
     { rooms: '3', is_furnished: 'neutral', style: 'coastal' },
     { rooms: '2', is_furnished: 'true', style: 'bohemian' },
-    { rooms: '2', is_furnished: 'true', style: 'bohemian' }
+    { rooms: '2', is_furnished: 'true', style: 'bohemian' },
+    { rooms: '2', is_furnished: 'true', style: 'bohemian' },
   ])
 
 flats_perks = FlatPerk.create!([
@@ -887,13 +888,13 @@ flats_perks = FlatPerk.create!([
     {flat: flats[21], perk: perks[1]},
     {flat: flats[21], perk: perks[2]},
     {flat: flats[21], perk: perks[13]},
-    {flat: flats[21], perk: perks[21]},
+    {flat: flats[21], perk: perks[19]},
     {flat: flats[21], perk: perks[15]},
     {flat: flats[22], perk: perks[4]},
     {flat: flats[22], perk: perks[1]},
     {flat: flats[22], perk: perks[2]},
     {flat: flats[22], perk: perks[13]},
-    {flat: flats[22], perk: perks[20]},
+    {flat: flats[22], perk: perks[10]},
     {flat: flats[22], perk: perks[15]},
 ])
 
