@@ -14,7 +14,7 @@
                 class: "form-control custom-input d-none",
                 placeholder: "Paris, France" %>
               </div>
-              <%= select_tag(:alternance, options_for_select([['Even weeks', 'even'], ['Odd weeks', 'odd']], params[:alternance]), placeholder: "Even / Odd", class: "form-control custom-input alternance") %>
+              <%= select_tag(:alternance, options_for_select([['Select a rythm', ''],['Even weeks', 'even'], ['Odd weeks', 'odd']], params[:alternance]), placeholder: "Even / Odd", class: "form-control custom-input alternance") %>
               <%= submit_tag "Find a CoRenter", class: "button-primary is-tiffany" %>
             </div>
           <% end %>
