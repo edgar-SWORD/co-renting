@@ -78,9 +78,9 @@ class UsersController < ApplicationController
     other_user_id = params[:id]
 
     current_user_profile = User.find(current_user_id)
-    current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
+    current_user_profile_research = ProfileResearch.where(user: current_user_id).last
     @other_user_profile = User.find(other_user_id)
-    other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
+    other_user_profile_research = ProfileResearch.where(user: other_user_id).last
 
     @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
