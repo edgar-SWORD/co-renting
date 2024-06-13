@@ -1,314 +1,312 @@
 <div data-controller="chatroom-toggle">
-
-<div class="show-banner-wrap">
- <div class="show-avatar-wrap container">
-    <% if @user.photo.attached? %>
-      <%= cl_image_tag @user.avatar_url, class: "show-avatar", alt: "avatar" %>
-    <% else %>
-      <img class="show-avatar" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
-    <% end %>
-
+  <div class="show-banner-wrap">
+    <div class="show-avatar-wrap container">
+      <% if @user.photo.attached? %>
+        <%= cl_image_tag @user.avatar_url, class: "show-avatar", alt: "avatar" %>
+      <% else %>
+        <img class="show-avatar" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
+      <% end %>
+    </div>
   </div>
-</div>
-<div class="show-top-wrap">
-  <div class="container">
-    <div class="show-top-layout">
-      <div class="show-top-left">
-        <div class="show-name-wrap">
-          <h1 class="heading-style-h2"><%= @user.first_name %></h1>
-          <p> <%= @user.tagline %> </p>
-
-        <div class="show-stat-wrap">
-          <div class="show-stat-colum">
-            <div class="show-stat-icon-wrap">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99998 4.5C6.80336 4.5 5.83331 5.47005 5.83331 6.66667C5.83331 7.86328 6.80336 8.83333 7.99998 8.83333C9.1966 8.83333 10.1666 7.86328 10.1666 6.66667C10.1666 5.47005 9.1966 4.5 7.99998 4.5ZM6.83331 6.66667C6.83331 6.02233 7.35565 5.5 7.99998 5.5C8.64431 5.5 9.16665 6.02233 9.16665 6.66667C9.16665 7.311 8.64431 7.83333 7.99998 7.83333C7.35565 7.83333 6.83331 7.311 6.83331 6.66667Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99998 1.5C5.14651 1.5 2.83331 3.8132 2.83331 6.66667C2.83331 7.61106 3.16176 8.56785 3.6186 9.44891C4.07769 10.3343 4.68401 11.1767 5.28068 11.9012C5.87857 12.6272 6.47506 13.2449 6.92154 13.6807C7.14509 13.8989 7.33181 14.0723 7.46331 14.1918C7.52908 14.2515 7.58109 14.2978 7.61706 14.3294C7.63504 14.3453 7.64901 14.3575 7.6587 14.3659C7.66354 14.3701 7.66731 14.3734 7.66997 14.3757L7.67312 14.3784L7.67406 14.3792L7.67438 14.3795C7.67449 14.3795 7.67458 14.3796 7.99998 14L7.67458 14.3796L7.99998 14.6585L8.32538 14.3796L7.99998 14C8.32538 14.3796 8.32547 14.3795 8.32558 14.3795L8.32589 14.3792L8.32684 14.3784L8.32999 14.3757C8.33265 14.3734 8.33642 14.3701 8.34126 14.3659C8.35094 14.3575 8.36492 14.3453 8.3829 14.3294C8.41887 14.2978 8.47088 14.2515 8.53665 14.1918C8.66815 14.0723 8.85486 13.8989 9.07841 13.6807C9.5249 13.2449 10.1214 12.6272 10.7193 11.9012C11.3159 11.1767 11.9223 10.3343 12.3814 9.44891C12.8382 8.56785 13.1666 7.61106 13.1666 6.66667C13.1666 3.8132 10.8535 1.5 7.99998 1.5ZM8.37988 12.9651C8.23477 13.1068 8.10625 13.2283 7.99998 13.3269C7.89371 13.2283 7.76519 13.1068 7.62008 12.9651C7.19156 12.5468 6.62139 11.9561 6.05261 11.2655C5.48261 10.5733 4.92226 9.7907 4.50636 8.98859C4.0882 8.18215 3.83331 7.38894 3.83331 6.66667C3.83331 4.36548 5.69879 2.5 7.99998 2.5C10.3012 2.5 12.1666 4.36548 12.1666 6.66667C12.1666 7.38894 11.9118 8.18215 11.4936 8.98859C11.0777 9.7907 10.5173 10.5733 9.94735 11.2655C9.37857 11.9561 8.8084 12.5468 8.37988 12.9651Z" fill="black"/>
-              </svg>
-              <p class="text-weight-medium font-color-black">Based in <%= @user.address.split.last %> </p>
-            </div>
-            <div class="show-stat-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.6875C7.23959 1.6875 5.8125 3.11459 5.8125 4.875C5.8125 6.63541 7.23959 8.0625 9 8.0625C10.7604 8.0625 12.1875 6.63541 12.1875 4.875C12.1875 3.11459 10.7604 1.6875 9 1.6875ZM6.9375 4.875C6.9375 3.73591 7.86091 2.8125 9 2.8125C10.1391 2.8125 11.0625 3.73591 11.0625 4.875C11.0625 6.01409 10.1391 6.9375 9 6.9375C7.86091 6.9375 6.9375 6.01409 6.9375 4.875Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M9 9.5625C5.78985 9.5625 3.1875 12.1648 3.1875 15.375V16.3125H14.8125V15.375C14.8125 12.1648 12.2102 9.5625 9 9.5625ZM9 10.6875C11.526 10.6875 13.5854 12.6856 13.6838 15.1875H4.31618C4.4146 12.6856 6.47396 10.6875 9 10.6875Z" fill="black"/>
-              </svg>
-              <p class="text-weight-medium font-color-black">Looking for a co-parent in <%= @user.profile_researches.first.location.split.last %> </p>
-            </div>
+  <div class="show-top-wrap">
+    <div class="container">
+      <div class="show-top-layout">
+        <div class="show-top-left">
+          <div class="show-name-wrap">
+            <h1 class="heading-style-h2"><%= @user.first_name %></h1>
+            <p> <%= @user.tagline %> </p>
           </div>
-          <div class="show-stat-colum">
-            <div class="show-stat-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4.6875 7.21875H6.1875V8.71875H4.6875V7.21875Z" fill="black"/>
-                <path d="M6.1875 10.7813H4.6875V12.2813H6.1875V10.7813Z" fill="black"/>
-                <path d="M8.25 7.21875H9.75V8.71875H8.25V7.21875Z" fill="black"/>
-                <path d="M9.75 10.7813H8.25V12.2813H9.75V10.7813Z" fill="black"/>
-                <path d="M11.8125 7.21875H13.3125V8.71875H11.8125V7.21875Z" fill="black"/>
-                <path d="M13.3125 10.7813H11.8125V12.2813H13.3125V10.7813Z" fill="black"/>
-                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9375 3.9375H1.6875V15.5625H16.3125V3.9375H14.0625V1.5H12.9375V3.9375H5.0625V1.5H3.9375V3.9375ZM2.8125 5.0625V14.4375H15.1875V5.0625H2.8125Z" fill="black"/>
-              </svg>
-
-              <p class="text-weight-medium font-color-black"> <%= @user.rythm.capitalize %> (<%= @user.alternance %>) </p>
+          <div class="show-stat-wrap">
+            <div class="show-stat-colum">
+              <div class="show-stat-icon-wrap">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99998 4.5C6.80336 4.5 5.83331 5.47005 5.83331 6.66667C5.83331 7.86328 6.80336 8.83333 7.99998 8.83333C9.1966 8.83333 10.1666 7.86328 10.1666 6.66667C10.1666 5.47005 9.1966 4.5 7.99998 4.5ZM6.83331 6.66667C6.83331 6.02233 7.35565 5.5 7.99998 5.5C8.64431 5.5 9.16665 6.02233 9.16665 6.66667C9.16665 7.311 8.64431 7.83333 7.99998 7.83333C7.35565 7.83333 6.83331 7.311 6.83331 6.66667Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M7.99998 1.5C5.14651 1.5 2.83331 3.8132 2.83331 6.66667C2.83331 7.61106 3.16176 8.56785 3.6186 9.44891C4.07769 10.3343 4.68401 11.1767 5.28068 11.9012C5.87857 12.6272 6.47506 13.2449 6.92154 13.6807C7.14509 13.8989 7.33181 14.0723 7.46331 14.1918C7.52908 14.2515 7.58109 14.2978 7.61706 14.3294C7.63504 14.3453 7.64901 14.3575 7.6587 14.3659C7.66354 14.3701 7.66731 14.3734 7.66997 14.3757L7.67312 14.3784L7.67406 14.3792L7.67438 14.3795C7.67449 14.3795 7.67458 14.3796 7.99998 14L7.67458 14.3796L7.99998 14.6585L8.32538 14.3796L7.99998 14C8.32538 14.3796 8.32547 14.3795 8.32558 14.3795L8.32589 14.3792L8.32684 14.3784L8.32999 14.3757C8.33265 14.3734 8.33642 14.3701 8.34126 14.3659C8.35094 14.3575 8.36492 14.3453 8.3829 14.3294C8.41887 14.2978 8.47088 14.2515 8.53665 14.1918C8.66815 14.0723 8.85486 13.8989 9.07841 13.6807C9.5249 13.2449 10.1214 12.6272 10.7193 11.9012C11.3159 11.1767 11.9223 10.3343 12.3814 9.44891C12.8382 8.56785 13.1666 7.61106 13.1666 6.66667C13.1666 3.8132 10.8535 1.5 7.99998 1.5ZM8.37988 12.9651C8.23477 13.1068 8.10625 13.2283 7.99998 13.3269C7.89371 13.2283 7.76519 13.1068 7.62008 12.9651C7.19156 12.5468 6.62139 11.9561 6.05261 11.2655C5.48261 10.5733 4.92226 9.7907 4.50636 8.98859C4.0882 8.18215 3.83331 7.38894 3.83331 6.66667C3.83331 4.36548 5.69879 2.5 7.99998 2.5C10.3012 2.5 12.1666 4.36548 12.1666 6.66667C12.1666 7.38894 11.9118 8.18215 11.4936 8.98859C11.0777 9.7907 10.5173 10.5733 9.94735 11.2655C9.37857 11.9561 8.8084 12.5468 8.37988 12.9651Z" fill="black"/>
+                </svg>
+                <p class="text-weight-medium font-color-black">Based in <%= @user.address.split.last %> </p>
+              </div>
+              <div class="show-stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 1.6875C7.23959 1.6875 5.8125 3.11459 5.8125 4.875C5.8125 6.63541 7.23959 8.0625 9 8.0625C10.7604 8.0625 12.1875 6.63541 12.1875 4.875C12.1875 3.11459 10.7604 1.6875 9 1.6875ZM6.9375 4.875C6.9375 3.73591 7.86091 2.8125 9 2.8125C10.1391 2.8125 11.0625 3.73591 11.0625 4.875C11.0625 6.01409 10.1391 6.9375 9 6.9375C7.86091 6.9375 6.9375 6.01409 6.9375 4.875Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M9 9.5625C5.78985 9.5625 3.1875 12.1648 3.1875 15.375V16.3125H14.8125V15.375C14.8125 12.1648 12.2102 9.5625 9 9.5625ZM9 10.6875C11.526 10.6875 13.5854 12.6856 13.6838 15.1875H4.31618C4.4146 12.6856 6.47396 10.6875 9 10.6875Z" fill="black"/>
+                </svg>
+                <p class="text-weight-medium font-color-black">Looking for a co-parent in <%= @user.profile_researches.first.location.split.last %> </p>
+              </div>
             </div>
-            <div class="show-stat-icon-wrap">
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.6875 8.0625H3.9375V9.9375H1.6875V11.0625H3.9684C4.24821 13.5937 6.39419 15.5625 9 15.5625V14.4375C7.01636 14.4375 5.37532 12.9707 5.10238 11.0625H9.5625V9.9375H5.0625V8.0625H9.5625V6.9375H5.10238C5.37532 5.02933 7.01636 3.5625 9 3.5625V2.4375C6.39419 2.4375 4.24821 4.40628 3.9684 6.9375H1.6875V8.0625Z" fill="black"/>
-                <path d="M9 2.4375C10.7614 2.4375 12.3124 3.33755 13.2184 4.70021L12.2816 5.3231C11.5752 4.26072 10.369 3.5625 9 3.5625V2.4375Z" fill="black"/>
-                <path d="M9 14.4375C10.369 14.4375 11.5752 13.7393 12.2816 12.6769L13.2184 13.2998C12.3124 14.6625 10.7614 15.5625 9 15.5625V14.4375Z" fill="black"/>
-              </svg>
-              <p class="text-weight-medium font-color-black"><%= @user.max_budget.round %>€/month </p>
+            <div class="show-stat-colum">
+              <div class="show-stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.6875 7.21875H6.1875V8.71875H4.6875V7.21875Z" fill="black"/>
+                  <path d="M6.1875 10.7813H4.6875V12.2813H6.1875V10.7813Z" fill="black"/>
+                  <path d="M8.25 7.21875H9.75V8.71875H8.25V7.21875Z" fill="black"/>
+                  <path d="M9.75 10.7813H8.25V12.2813H9.75V10.7813Z" fill="black"/>
+                  <path d="M11.8125 7.21875H13.3125V8.71875H11.8125V7.21875Z" fill="black"/>
+                  <path d="M13.3125 10.7813H11.8125V12.2813H13.3125V10.7813Z" fill="black"/>
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M3.9375 3.9375H1.6875V15.5625H16.3125V3.9375H14.0625V1.5H12.9375V3.9375H5.0625V1.5H3.9375V3.9375ZM2.8125 5.0625V14.4375H15.1875V5.0625H2.8125Z" fill="black"/>
+                </svg>
+
+                <p class="text-weight-medium font-color-black"> <%= @user.rythm.capitalize %> (<%= @user.alternance %>) </p>
+              </div>
+              <div class="show-stat-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.6875 8.0625H3.9375V9.9375H1.6875V11.0625H3.9684C4.24821 13.5937 6.39419 15.5625 9 15.5625V14.4375C7.01636 14.4375 5.37532 12.9707 5.10238 11.0625H9.5625V9.9375H5.0625V8.0625H9.5625V6.9375H5.10238C5.37532 5.02933 7.01636 3.5625 9 3.5625V2.4375C6.39419 2.4375 4.24821 4.40628 3.9684 6.9375H1.6875V8.0625Z" fill="black"/>
+                  <path d="M9 2.4375C10.7614 2.4375 12.3124 3.33755 13.2184 4.70021L12.2816 5.3231C11.5752 4.26072 10.369 3.5625 9 3.5625V2.4375Z" fill="black"/>
+                  <path d="M9 14.4375C10.369 14.4375 11.5752 13.7393 12.2816 12.6769L13.2184 13.2998C12.3124 14.6625 10.7614 15.5625 9 15.5625V14.4375Z" fill="black"/>
+                </svg>
+                <p class="text-weight-medium font-color-black"><%= @user.max_budget.round %>€/month </p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="show-btn-group">
-        <%= link_to "Discover profile", destroy_user_session_path, :class => "button-secondary" %>
-        <%= link_to destroy_user_session_path, class: "button-primary" do %>
-          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6875 3.1875H16.3125V14.8125H1.6875V3.1875ZM2.8125 4.3125V5.63445L9 8.38445L15.1875 5.63445V4.3125H2.8125ZM15.1875 6.86555L9 9.61555L2.8125 6.86555V13.6875H15.1875V6.86555Z" fill="white"/>
-          </svg>
+        <div class="show-btn-group d-none">
+          <%= link_to "Discover profile", destroy_user_session_path, :class => "button-secondary" %>
+          <%= link_to destroy_user_session_path, class: "button-primary" do %>
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M1.6875 3.1875H16.3125V14.8125H1.6875V3.1875ZM2.8125 4.3125V5.63445L9 8.38445L15.1875 5.63445V4.3125H2.8125ZM15.1875 6.86555L9 9.61555L2.8125 6.86555V13.6875H15.1875V6.86555Z" fill="white"/>
+            </svg>
 
-          <%= link_to 'Send a message', "#", data: {action: "click->chatroom-toggle#toggle", turbo_method: :post } %></div>
+            <%= link_to 'Send a message', "#", data: {action: "click->chatroom-toggle#toggle", turbo_method: :post } %></div>
 
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="profile-wrap">
-  <div class="container">
-    <div class="profile-layout">
-      <div class="profile-top u-grid-column-2">
-        <div class="profile-card">
-          <div class="profile-card-description">
-            <h2 class="heading-style-h5">Description</h2>
-            <p> <%= @user.long_description %> </p>
-          </div>
-          <div class="profile-card-family">
-            <h2 class="heading-style-h5">Family</h2>
-            <div class="profile-child-wrap">
-            <% @children.each do |child| %>
-              <div class="profile-child-item">
-                <div class="profile-child-left">
-                  <% if child.gender == "male" %>
-                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_2261_1124)">
-                    <path d="M17.82 1.05779C17.82 0.855517 17.656 0.691492 17.4537 0.691492H12.3257C12.1673 0.679792 12.0194 0.771517 11.9594 0.918592C11.8981 1.05404 11.9306 1.21357 12.04 1.31422L13.8275 3.10169C13.8947 3.17677 13.8947 3.29032 13.8275 3.36539L10.5896 6.62534C10.5228 6.68504 10.4219 6.68504 10.3551 6.62534C6.31764 3.74954 0.681013 6.32287 0.209263 11.2573C-0.262487 16.1918 4.78441 19.7866 9.29364 17.7279C12.974 16.0477 14.2114 11.4297 11.8642 8.13442C11.8045 8.06767 11.8045 7.96672 11.8642 7.90004L15.1241 4.63274C15.1992 4.56562 15.3128 4.56562 15.3878 4.63274L17.1753 6.42022C17.2771 6.52762 17.4353 6.55987 17.5709 6.50077C17.7092 6.45472 17.8071 6.33104 17.82 6.18577V1.05779ZM6.64831 16.4418C3.12369 16.4416 0.920788 12.6261 2.68321 9.57374C4.44571 6.52147 8.85144 6.52169 10.6136 9.57412C11.0153 10.2701 11.2268 11.0596 11.2268 11.8632C11.2268 14.3918 9.17686 16.4417 6.64831 16.4418Z" fill="#1D1D1D"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_2261_1124">
-                    <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                    </clipPath>
-                    </defs>
-                    </svg>
-                  <% else %>
-                    <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_2261_1131)">
-                    <path d="M12.3251 13.4015H9.88704V10.9632C9.88704 10.9373 9.88168 10.9133 9.879 10.8878C12.3465 10.4684 14.2316 8.31648 14.2316 5.73159C14.2316 2.84678 11.885 0.5 9.00006 0.5C6.11532 0.5 3.76843 2.84678 3.76843 5.73159C3.76843 8.31652 5.65365 10.4684 8.12092 10.8878C8.11869 10.9133 8.11322 10.9373 8.11322 10.9632V13.4015H5.67504C5.18526 13.4015 4.78847 13.7986 4.78847 14.2881C4.78847 14.7777 5.18526 15.1749 5.67504 15.1749H8.11345V17.6134C8.11345 18.1031 8.51047 18.5 9.00002 18.5C9.48965 18.5 9.88704 18.1029 9.88704 17.6134V15.1749H12.3251C12.815 15.1749 13.2119 14.7778 13.2119 14.2881C13.2119 13.7986 12.815 13.4015 12.3251 13.4015ZM5.54195 5.73159C5.54195 3.82475 7.09322 2.27325 9.00006 2.27325C10.907 2.27325 12.4585 3.82456 12.4585 5.73159C12.4585 7.63861 10.907 9.1897 9.00006 9.1897C7.09345 9.18973 5.54195 7.63842 5.54195 5.73159Z" fill="#1D1D1D"/>
-                    </g>
-                    <defs>
-                    <clipPath id="clip0_2261_1131">
-                    <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
-                    </clipPath>
-                    </defs>
-                    </svg>
-                  <% end %>
-                  <p class="heading-style-h6 text-color-black"><%= child.first_name %></p>
-                </div>
-                <div class="profile-child-tag">
-                  <p> <%= child.age_range %> </p>
-                </div>
-              </div>
-            <% end %>
-
+  <div class="profile-wrap">
+    <div class="container">
+      <div class="profile-layout">
+        <div class="profile-top u-grid-column-2">
+          <div class="profile-card">
+            <div class="profile-card-description">
+              <h2 class="heading-style-h5">Description</h2>
+              <p> <%= @user.long_description %> </p>
             </div>
-          </div>
-        </div>
-        <div class="profile-card">
-          <div class="profile-card-personality">
-            <h2 class="heading-style-h5">Personality</h2>
-            <div class="profile-range-wrap">
-              <div class="profile-range-item">
-                <div class="profile-range">
-                  <% if @user.cleanliness == "1" %>
-                    <div class="range-cursor is-1"></div>
-                  <% elsif @user.cleanliness == "2" %>
-                    <div class="range-cursor is-2"></div>
-                  <% elsif @user.cleanliness == "3" %>
-                    <div class="range-cursor is-3"></div>
-                  <% end %>
-                </div>
-                <div class="profile-range-label-wrap">
-                  <p>Relax</p>
-                  <p>Maniac</p>
-                </div>
-              </div>
-              <div class="profile-range-item">
-                <div class="profile-range">
-                  <% if @user.lifestyle == "1" %>
-                    <div class="range-cursor is-1"></div>
-                  <% elsif @user.lifestyle == "2" %>
-                    <div class="range-cursor is-2"></div>
-                  <% elsif @user.lifestyle == "3" %>
-                    <div class="range-cursor is-3"></div>
-                  <% end %>
-                </div>
-                <div class="profile-range-label-wrap">
-                  <p>Indoor person</p>
-                  <p>Outdoor person</p>
-                </div>
-              </div>
-              <div class="profile-range-item">
-                <div class="profile-range">
-                  <% if @user.sharing == "1" %>
-                    <div class="range-cursor is-1"></div>
-                  <% elsif @user.sharing == "2" %>
-                    <div class="range-cursor is-2"></div>
-                  <% elsif @user.sharing == "3" %>
-                    <div class="range-cursor is-3"></div>
-                  <% end %>
-                </div>
-                <div class="profile-range-label-wrap">
-                  <p>Possessive</p>
-                  <p>Sharing</p>
-                </div>
-              </div>
-              <div class="profile-range-item">
-                <div class="profile-range">
-                  <% if @user.cooking == "1" %>
-                    <div class="range-cursor is-1"></div>
-                  <% elsif @user.cooking == "2" %>
-                    <div class="range-cursor is-2"></div>
-                  <% elsif @user.cooking == "3" %>
-                    <div class="range-cursor is-3"></div>
-                  <% end %>
-                </div>
-                <div class="profile-range-label-wrap">
-                  <p>Take away food</p>
-                  <p>Homemade food</p>
-                </div>
-              </div>
-              <div class="profile-range-item">
-                <div class="profile-range">
-                  <% if @user.storage == "1" %>
-                    <div class="range-cursor is-1"></div>
-                  <% elsif @user.storage == "2" %>
-                    <div class="range-cursor is-2"></div>
-                  <% elsif @user.storage == "3" %>
-                    <div class="range-cursor is-3"></div>
-                  <% end %>
-                </div>
-                <div class="profile-range-label-wrap">
-                  <p>I pack light</p>
-                  <p>I store a lot</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="profile-specs-wrap">
-        <div class="profile-specs-left">
-          <h2 class="heading-style-h5"> <%= @user.first_name %>'s ideal flat</h2>
-          <div class="specs-wrap">
-            <p>Must have</p>
-            <div class="specs-tag-wrap">
-              <% @perks.each do |perk| %>
-                <% if perk.status == 'positive' %>
-                  <div class="positive-perk">
-                    <p> <%= perk.name.capitalize %> </p>
+            <div class="profile-card-family">
+              <h2 class="heading-style-h5">Family</h2>
+              <div class="profile-child-wrap">
+              <% @children.each do |child| %>
+                <div class="profile-child-item">
+                  <div class="profile-child-left">
+                    <% if child.gender == "male" %>
+                      <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_2261_1124)">
+                      <path d="M17.82 1.05779C17.82 0.855517 17.656 0.691492 17.4537 0.691492H12.3257C12.1673 0.679792 12.0194 0.771517 11.9594 0.918592C11.8981 1.05404 11.9306 1.21357 12.04 1.31422L13.8275 3.10169C13.8947 3.17677 13.8947 3.29032 13.8275 3.36539L10.5896 6.62534C10.5228 6.68504 10.4219 6.68504 10.3551 6.62534C6.31764 3.74954 0.681013 6.32287 0.209263 11.2573C-0.262487 16.1918 4.78441 19.7866 9.29364 17.7279C12.974 16.0477 14.2114 11.4297 11.8642 8.13442C11.8045 8.06767 11.8045 7.96672 11.8642 7.90004L15.1241 4.63274C15.1992 4.56562 15.3128 4.56562 15.3878 4.63274L17.1753 6.42022C17.2771 6.52762 17.4353 6.55987 17.5709 6.50077C17.7092 6.45472 17.8071 6.33104 17.82 6.18577V1.05779ZM6.64831 16.4418C3.12369 16.4416 0.920788 12.6261 2.68321 9.57374C4.44571 6.52147 8.85144 6.52169 10.6136 9.57412C11.0153 10.2701 11.2268 11.0596 11.2268 11.8632C11.2268 14.3918 9.17686 16.4417 6.64831 16.4418Z" fill="#006D77"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_2261_1124">
+                      <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                    <% else %>
+                      <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_2261_1131)">
+                      <path d="M12.3251 13.4015H9.88704V10.9632C9.88704 10.9373 9.88168 10.9133 9.879 10.8878C12.3465 10.4684 14.2316 8.31648 14.2316 5.73159C14.2316 2.84678 11.885 0.5 9.00006 0.5C6.11532 0.5 3.76843 2.84678 3.76843 5.73159C3.76843 8.31652 5.65365 10.4684 8.12092 10.8878C8.11869 10.9133 8.11322 10.9373 8.11322 10.9632V13.4015H5.67504C5.18526 13.4015 4.78847 13.7986 4.78847 14.2881C4.78847 14.7777 5.18526 15.1749 5.67504 15.1749H8.11345V17.6134C8.11345 18.1031 8.51047 18.5 9.00002 18.5C9.48965 18.5 9.88704 18.1029 9.88704 17.6134V15.1749H12.3251C12.815 15.1749 13.2119 14.7778 13.2119 14.2881C13.2119 13.7986 12.815 13.4015 12.3251 13.4015ZM5.54195 5.73159C5.54195 3.82475 7.09322 2.27325 9.00006 2.27325C10.907 2.27325 12.4585 3.82456 12.4585 5.73159C12.4585 7.63861 10.907 9.1897 9.00006 9.1897C7.09345 9.18973 5.54195 7.63842 5.54195 5.73159Z" fill="#006D77"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_2261_1131">
+                      <rect width="18" height="18" fill="white" transform="translate(0 0.5)"/>
+                      </clipPath>
+                      </defs>
+                      </svg>
+                    <% end %>
+                    <p class="heading-style-h6 text-color-main"><%= child.first_name %></p>
                   </div>
+                  <div class="profile-child-tag">
+                    <p> <%= child.age_range %> </p>
+                  </div>
+                </div>
+              <% end %>
+
+              </div>
+            </div>
+          </div>
+          <div class="profile-card">
+            <div class="profile-card-personality">
+              <h2 class="heading-style-h5">Personality</h2>
+              <div class="profile-range-wrap">
+                <div class="profile-range-item">
+                  <div class="profile-range">
+                    <% if @user.cleanliness == "1" %>
+                      <div class="range-cursor is-1"></div>
+                    <% elsif @user.cleanliness == "2" %>
+                      <div class="range-cursor is-2"></div>
+                    <% elsif @user.cleanliness == "3" %>
+                      <div class="range-cursor is-3"></div>
+                    <% end %>
+                  </div>
+                  <div class="profile-range-label-wrap">
+                    <p>Relax</p>
+                    <p>Maniac</p>
+                  </div>
+                </div>
+                <div class="profile-range-item">
+                  <div class="profile-range">
+                    <% if @user.lifestyle == "1" %>
+                      <div class="range-cursor is-1"></div>
+                    <% elsif @user.lifestyle == "2" %>
+                      <div class="range-cursor is-2"></div>
+                    <% elsif @user.lifestyle == "3" %>
+                      <div class="range-cursor is-3"></div>
+                    <% end %>
+                  </div>
+                  <div class="profile-range-label-wrap">
+                    <p>Indoor person</p>
+                    <p>Outdoor person</p>
+                  </div>
+                </div>
+                <div class="profile-range-item">
+                  <div class="profile-range">
+                    <% if @user.sharing == "1" %>
+                      <div class="range-cursor is-1"></div>
+                    <% elsif @user.sharing == "2" %>
+                      <div class="range-cursor is-2"></div>
+                    <% elsif @user.sharing == "3" %>
+                      <div class="range-cursor is-3"></div>
+                    <% end %>
+                  </div>
+                  <div class="profile-range-label-wrap">
+                    <p>Possessive</p>
+                    <p>Sharing</p>
+                  </div>
+                </div>
+                <div class="profile-range-item">
+                  <div class="profile-range">
+                    <% if @user.cooking == "1" %>
+                      <div class="range-cursor is-1"></div>
+                    <% elsif @user.cooking == "2" %>
+                      <div class="range-cursor is-2"></div>
+                    <% elsif @user.cooking == "3" %>
+                      <div class="range-cursor is-3"></div>
+                    <% end %>
+                  </div>
+                  <div class="profile-range-label-wrap">
+                    <p>Take away food</p>
+                    <p>Homemade food</p>
+                  </div>
+                </div>
+                <div class="profile-range-item">
+                  <div class="profile-range">
+                    <% if @user.storage == "1" %>
+                      <div class="range-cursor is-1"></div>
+                    <% elsif @user.storage == "2" %>
+                      <div class="range-cursor is-2"></div>
+                    <% elsif @user.storage == "3" %>
+                      <div class="range-cursor is-3"></div>
+                    <% end %>
+                  </div>
+                  <div class="profile-range-label-wrap">
+                    <p>I pack light</p>
+                    <p>I store a lot</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-specs-wrap">
+          <div class="profile-specs-left">
+            <h2 class="heading-style-h5"> <%= @user.first_name %>'s ideal flat</h2>
+            <div class="specs-wrap">
+              <p>Must have</p>
+              <div class="specs-tag-wrap">
+                <% @perks.each do |perk| %>
+                  <% if perk.status == 'positive' %>
+                    <div class="positive-perk">
+                      <p> <%= perk.name.capitalize %> </p>
+                    </div>
+                  <% end %>
                 <% end %>
+              </div>
+            </div>
+            <div class="specs-wrap">
+              <p>Deal breakers</p>
+              <div class="specs-tag-wrap">
+                <% @perks.each do |perk| %>
+                  <% if perk.status == 'negative' %>
+                    <div class="negative-perk">
+                      <p> <%= perk.name.capitalize %> </p>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="flat-style-img-frame">
+            <div class="flat-style-img-height">
+              <% if @flat.style == 'industrial' %>
+                <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+              <% elsif @flat.style == 'scandinavian' %>
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+              <% elsif @flat.style == 'boheme' %>
+                <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+              <% elsif @flat.style == 'vintage' %>
+                <img src="https://images.unsplash.com/photo-1522871465649-53a34924fdcc?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+              <% elsif @flat.style == 'art deco' %>
+                <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+              <% else %>
+                <img src="https://images.unsplash.com/photo-1603792907191-89e55f70099a?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
               <% end %>
             </div>
           </div>
-          <div class="specs-wrap">
-            <p>Deal breakers</p>
-            <div class="specs-tag-wrap">
-              <% @perks.each do |perk| %>
-                <% if perk.status == 'negative' %>
-                  <div class="negative-perk">
-                    <p> <%= perk.name.capitalize %> </p>
-                  </div>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-        <div class="flat-style-img-frame">
-          <div class="flat-style-img-height">
-            <% if @flat.style == 'industrial' %>
-              <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% elsif @flat.style == 'scandinavian' %>
-              <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% elsif @flat.style == 'boheme' %>
-              <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% elsif @flat.style == 'vintage' %>
-              <img src="https://images.unsplash.com/photo-1522871465649-53a34924fdcc?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% elsif @flat.style == 'art deco' %>
-              <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% else %>
-              <img src="https://images.unsplash.com/photo-1603792907191-89e55f70099a?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
-            <% end %>
-          </div>
         </div>
       </div>
     </div>
   </div>
-  <div >
-  <% if user_signed_in? %>
-    <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"
-       data-chatroom-toggle-target="chatButton" style="right: 4rem; width: 22vw; position: fixed; bottom: 0; height:6vh;">
-       <h5>Chat with <%= @other_user_profile.first_name %></h5>
-    <i class="fa-solid fa-arrow-up"></i>
-  </div>
-  <div class="chatroom-show d-none" data-chatroom-toggle-target="chatroom" data-controller="chatroom-subscription"
-    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-    <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"> <h5>Chat with <%= @other_user_profile.first_name %></h5>
-    <i class="fa-solid fa-xmark"></i>
-  </div>
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-        <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-        <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-        <%= render "messages/message", message: message %>
-      </div>
+    <% if user_signed_in? %>
+      <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"
+        data-chatroom-toggle-target="chatButton" style="right: 4rem; width: 22vw; position: fixed; bottom: 0; height:6vh;">
+        <h5>Chat with <%= @other_user_profile.first_name %></h5>
+      <i class="fa-solid fa-arrow-up"></i>
     </div>
-    <% end %>
-  </div>
+    <div class="chatroom-show d-none" data-chatroom-toggle-target="chatroom" data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+      data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+      <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"> <h5>Chat with <%= @other_user_profile.first_name %></h5>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+          <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+          <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+          <%= render "messages/message", message: message %>
+        </div>
+      </div>
+      <% end %>
+    </div>
 
-  <%= simple_form_for [@chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex align-items-center" }  do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      # placeholder: "Message ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1 input-chatroom mb-0"}
+    <%= simple_form_for [@chatroom, @message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex align-items-center" }  do |f|
     %>
-    <%= f.submit "Send", class: "button-primary mx-2" %>
+      <%= f.input :content,
+        label: false,
+        # placeholder: "Message ##{@chatroom.name}",
+        wrapper_html: {class: "flex-grow-1 input-chatroom mb-0"}
+      %>
+      <%= f.submit "Send", class: "button-primary mx-2" %>
+    <% end %>
+  </div>
+  <%= render partial: 'shared/footer' %>
+  <% if !user_signed_in? %>
+    <div class="singup-wrap">
+      <div class="signup-outer">
+        <div class="signup-inner">
+          <div class="signup-content">
+            <div class="signup-header">
+              <h3 class="heading-style-h3 font-color-white">Create an account now to discover the full profile</h3>
+              <p class="font-color-grey-1">Create your profile to discover other corenters</p>
+            </div>
+            <%= link_to "Create my profile", "/users/sign_up", :class => "button-primary is-white" %>
+          </div>
+          <svg class= "signup-pattern-left" width="157" height="144" viewBox="0 0 157 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M70.1628 230.444C12.4622 241.856 -43.5646 204.332 -54.9764 146.631C-66.3883 88.9304 -28.8637 32.9036 28.8369 21.4918L133.313 0.828868L153.976 105.305C165.388 163.006 127.863 219.033 70.1628 230.444Z" fill="#FFDDD2"/>
+          </svg>
+          <svg class= "signup-pattern-right" width="184" height="150" viewBox="0 0 184 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M49.2835 -87.1386C98.8524 -118.801 164.704 -104.285 196.366 -54.7166C228.029 -5.1477 213.513 60.7035 163.944 92.3661L74.1917 149.696L16.8614 59.944C-14.8012 10.3752 -0.285347 -55.476 49.2835 -87.1386Z" fill="#83C5BE"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  <% end %>
   <% end %>
 </div>
-<% end %>
-<%= render partial: 'shared/footer' %>
-
-<% if !user_signed_in? %>
-  <div class="singup-wrap">
-    <div class="signup-outer">
-      <div class="signup-inner">
-        <div class="signup-content">
-          <div class="signup-header">
-            <h3 class="heading-style-h3 font-color-white">Create an account now to discover the full profile</h3>
-            <p class="font-color-grey-1">Create your profile to discover other corenters</p>
-          </div>
-          <%= link_to "Create my profile", "/users/sign_up", :class => "button-primary is-white" %>
-        </div>
-        <svg class= "signup-pattern-left" width="157" height="144" viewBox="0 0 157 144" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M70.1628 230.444C12.4622 241.856 -43.5646 204.332 -54.9764 146.631C-66.3883 88.9304 -28.8637 32.9036 28.8369 21.4918L133.313 0.828868L153.976 105.305C165.388 163.006 127.863 219.033 70.1628 230.444Z" fill="#FFDDD2"/>
-        </svg>
-        <svg class= "signup-pattern-right" width="184" height="150" viewBox="0 0 184 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M49.2835 -87.1386C98.8524 -118.801 164.704 -104.285 196.366 -54.7166C228.029 -5.1477 213.513 60.7035 163.944 92.3661L74.1917 149.696L16.8614 59.944C-14.8012 10.3752 -0.285347 -55.476 49.2835 -87.1386Z" fill="#83C5BE"/>
-        </svg>
-      </div>
-    </div>
-  </div>
-<% end %>
