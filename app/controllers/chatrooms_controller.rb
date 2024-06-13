@@ -22,6 +22,14 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: {
+          html: render_to_string(partial: 'chatrooms/chatroom', locals: {chatroom: @chatroom, user: current_user, message: @message }, formats: :html, layout: false)
+        }
+      end
+    end
   end
 
   def create

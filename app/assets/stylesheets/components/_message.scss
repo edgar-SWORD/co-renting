@@ -26,3 +26,18 @@
 
 
 }
+.container-message {
+  overflow: hidden;
+  height: 25rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+  .messages {
+    overflow: scroll;
+    width: 100%;
+    max-height: 100%;
+  }
+}
