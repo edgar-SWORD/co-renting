@@ -3,6 +3,7 @@
 <% content_for :meta_image, cl_image_path(@user.avatar_url) %>
 
 <div data-controller="chatroom-toggle">
+<div >
   <div class="show-banner-wrap">
     <div class="show-avatar-wrap container">
       <% if @user.photo.attached? %>
@@ -291,21 +292,23 @@
       <%= f.submit "Send", class: "button-primary mx-2" %>
     <% end %>
   </div>
-  <%= render partial: 'shared/footer' %>
+
+</div>
+
   <% if !user_signed_in? %>
     <div class="singup-wrap">
       <div class="signup-outer">
         <div class="signup-inner">
           <div class="signup-content">
             <div class="signup-header">
+              <button type="submit" class="button-primary mx-2">
+                <i class="fa-regular fa-paper-plane"></i>
+              </button>
               <h3 class="heading-style-h3 font-color-white">Create an account now to discover the full profile</h3>
               <p class="font-color-grey-1">Create your profile to discover other corenters</p>
             </div>
             <%= link_to "Create my profile", "/users/sign_up", :class => "button-primary is-white" %>
 
-    <button type="submit" class="button-primary mx-2">
-    <i class="fa-regular fa-paper-plane"></i>
-  </button>
   <% end %>
 </div>
 <% end %>
@@ -330,8 +333,6 @@
           </svg>
         </div>
       </div>
-
     </div>
-  <% end %>
   <% end %>
 </div>
