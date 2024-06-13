@@ -35,11 +35,13 @@ class UsersController < ApplicationController
 
     @markers = @users.map do |user|
       profile_research = user.profile_researches.last
-      {
-        lat: profile_research.latitude,
-        lng: profile_research.longitude,
-        info_window_html: render_to_string(partial: "profile_researches/info_window", locals: { a: profile_research }, formats: :html)
-      }
+      if profile_research
+        {
+          lat: profile_research.latitude,
+          lng: profile_research.longitude,
+          info_window_html: render_to_string(partial: "profile_researches/info_window", locals: { a: profile_research }, formats: :html)
+        }
+      end
     end
 
     respond_to do |format|
