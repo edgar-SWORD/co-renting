@@ -1,6 +1,7 @@
 module UserIntake
   class UserShiftsController < ApplicationController
     skip_before_action :authenticate_user!, only: %i[new create]
+    
     def new
       @user_shift = UserShift.new
     end

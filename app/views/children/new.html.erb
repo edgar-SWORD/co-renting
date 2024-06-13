@@ -13,7 +13,7 @@
           <div class="form-step3 d-flex flex-row justify-content-around gap-input">
             <div><%= f.input :first_name, label: false, placeholder: "First name", class: "input-field-step3" %></div>
             <div><%= f.input :last_name, label: false, placeholder: "Last name", class: "input-field-step3" %></div>
-            <div><%= f.input :gender, collection: ["Male", "Female"], label: false, placeholder: "Gender", class: "input-field-step3" %></div>
+            <div><%= f.input :gender, collection: ["Boy", "Girl"], label: false, placeholder: "Gender", class: "input-field-step3" %></div>
             <div><%= f.input :age_range, collection: ["Baby", "Toddler", "Child", "Teenager"], label: false, placeholder: "Age range", class: "input-field-step3" %></div>
             <div><%= f.submit "Add to family +", class: "button-form"%></div>
           </div>
