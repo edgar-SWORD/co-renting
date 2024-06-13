@@ -3,10 +3,9 @@ class ChatroomsController < ApplicationController
 
   def index
     Couple.all.each { |couple| couple.first_profile == couple.second_profile ? couple.destroy : couple}
-    @couples = current_user.couples.includes(chatroom: :messages).select do |couple|
+    @couples = (current_user.first_couples + current_user.second_couples).select do |couple|
       couple.chatroom.messages.any?
     end
-
     @last_messages = @couples.each_with_object({}) do |couple, hash|
       last_message = couple.chatroom.messages.order(created_at: :desc).first
       hash[couple.chatroom.id] = {
@@ -18,7 +17,7 @@ class ChatroomsController < ApplicationController
       @chatroom = Chatroom.find(params[:id])
       @message = Message.new
     end
-    
+
   end
 
   def show
