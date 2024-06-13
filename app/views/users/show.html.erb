@@ -289,20 +289,13 @@
       # placeholder: "Message ##{@chatroom.name}",
       wrapper_html: {class: "flex-grow-1 input-chatroom mb-0"}
     %>
-    <%= f.submit "Send", class: "button-primary mx-2" %>
+    <button type="submit" class="button-primary mx-2">
+    <i class="fa-regular fa-paper-plane"></i>
+  </button>
   <% end %>
 </div>
 <% end %>
 <%= render partial: 'shared/footer' %>
-
-
-  </div>
-
-</div>
-
-<div class="singup-wrap">
-  <div class="signup-outer">
-    <div class="signup-inner">
 
 
 <% if !user_signed_in? %>
