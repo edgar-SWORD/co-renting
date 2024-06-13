@@ -13,6 +13,10 @@ class ChatroomsController < ApplicationController
         created_at: last_message.created_at
       }
     end
+    if params[:id]
+      @chatroom = Chatroom.find(params[:id])
+      @message = Message.new
+    end
   end
 
   def show
