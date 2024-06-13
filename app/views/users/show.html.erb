@@ -1,4 +1,4 @@
-<% content_for :meta_title, "#{@user.&first_name} #{@user&.last_name} is on CoRent" %>
+<% content_for :meta_title, "#{@user&.first_name} #{@user&.last_name} is on CoRent" %>
 <% content_for :meta_description, @user&.tagline%>
 <% content_for :meta_image, cl_image_path(@user&.avatar_url) %>
 
