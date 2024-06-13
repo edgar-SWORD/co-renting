@@ -31,12 +31,18 @@ class UsersController < ApplicationController
       @users = @users.joins(profile_researches: :flat).where("flats.rooms <= ?", params[:rooms])
     end
 
-    @markers = ProfileResearch.all.geocoded.map do |a|
+    @markers = @users.map do |user|
+      profile_research = user.profile_researches.last
       {
-        lat: a.latitude,
-        lng: a.longitude,
-        # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+        lat: profile_research.latitude,
+        lng: profile_research.longitude,
+        info_window_html: render_to_string(partial: "profile_researches/info_window", locals: { a: profile_research }, formats: :html)
       }
+    end
+
+    respond_to do |format|
+      format.html
+      format.json { render json: { markers: @markers } }
     end
   end
 
@@ -57,7 +63,7 @@ class UsersController < ApplicationController
         }]
     else
       @flat = nil
-      @perks = [] # ou une autre valeur par défaut si nécessaire
+      @perks = [] 
     end
   end
 
@@ -92,26 +98,21 @@ class UsersController < ApplicationController
     redirect_to users_path, status: :see_other
   end
 
+
   private
 
   def find_chatroom
     current_user_id = current_user.id
     other_user_id = params[:id]
 
-    # Assurez-vous que les profils existent dans la table profile_researches
     current_user_profile = User.find(current_user_id)
     current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
     @other_user_profile = User.find(other_user_id)
     other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
 
-    # Cherchez ou créez le couple
     @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
-
-    # Cherchez ou créez le chatroom
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
-
     @message = Message.new
-
   end
 
   def set_user
@@ -119,7 +120,7 @@ class UsersController < ApplicationController
   end
 
   def user_logged
-    return current_user
+    current_user
   end
 
   def user_params

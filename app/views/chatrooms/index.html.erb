@@ -1,3 +1,4 @@
+<% content_for :meta_title, "Your messages" %>
 <div class="padding-section-large">
   <div class="container chatroom-list">
     <h1 class="mb-5">Inbox</h1>
@@ -25,14 +26,10 @@
               </p>
             </div>
             <div class="text-muted ml-auto">
-              <% if @last_messages[couple.chatroom.id][:created_at] %>
-                <div class="last-message-time">
-                  <span class="d-block"><%= @last_messages[couple.chatroom.id][:created_at].strftime("%Y-%m-%d") %></span>
-                  <span><%= @last_messages[couple.chatroom.id][:created_at].strftime("%H:%M:%S") %></span>
-                </div>
-              <% else %>
-                <span>No messages yet</span>
-              <% end %>
+              <div class="last-message-time">
+                <span class="d-block"><%= @last_messages[couple.chatroom.id][:created_at].strftime("%Y-%m-%d") %></span>
+                <span><%= @last_messages[couple.chatroom.id][:created_at].strftime("%H:%M:%S") %></span>
+              </div>
             </div>
           <% end %>
         </div>
@@ -40,3 +37,4 @@
     </div>
   </div>
 </div>
+

@@ -1,3 +1,7 @@
+<% content_for :meta_title, "#{@user.first_name} #{@user.last_name} is on CoRent" %>
+<% content_for :meta_description, @user.tagline%>
+<% content_for :meta_image, cl_image_path(@user.avatar_url) %>
+
 <div data-controller="chatroom-toggle">
   <div class="show-banner-wrap">
     <div class="show-avatar-wrap container">
@@ -278,6 +282,7 @@
     <%= simple_form_for [@chatroom, @message],
       html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex align-items-center" }  do |f|
     %>
+
       <%= f.input :content,
         label: false,
         # placeholder: "Message ##{@chatroom.name}",
@@ -297,6 +302,25 @@
               <p class="font-color-grey-1">Create your profile to discover other corenters</p>
             </div>
             <%= link_to "Create my profile", "/users/sign_up", :class => "button-primary is-white" %>
+
+    <button type="submit" class="button-primary mx-2">
+    <i class="fa-regular fa-paper-plane"></i>
+  </button>
+  <% end %>
+</div>
+<% end %>
+<%= render partial: 'shared/footer' %>
+
+
+<% if !user_signed_in? %>
+  <div class="singup-wrap">
+    <div class="signup-outer">
+      <div class="signup-inner">
+        <div class="signup-content">
+          <div class="signup-header">
+            <h3 class="heading-style-h3 font-color-white">Create an account now to discover the full profile</h3>
+            <p class="font-color-grey-1">Create your profile to discover other corenters</p>
+
           </div>
           <svg class= "signup-pattern-left" width="157" height="144" viewBox="0 0 157 144" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M70.1628 230.444C12.4622 241.856 -43.5646 204.332 -54.9764 146.631C-66.3883 88.9304 -28.8637 32.9036 28.8369 21.4918L133.313 0.828868L153.976 105.305C165.388 163.006 127.863 219.033 70.1628 230.444Z" fill="#FFDDD2"/>
@@ -306,6 +330,7 @@
           </svg>
         </div>
       </div>
+
     </div>
   <% end %>
   <% end %>
