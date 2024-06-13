@@ -1,3 +1,4 @@
+<% content_for :meta_title, "#{@users.count} similar profiles are on CoRent" %>
 <div class="padding-section-large-index">
   <div class="container">
     <h1 class="mb-4"><%= @users.count %> similar profiles</h1>
@@ -20,16 +21,16 @@
                 <%= radio_button_tag :alternance, "even", data: {alternance_target:'evenValue'}, class: "d-none", checked: @even_alternance %>
                 <%= radio_button_tag :alternance, "odd", data: {alternance_target:'oddValue'}, class: "d-none", checked: @odd_alternance  %>
                 <%= label_tag :alternance, "Odd", data: {alternance_target:'oddElement', action:'click->alternance#selectodd'}, class: "form-control text-color-blue text-center #{"alternance-switch" if @odd_alternance}"%>
-              </div>
+               </div> 
             </div>
             <div class="mb-3 d-flex flex-row gap-10">
               <div>
                 <label for="min_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i> Min</label>
-                <%= number_field_tag :min_budget, params[:min_budget], placeholder: "", class: "form-control custom-input" %>
+                <%= number_field_tag :min_budget, params[:min_budget], placeholder: "", class: "form-control custom-input", type:'number', min:'0' %>
               </div>
               <div>
                 <label for="max_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i> Max</label>
-                <%= number_field_tag :max_budget, params[:max_budget], placeholder: "", class: "form-control custom-input" %>
+                <%= number_field_tag :max_budget, params[:max_budget], placeholder: "", class: "form-control custom-input", type:'number', min:'0' %>
               </div>
             </div>
             <div class="mb-3">
