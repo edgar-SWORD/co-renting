@@ -63,41 +63,9 @@ class UsersController < ApplicationController
         }]
     else
       @flat = nil
-      @perks = [] 
+      @perks = []
     end
   end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(user_params)
-    @user.user = current_user
-
-    if @user.save
-      redirect_to user_path(@user)
-    else
-      render "pages#home", status: :unprocessable_entity
-    end
-  end
-
-  def edit
-  end
-
-  def update
-    if @user.update(user_params)
-      # redirect_to user_path(@user)
-    else
-      render 'children/new', status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    @user.destroy
-    redirect_to users_path, status: :see_other
-  end
-
 
   private
 
@@ -123,7 +91,4 @@ class UsersController < ApplicationController
     current_user
   end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm, :min_budget, :max_budget, :cleanliness, :cooking)
-  end
 end
