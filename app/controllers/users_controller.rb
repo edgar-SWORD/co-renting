@@ -46,6 +46,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    set_user
+    @children = @user.children
+    profile_research = ProfileResearch.where(user_id: @user.id).last
+
+
+    if profile_research
+      @flat = Flat.find(profile_research.flat_id)
+      @perks = @flat.perks
+      @markers =
+        [{
+          lat: profile_research.latitude,
+          lng: profile_research.longitude,
+          # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+        }]
+    else
+      @flat = nil
+      @perks = []
+    end
+  end
+
   private
 
   def find_chatroom
