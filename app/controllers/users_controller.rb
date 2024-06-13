@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     end
 
     if params[:alternance].present?
+      @even_alternance = params[:alternance] == "even"
+      @odd_alternance = params[:alternance] == "odd"
       @users = @users.where(alternance: params[:alternance])
     end
 

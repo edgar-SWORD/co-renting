@@ -1,6 +1,7 @@
 module UserIntake
   class UserPersonalitiesController < ApplicationController
     skip_before_action :authenticate_user!, only: %i[new create]
+    
     def new
       @user_personality = UserPersonality.new
     end

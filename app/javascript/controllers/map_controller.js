@@ -15,7 +15,9 @@ export default class extends Controller {
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/mapbox/streets-v10"
+      style: "mapbox://styles/mapbox/light-v11",
+      center: [2.3483915, 48.8534951],
+      zoom: 5
     })
 
     this.map.addControl(
@@ -36,7 +38,6 @@ export default class extends Controller {
   }
 
   #setInputValue(event) {
-    console.log("coucou");
     this.addressTarget.value = event.result["place_name"]
   }
 

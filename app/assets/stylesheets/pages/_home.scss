@@ -100,14 +100,18 @@
   object-fit: cover;
 }
 
-#cleanliness-range::-webkit-slider-thumb,
-#cooking-range::-webkit-slider-thumb {
-  background: #006d77;
+.gap-10 {
+  gap: 10px;
 }
 
-#cleanliness-range::-moz-range-thumb,
-#cooking-range::-moz-range-thumb {
-  background: #006d77;
+.filter-scroll {
+  overflow-y: scroll;
+  max-height: 100vh;
+}
+
+.alternance-switch {
+  background-color: var(--caribbean);
+  color: white !important;
 }
 
 .refine-reset-buttons {
