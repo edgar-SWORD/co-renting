@@ -49,6 +49,7 @@
   width: 632px;
   max-width: none;
   gap: 0.5rem;
+  position: relative;
 }
 
 .home-block-wrapper {
@@ -179,14 +180,14 @@
 
 .hero-arrow {
   position: absolute;
-  left: 30rem;
-  bottom: 9rem;
+  right: 5rem;
+  top: 4rem;
 }
 
 .hero-p {
   position: absolute;
-  left: 18rem;
-  bottom: 10rem;
+  right: 15rem;
+  top: 10rem;
   transform: rotate(-7deg);
   font-family: "Quicksand";
   color: var(--white);

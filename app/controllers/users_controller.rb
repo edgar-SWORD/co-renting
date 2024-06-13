@@ -91,7 +91,4 @@ class UsersController < ApplicationController
     current_user
   end
 
-  def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :alternance, :rythm, :min_budget, :max_budget, :cleanliness, :cooking)
-  end
 end

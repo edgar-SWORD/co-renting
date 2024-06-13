@@ -4,7 +4,7 @@
       <div class="home-hero-content">
         <div class="home-hero-header">
           <h1 class="heading-style-h1 font-color-white max-width-416">Find the perfect <span class="home-hero-span">invisible</span><span class="flatmate">flatmate</span></h1>
-          <p class="text-size-medium font-color-grey-1 text-weight-regular">Easily find a co-parent to share housing costs and responsibilities, ensuring a stable home for your children.</p>
+          <p class="text-size-medium font-color-grey-1 text-weight-regular">Easily find a CoRenter to share housing costs for long-term contracts and get closer to your children</p>
           <%= form_with url: users_path, method: :get do %>
             <div class="search-wrapper is-hero">
               <div data-controller="address-autocomplete"
@@ -16,21 +16,21 @@
               </div>
               <%= select_tag(:alternance, options_for_select([['Select a rythm', ''],['Even weeks', 'even'], ['Odd weeks', 'odd']], params[:alternance]), placeholder: "Even / Odd", class: "form-control custom-input alternance") %>
               <%= submit_tag "Find a CoRenter", class: "button-primary is-tiffany" %>
+              <img src="  <%= asset_path("hero-arrow.svg") %>  " alt="" class="hero-arrow">
+              <p class="hero-p">Find your CoRenter!</p>
             </div>
           <% end %>
         </div>
       </div>
       <div class="hero-img-frame">
         <div class="hero-img-height">
-          <img src="https://images.unsplash.com/photo-1593630459615-6ab2aa81a6ce?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img border-radius-12">
+          <img src=" <%= asset_path("hero-img-2.jpg") %> " alt="" class="absolute-img border-radius-12">
           <img src="" alt="" class="hero-ui-left">
           <img src=" <%= asset_path("hero-ui-right.svg") %> " alt="hero-ui-right" class="hero-ui-right">
         </div>
       </div>
     </div>
   </div>
-  <img src="  <%= asset_path("hero-arrow.svg") %>  " alt="" class="hero-arrow">
-  <p class="hero-p">Find your coparent!</p>
 </div>
 <div class="home-detail-wrap">
   <div class="container">
