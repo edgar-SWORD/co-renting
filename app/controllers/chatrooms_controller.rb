@@ -2,6 +2,7 @@ class ChatroomsController < ApplicationController
   before_action :set_user
 
   def index
+    Couple.all.each { |couple| couple.first_profile == couple.second_profile ? couple.destroy : couple}
     @couples = current_user.couples.includes(chatroom: :messages).select do |couple|
       couple.chatroom.messages.any?
     end
@@ -17,6 +18,7 @@ class ChatroomsController < ApplicationController
       @chatroom = Chatroom.find(params[:id])
       @message = Message.new
     end
+    
   end
 
   def show
@@ -29,9 +31,9 @@ class ChatroomsController < ApplicationController
     other_user_id = params[:user_id]
 
     current_user_profile = User.find(current_user_id)
-    current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
+    current_user_profile_research = ProfileResearch.where(user: current_user_id).last
     other_user_profile = User.find(other_user_id)
-    other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
+    other_user_profile_research = ProfileResearch.where(user: other_user_id).last
 
     @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)

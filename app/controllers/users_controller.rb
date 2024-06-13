@@ -74,15 +74,14 @@ class UsersController < ApplicationController
   private
 
   def find_chatroom
-    current_user_id = current_user.id
-    other_user_id = params[:id]
+    current_user_profile = User.find(current_user.id)
+    current_user_profile_research = ProfileResearch.where(user: current_user_profile).last
+    @other_user_profile = User.find(params[:id])
+    other_user_profile_research = ProfileResearch.where(user: @other_user_profile).last
 
-    current_user_profile = User.find(current_user_id)
-    current_user_profile_research = ProfileResearch.where(user: current_user_id).last
-    @other_user_profile = User.find(other_user_id)
-    other_user_profile_research = ProfileResearch.where(user: other_user_id).last
-
-    @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
+    @couple = Couple.find_by(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
+    @couple ||= Couple.find_by(first_profile: other_user_profile_research, second_profile: current_user_profile_research)
+    @couple ||= Couple.create!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
     @message = Message.new
   end
