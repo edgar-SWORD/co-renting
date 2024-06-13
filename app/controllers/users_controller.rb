@@ -46,6 +46,59 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    set_user
+    @children = @user.children
+    profile_research = ProfileResearch.where(user_id: @user.id).last
+
+
+    if profile_research
+      @flat = Flat.find(profile_research.flat_id)
+      @perks = @flat.perks
+      @markers =
+        [{
+          lat: profile_research.latitude,
+          lng: profile_research.longitude,
+          # info_window_html: render_to_string(partial: "profile_researches/info_window", locals: {a: a}, formats: :html)
+        }]
+    else
+      @flat = nil
+      @perks = [] 
+    end
+  end
+
+  def new
+    @user = User.new
+  end
+
+  def create
+    @user = User.new(user_params)
+    @user.user = current_user
+
+    if @user.save
+      redirect_to user_path(@user)
+    else
+      render "pages#home", status: :unprocessable_entity
+    end
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      # redirect_to user_path(@user)
+    else
+      render 'children/new', status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to users_path, status: :see_other
+  end
+
+
   private
 
   def find_chatroom
