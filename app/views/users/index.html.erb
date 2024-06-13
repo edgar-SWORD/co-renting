@@ -21,7 +21,7 @@
                 <%= radio_button_tag :alternance, "even", data: {alternance_target:'evenValue'}, class: "d-none", checked: @even_alternance %>
                 <%= radio_button_tag :alternance, "odd", data: {alternance_target:'oddValue'}, class: "d-none", checked: @odd_alternance  %>
                 <%= label_tag :alternance, "Odd", data: {alternance_target:'oddElement', action:'click->alternance#selectodd'}, class: "form-control text-color-blue text-center #{"alternance-switch" if @odd_alternance}"%>
-               </div> 
+               </div>
             </div>
             <div class="mb-3 d-flex flex-row gap-10">
               <div>
@@ -57,7 +57,7 @@
                 <%= link_to user_path(user), class:"card-link" do %>
                   <div class="card h-100 border-0 shadow-sm">
                     <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px;">
-                      <span class="blue-badge top-10 start-10"><%= user.alternance.capitalize %> weeks</span>
+                      <span class="blue-badge top-10 start-10"><%= user.alternance&.capitalize %> weeks</span>
                       <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
                     </div>
                     <div class="card-body">
