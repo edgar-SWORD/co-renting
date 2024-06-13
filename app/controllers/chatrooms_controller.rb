@@ -42,4 +42,3 @@ class ChatroomsController < ApplicationController
     @profile_researches = ProfileResearch.where(user_id: @user.id)
   end
 end
-
