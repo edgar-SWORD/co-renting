@@ -7,7 +7,7 @@
         <p>Rank each field from 1 to 3</p>
       </div>
     </div>
-    <%= simple_form_for @user_personality do |f| %>
+    <%= simple_form_for @user_personality, data: { turbo: false }   do |f| %>
       <div class="ranges-wrap">
         <div class="range-input-wrap">
           <p>Relax</p>

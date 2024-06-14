@@ -16,6 +16,8 @@ class UsersController < ApplicationController
     end
 
     if params[:alternance].present?
+      @even_alternance = params[:alternance] == "even"
+      @odd_alternance = params[:alternance] == "odd"
       @users = @users.where(alternance: params[:alternance])
     end
 
@@ -33,11 +35,13 @@ class UsersController < ApplicationController
 
     @markers = @users.map do |user|
       profile_research = user.profile_researches.last
-      {
-        lat: profile_research.latitude,
-        lng: profile_research.longitude,
-        info_window_html: render_to_string(partial: "profile_researches/info_window", locals: { a: profile_research }, formats: :html)
-      }
+      if profile_research
+        {
+          lat: profile_research.latitude,
+          lng: profile_research.longitude,
+          info_window_html: render_to_string(partial: "profile_researches/info_window", locals: { a: profile_research }, formats: :html)
+        }
+      end
     end
 
     respond_to do |format|
@@ -70,15 +74,14 @@ class UsersController < ApplicationController
   private
 
   def find_chatroom
-    current_user_id = current_user.id
-    other_user_id = params[:id]
+    current_user_profile = User.find(current_user.id)
+    current_user_profile_research = ProfileResearch.where(user: current_user_profile).last
+    @other_user_profile = User.find(params[:id])
+    other_user_profile_research = ProfileResearch.where(user: @other_user_profile).last
 
-    current_user_profile = User.find(current_user_id)
-    current_user_profile_research = ProfileResearch.find_by(user: current_user_id)
-    @other_user_profile = User.find(other_user_id)
-    other_user_profile_research = ProfileResearch.find_by(user: other_user_id)
-
-    @couple = Couple.find_or_create_by!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
+    @couple = Couple.find_by(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
+    @couple ||= Couple.find_by(first_profile: other_user_profile_research, second_profile: current_user_profile_research)
+    @couple ||= Couple.create!(first_profile: current_user_profile_research, second_profile: other_user_profile_research)
     @chatroom = Chatroom.find_or_create_by!(couple: @couple)
     @message = Message.new
   end

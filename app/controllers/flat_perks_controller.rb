@@ -21,7 +21,7 @@ class FlatPerksController < ApplicationController
     end
 
     unless @flat.perks.empty?
-      redirect_to new_flat_intake_flat_style_path
+      redirect_to new_user_intake_user_personality_path
     end
 
   end

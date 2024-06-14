@@ -52,7 +52,7 @@ users = User.create!([
     I often work from home, but I am looking for a co-tenant to share a future apartment on a part-time basis. I want someone who is discreet,
     organized, and respectful of our space. Cleanliness and the ability to maintain a calm environment are important qualities.
     Once we 'match', we will search together for an apartment that meets our shared needs.",
-    avatar_url: "https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://media.istockphoto.com/id/1130500063/fr/photo/jeune-p%C3%A8re-en-nature-tenue-petite-fille-dans-les-bras.webp?b=1&s=170667a&w=0&k=20&c=qxb5YOGWL0fTC1F-c68avJeMbOcyFIXiIlQHKevohf0=",
     job_title: "Digital entreprener",
     tagline: "I am Jules, a young father of 33 years with a 6-year-old daughter, Zoé.",
     alternance: "odd",
@@ -99,7 +99,7 @@ users = User.create!([
     I am looking for a co-tenant to share a future apartment on a part-time basis.
     Ideally, I would like someone who respects our home and is attentive to maintaining a clean and pleasant environment.
     Once we 'match', we will search together for a place that meets our expectations.",
-    avatar_url: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://plus.unsplash.com/premium_photo-1681495137929-115915b91342?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fG1vdGhlciUyMGFuZCUyMHRlZW5hZ2VyfGVufDB8fDB8fHww",
     job_title: "Digital marketing freelancer",
     tagline: "I am Marie, an active mom of 35 years with a passion for cooking and gardening.",
     alternance: "odd",
@@ -143,7 +143,7 @@ users = User.create!([
     long_description: "Hello I am Pierre, solo dad with 2 boys : Adam, 5 years old and Jules, 7 years old. We are a dynamic family.
     We love to have fun together, play video games and watch sports on TV. We are easy-going and nice folks.
     We are looking for another family to share a flat as I only come to Paris for even weeks.",
-    avatar_url: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://media.istockphoto.com/id/1947113785/fr/photo/p%C3%A8re-heureux-avec-sa-fille-qui-passe-du-temps-de-qualit%C3%A9-ensemble-%C3%A0-lext%C3%A9rieur-concept-de.webp?b=1&s=170667a&w=0&k=20&c=5nzQkIMdCblN2fRGgc9E4qUNQQPRfKVhNIWzNydk6p8=",
     job_title: "Fire fighter",
     tagline: "I am Pierre, an easy-going dad of two boys.",
     alternance: "even",
@@ -164,7 +164,7 @@ users = User.create!([
     address: "5 place de la république, 69000 Lyon",
     long_description: "Hello I am Barbara, single mum with a 1 year old baby. The father lives in Paris so I am looking for another parent to rent a flat there every other week.
     I don't need much space but I would like to feel at home in this flat and raise my baby there happily.",
-    avatar_url: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://images.unsplash.com/photo-1560707854-fb9a10eeaace?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bW90aGVyJTIwYW5kJTIwYmFieXxlbnwwfHwwfHx8MA%3D%3D",
     job_title: "Social worker",
     tagline: "I am Barbara, a social worker with good manners.",
     alternance: "odd",
@@ -264,7 +264,7 @@ users = User.create!([
     password: '123456',
     address: "30 Rue de la Liberté, 21000 Dijon",
     long_description: "I am Thomas, a single father with a 6-year-old daughter, Emma. I work as a journalist and have a flexible work schedule. I'm looking for a co-tenant who values privacy, cleanliness, and a peaceful living environment. Once we 'match', we can find an apartment that suits our needs.",
-    avatar_url: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://images.unsplash.com/photo-1482235225574-c37692835cf3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZmF0aGVyJTIwZGF1Z2h0ZXJ8ZW58MHx8MHx8fDA%3D",
     job_title: "Journalist",
     tagline: "I am Thomas, a privacy-valuing single dad.",
     alternance: "odd",
@@ -324,7 +324,7 @@ users = User.create!([
     password: '123456',
     address: "28 Rue Victor Hugo, 76000 Rouen",
     long_description: "I am Amandine, a single mother with a 4-year-old daughter, Chloé. I work as a nurse and have a variable schedule. I'm looking for a co-tenant who values cleanliness, respect, and a calm living environment. Once we 'match', we can find an apartment that suits our needs.",
-    avatar_url: "https://images.unsplash.com/photo-1589169011402-8b2cbd1ee593?q=80&w=3021&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    avatar_url: "https://media.istockphoto.com/id/944847394/fr/photo/h%C3%A9h%C3%A9-%C3%A0-lext%C3%A9rieur-maman-avec-deux-enfants-en-bas-%C3%A2ge.webp?b=1&s=170667a&w=0&k=20&c=NtB0xtUXG8OcQJ2FzhWDHFu9fdH27jNtOLnSWHxmh4s=",
     job_title: "Nurse",
     tagline: "I am Amandine, a clean and respectful single mother.",
     alternance: "even",
@@ -364,7 +364,7 @@ users = User.create!([
   password: '123456',
   address: "26 place de la republique, 69002 Lyon",
   long_description: "I am Agathe, a single mother with a 3-year-old daughter, Jeanne. I work as a fashion designer and have a busy yet flexible schedule. I'm looking for a co-tenant who values cleanliness and enjoys a harmonious living environment. Together, we can find an apartment that meets both our needs.",
-  avatar_url: "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fHdvbWFuJTIwcHJvZmlsZXxlbnwwfHwwfHx8MA%3D%3D",
+  avatar_url: "https://media.istockphoto.com/id/1402495372/fr/photo/si-tu-peux.webp?b=1&s=170667a&w=0&k=20&c=-pUMgPt-CjJIEvEVeJBg17OUoQqvfEKqOGlFR-UrcYY=",
   job_title: "Fashion Designer",
   tagline: "I am Agathe, a creative and tidy single mother.",
   alternance: "even",
@@ -404,7 +404,7 @@ users = User.create!([
   password: '123456',
   address: "20 Avenue Jean Médecin, 06000 Nice",
   long_description: "I am Clara, a single mother with a 5-year-old son, Lucas. I work as a photographer and have a variable schedule. I'm looking for a co-tenant who is respectful, clean, and enjoys a calm environment. Together, we will find an apartment that meets our needs.",
-  avatar_url: "https://media.istockphoto.com/id/1589605653/fr/photo/souriez-selfie-et-m%C3%A8re-avec-enfant-sur-un-c%C3%A2lin-de-lit-amour-et-lien-dans-leur-maison.webp?b=1&s=170667a&w=0&k=20&c=BwGP9-hGmv2JTHyQc2m5cGq7kKgeJBIW_HIY3dJx-2I=",
+  avatar_url: "https://media.istockphoto.com/id/507654333/fr/photo/amusement-avec-maman.webp?b=1&s=170667a&w=0&k=20&c=kBoLPC0ElYkMCC4HF6VK09H5QSEhEx-0DRNDeHt8yoM=",
   job_title: "Photographer",
   tagline: "I am Clara, a creative and clean single mother.",
   alternance: "even",
@@ -424,7 +424,7 @@ users = User.create!([
   password: '123456',
   address: "28 avenue de la gare, 95220 Herblay",
   long_description: "I am Thomas, a single father with a 6-year-old daughter, Leana. I work as a journalist and have a flexible work schedule. I'm looking for a co-tenant who values privacy, cleanliness, and a peaceful living environment. Once we 'match', we can find an apartment that suits our needs.",
-  avatar_url: "https://media.istockphoto.com/id/1458846087/fr/photo/portrait-dun-p%C3%A8re-et-de-sa-fille-jouant-au-super-h%C3%A9ros-dans-le-salon-%C3%A0-la-maison.webp?b=1&s=170667a&w=0&k=20&c=n_d_tVC-pkXdZ9Q7ifwgbmoS2C5l5dywOffSj08lSG0=",
+  avatar_url: "https://media.istockphoto.com/id/1009877634/fr/photo/enfants-heureux-h%C3%A9h%C3%A9.webp?b=1&s=170667a&w=0&k=20&c=GQKLlr-LHMzbSjZVdRjOmOFj4A0Ns-sFw8SGHbmlrFI=",
   job_title: "Journalist",
   tagline: "I am Thomas, a privacy-valuing single dad.",
   alternance: "even",
@@ -443,10 +443,10 @@ users = User.create!([
   email: 'dufousrachel@gmail.com',
   password: '123456',
   address: "place du foiral, 07000 privas",
-  long_description: "I am Rachel, a single mother with a 2-year-old son, Maxime. I work as a school teacher and have a structured schedule. I'm looking for a co-tenant who is responsible, respectful, and appreciates a clean and orderly environment. Together, we can find an apartment that fits our needs.",
+  long_description: "I am Rachel, a single mother with 2 kids. I work as a school teacher and have a structured schedule. I'm looking for a co-tenant who is responsible, respectful, and appreciates a clean and orderly environment. Together, we can find an apartment that fits our needs.",
   avatar_url: "https://plus.unsplash.com/premium_photo-1664047391705-52b7c7202df5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bW90aGVyJTIwYW5kJTIwZGF1Z2h0ZXJzfGVufDB8fDB8fHww",
   job_title: "School Teacher",
-  tagline: "I am Rachel, a responsible and respectful single mom.",
+  tagline: "I am Rachel, a quiet and respectful single mom.",
   alternance: "even",
   rythm: "all week",
   min_budget: 400,
@@ -504,147 +504,147 @@ children = Child.create!([
   { first_name: 'Thomas',
     last_name: 'Martin',
     age_range: 'teenager',
-    gender: 'male',
+    gender: 'Boy',
     user: users[0]
    },
 
    { first_name: 'Hugo',
     last_name: 'Martin',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[0]
    },
 
    { first_name: 'Elise',
     last_name: 'Martin',
     age_range: 'child',
-    gender: 'female',
+    gender: 'Girl',
     user: users[0]
    },
 
    { first_name: 'Zoé',
     last_name: 'Dupuis',
     age_range: 'child',
-    gender: 'female',
+    gender: 'Girl',
     user: users[1]
    },
 
    { first_name: 'Lou',
     last_name: 'Roy',
     age_range: 'toddler',
-    gender: 'female',
+    gender: 'Girl',
     user: users[2]
    },
 
    { first_name: 'Max',
     last_name: 'Roy',
     age_range: 'toddler',
-    gender: 'male',
+    gender: 'Boy',
     user: users[2]
    },
 
    { first_name: 'Clara',
     last_name: 'Dupont',
     age_range: 'teenager',
-    gender: 'female',
+    gender: 'Girl',
     user: users[3]
    },
 
    { first_name: 'Dalilah',
     last_name: 'Girard',
     age_range: 'teenager',
-    gender: 'female',
+    gender: 'Girl',
     user: users[4]
    },
 
    { first_name: 'Max',
     last_name: 'Girard',
     age_range: 'toddler',
-    gender: 'male',
+    gender: 'Boy',
     user: users[4]
    },
 
    { first_name: 'Adam',
     last_name: 'Jouard',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[5]
    },
 
    { first_name: 'Jules',
     last_name: 'Jouard',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[5]
    },
 
    { first_name: 'Mael',
     last_name: 'Frelon',
     age_range: 'baby',
-    gender: 'male',
+    gender: 'Boy',
     user: users[6]
    },
 
    { first_name: 'Leo',
     last_name: 'Bernard',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[7]
    },
 
    { first_name: 'Amélie',
     last_name: 'Lefevre',
     age_range: 'toddler',
-    gender: 'female',
+    gender: 'Girl',
     user: users[8]
    },
 
    { first_name: 'Gabriel',
     last_name: 'Dubois',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[9]
    },
 
    { first_name: 'Lucas',
     last_name: 'Moreau',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[10]
    },
 
    { first_name: 'Emma',
     last_name: 'Petit',
     age_range: 'child',
-    gender: 'female',
+    gender: 'Girl',
     user: users[11]
    },
 
    { first_name: 'Maxime',
     last_name: 'Durand',
     age_range: 'toddler',
-    gender: 'male',
+    gender: 'Boy',
     user: users[12]
    },
 
    { first_name: 'Théo',
     last_name: 'Gauthier',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[13]
    },
 
    { first_name: 'Chloé',
     last_name: 'Martin',
     age_range: 'toddler',
-    gender: 'female',
+    gender: 'Girl',
     user: users[14]
    },
 
    { first_name: 'Théodore',
    last_name: 'Martin',
    age_range: 'child',
-   gender: 'male',
+   gender: 'Boy',
    user: users[14]
   },
 
@@ -652,56 +652,78 @@ children = Child.create!([
   { first_name: 'Emma',
     last_name: 'Petit',
     age_range: 'child',
-    gender: 'female',
+    gender: 'Girl',
     user: users[15]
    },
 
    { first_name: 'Maxime',
     last_name: 'Durand',
     age_range: 'toddler',
-    gender: 'male',
+    gender: 'Boy',
     user: users[16]
    },
 
    { first_name: 'Théo',
     last_name: 'Gauthier',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[17]
    },
 
-   { first_name: 'Chloé',
-    last_name: 'Martin',
-    age_range: 'toddler',
-    gender: 'female',
+   { first_name: 'Vera',
+    last_name: 'Fraiche',
+    age_range: 'baby',
+    gender: 'Girl',
     user: users[18]
    },
 
    { first_name: 'Théodore',
-   last_name: 'Martin',
+   last_name: 'Grand',
    age_range: 'child',
-   gender: 'male',
+   gender: 'Boy',
    user: users[19]
   },
 
-  { first_name: 'Théo',
+  { first_name: 'Gilles',
+    last_name: 'Grand',
+    age_range: 'child',
+    gender: 'Boy',
+    user: users[19]
+   },
+
+  { first_name: 'Lea',
     last_name: 'Gauthier',
     age_range: 'child',
-    gender: 'male',
+    gender: 'Boy',
     user: users[20]
    },
 
+   { first_name: 'Mila',
+    last_name: 'Gauthier',
+    age_range: 'child',
+    gender: 'Boy',
+    user: users[20]
+   },
+
+
    { first_name: 'Chloé',
-    last_name: 'Martin',
+    last_name: 'Prigent',
     age_range: 'toddler',
-    gender: 'female',
+    gender: 'Girl',
+    user: users[21]
+   },
+
+   { first_name: 'Sarah',
+    last_name: 'Prigent',
+    age_range: 'toddler',
+    gender: 'Girl',
     user: users[21]
    },
 
    { first_name: 'Théodore',
-   last_name: 'Martin',
+   last_name: 'Formes',
    age_range: 'child',
-   gender: 'male',
+   gender: 'Boy',
    user: users[22]
   },
 ])
@@ -900,12 +922,12 @@ flats_perks = FlatPerk.create!([
 ])
 
 profile_researches = ProfileResearch.create!([
-  { user: users[0], flat: flats[0], location: '75012 Paris' },
-  { user: users[1], flat: flats[1], location: '75011 Paris' },
-  { user: users[2], flat: flats[2], location: '75019 Paris' },
-  { user: users[3], flat: flats[3], location: '75012 Paris' },
-  { user: users[4], flat: flats[4], location: '75011 Paris' },
-  { user: users[5], flat: flats[5], location: '75010 Paris' },
+  { user: users[0], flat: flats[0], location: 'rue lepic 75018 Paris' },
+  { user: users[1], flat: flats[1], location: 'avenue de la république 75011 Paris' },
+  { user: users[2], flat: flats[2], location: 'buttes chaumont 75019 Paris' },
+  { user: users[3], flat: flats[3], location: 'rue gambetta 75020 Paris' },
+  { user: users[4], flat: flats[4], location: 'cite griset 75011 Paris' },
+  { user: users[5], flat: flats[5], location: 'boulevard sebastopol 75010 Paris' },
   { user: users[6], flat: flats[6], location: '75019 Paris' },
   { user: users[7], flat: flats[7], location: '94100 Saint-Maur-des-Fossés' },
   { user: users[8], flat: flats[8], location: '94000 Créteil' },
@@ -915,12 +937,12 @@ profile_researches = ProfileResearch.create!([
   { user: users[12], flat: flats[12], location: '94120 Fontenay-sous-Bois' },
   { user: users[13], flat: flats[13], location: '94410 Saint-Maurice' },
   { user: users[14], flat: flats[14], location: '94270 Le Kremlin-Bicêtre' },
-  { user: users[15], flat: flats[15], location: '75012 Paris' },
-  { user: users[16], flat: flats[16], location: '75013 Paris' },
-  { user: users[17], flat: flats[17], location: '75007 Paris' },
-  { user: users[18], flat: flats[18], location: '75012 Paris' },
-  { user: users[19], flat: flats[19], location: '75001 Paris' },
-  { user: users[20], flat: flats[20], location: '75010 Paris' },
-  { user: users[21], flat: flats[21], location: '75014 Paris' },
-  { user: users[22], flat: flats[22], location: '75009 Paris' },
+  { user: users[15], flat: flats[15], location: '181 rue de charenton 75012 Paris' },
+  { user: users[16], flat: flats[16], location: 'rue jenner 75013 Paris' },
+  { user: users[17], flat: flats[17], location: "11 Passage de l'Union 75007 Paris" },
+  { user: users[18], flat: flats[18], location: 'rue saint lazare 75009 Paris' },
+  { user: users[19], flat: flats[19], location: 'place du louvre 75001 Paris' },
+  { user: users[20], flat: flats[20], location: 'quai de jemmapes 75010 Paris' },
+  { user: users[21], flat: flats[21], location: 'rue de la gaité 75014 Paris' },
+  { user: users[22], flat: flats[22], location: 'rue du faubourg saint denis 75009 Paris' },
 ])

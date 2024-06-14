@@ -1,15 +1,21 @@
-<% content_for :meta_title, "#{@user.first_name} #{@user.last_name} is on CoRent" %>
-<% content_for :meta_description, @user.tagline%>
-<% content_for :meta_image, cl_image_path(@user.avatar_url) %>
+<% content_for :meta_title, "#{@user&.first_name} #{@user&.last_name} is on CoRent" %>
+<% content_for :meta_description, @user&.tagline%>
+
+<% if @user.photo.attached? %>
+  <% content_for :meta_image, cl_image_path(@user.photo.key) %>
+<% else %>
+  <% content_for :meta_image, @user.avatar_url_safe %>
+<% end %>
+
 
 <div data-controller="chatroom-toggle">
 <div >
   <div class="show-banner-wrap">
     <div class="show-avatar-wrap container">
       <% if @user.photo.attached? %>
-        <%= cl_image_tag @user.avatar_url, class: "show-avatar", alt: "avatar" %>
+        <%= cl_image_tag @user.photo.key, class: "show-avatar", alt: "avatar" %>
       <% else %>
-        <img class="show-avatar" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
+        <img class="show-avatar" src="<%= @user.avatar_url_safe %>" alt="<%= @user.first_name %>">
       <% end %>
     </div>
   </div>
@@ -92,7 +98,7 @@
               <% @children.each do |child| %>
                 <div class="profile-child-item">
                   <div class="profile-child-left">
-                    <% if child.gender == "male" %>
+                    <% if child.gender == "Boy" %>
                       <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <g clip-path="url(#clip0_2261_1124)">
                       <path d="M17.82 1.05779C17.82 0.855517 17.656 0.691492 17.4537 0.691492H12.3257C12.1673 0.679792 12.0194 0.771517 11.9594 0.918592C11.8981 1.05404 11.9306 1.21357 12.04 1.31422L13.8275 3.10169C13.8947 3.17677 13.8947 3.29032 13.8275 3.36539L10.5896 6.62534C10.5228 6.68504 10.4219 6.68504 10.3551 6.62534C6.31764 3.74954 0.681013 6.32287 0.209263 11.2573C-0.262487 16.1918 4.78441 19.7866 9.29364 17.7279C12.974 16.0477 14.2114 11.4297 11.8642 8.13442C11.8045 8.06767 11.8045 7.96672 11.8642 7.90004L15.1241 4.63274C15.1992 4.56562 15.3128 4.56562 15.3878 4.63274L17.1753 6.42022C17.2771 6.52762 17.4353 6.55987 17.5709 6.50077C17.7092 6.45472 17.8071 6.33104 17.82 6.18577V1.05779ZM6.64831 16.4418C3.12369 16.4416 0.920788 12.6261 2.68321 9.57374C4.44571 6.52147 8.85144 6.52169 10.6136 9.57412C11.0153 10.2701 11.2268 11.0596 11.2268 11.8632C11.2268 14.3918 9.17686 16.4417 6.64831 16.4418Z" fill="#006D77"/>
@@ -240,17 +246,17 @@
           <div class="flat-style-img-frame">
             <div class="flat-style-img-height">
               <% if @flat.style == 'industrial' %>
-                <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?q=80&w=2971&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://plus.unsplash.com/premium_photo-1682125921736-04133d6a5b39?q=80&w=1946&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
               <% elsif @flat.style == 'scandinavian' %>
-                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://plus.unsplash.com/premium_photo-1670360211643-e9fff4b41628?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
               <% elsif @flat.style == 'boheme' %>
-                <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=3024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://media.listquicker.com/users/schulz/post-140-64374d24ed768-1807x797.webp" alt="" class="absolute-img">
               <% elsif @flat.style == 'vintage' %>
-                <img src="https://images.unsplash.com/photo-1522871465649-53a34924fdcc?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://www.christiesrealestate.com/blog/wp-content/uploads/2018/08/banner_supericabuckhead.jpg" alt="" class="absolute-img">
               <% elsif @flat.style == 'art deco' %>
-                <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=3058&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://as1.ftcdn.net/v2/jpg/05/74/24/48/1000_F_574244811_kMONv4ZdIT9HBIilBvZiPqmzZozxqPyK.jpg" alt="" class="absolute-img">
               <% else %>
-                <img src="https://images.unsplash.com/photo-1603792907191-89e55f70099a?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
+                <img src="https://images.unsplash.com/photo-1570747408017-38b4c5959378?q=80&w=2938&auto=format&f[%E2%80%A6]3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" class="absolute-img">
               <% end %>
             </div>
           </div>

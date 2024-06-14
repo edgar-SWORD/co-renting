@@ -1,6 +1,7 @@
 module UserIntake
   class PersonalInformationsController < ApplicationController
     skip_before_action :authenticate_user!, only: %i[new create]
+    
     def new
       @personal_information = PersonalInformation.new
     end
@@ -10,7 +11,6 @@ module UserIntake
       @user = current_user
       if @personal_information.valid?
         @user.update(user_params)
-        # TODO définir le prochain step et faire le redirect_to
         redirect_to new_user_intake_user_shift_path
       else
         render :new, status: :unprocessable_entity

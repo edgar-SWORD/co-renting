@@ -15,18 +15,6 @@ class FlatsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
-  def show
-  end
-
-  def destroy
-  end
-
   private
 
   def flat_params
