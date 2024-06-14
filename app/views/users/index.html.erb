@@ -1,10 +1,10 @@
 <% content_for :meta_title, "#{@users.count} similar profiles are on CoRent" %>
-<div class="padding-section-large">
+<div class="padding-section-large-index">
   <div class="container">
-    <h1 class="mb-5"><%= @users.count %> similar profiles</h1>
+    <h1 class="mb-4"><%= @users.count %> similar profiles</h1>
     <div class="row">
       <div class="col-md-3 mt-3">
-        <div class="sticky-top p-3 bg-light rounded shadow-sm">
+        <div class="sticky-top filter-scroll p-3 bg-light rounded shadow-sm">
           <%= form_with url: users_path, method: :get, local: true, class: "mb-4" do %>
             <div class="mb-3">
               <label for="location" class="form-label"><i class="fas fa-map-marker-alt me-2"></i>Location</label>
@@ -16,25 +16,26 @@
             </div>
             <div class="mb-3">
               <label for="alternance" class="form-label"><i class="fas fa-sync-alt me-2"></i>Alternance</label>
-              <%= select_tag :alternance, options_for_select([['', ''], ['Even', 'even'], ['Odd', 'odd']], params[:alternance]), class: "form-control custom-input" %>
+              <div data-controller="alternance" class= "d-flex justify-content-center flex-row gap-10">
+                <%= label_tag :alternance, "Even", data: {alternance_target:'evenElement', action:'click->alternance#selecteven'}, class: "form-control text-color-blue text-center #{"alternance-switch" if @even_alternance}" %>
+                <%= radio_button_tag :alternance, "even", data: {alternance_target:'evenValue'}, class: "d-none", checked: @even_alternance %>
+                <%= radio_button_tag :alternance, "odd", data: {alternance_target:'oddValue'}, class: "d-none", checked: @odd_alternance  %>
+                <%= label_tag :alternance, "Odd", data: {alternance_target:'oddElement', action:'click->alternance#selectodd'}, class: "form-control text-color-blue text-center #{"alternance-switch" if @odd_alternance}"%>
+               </div>
             </div>
-              <div class="mb-3 d-flex flex-row gap-10">
+            <div class="mb-3 d-flex flex-row gap-10">
               <div>
                 <label for="min_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i> Min</label>
-                <%= number_field_tag :min_budget, params[:min_budget], placeholder: "", class: "form-control custom-input",type:'number', min:'0'%>
+                <%= number_field_tag :min_budget, params[:min_budget], placeholder: "", class: "form-control custom-input", type:'number', min:'0' %>
               </div>
               <div>
                 <label for="max_budget" class="form-label"><i class="fas fa-euro-sign me-2"></i> Max</label>
-                <%= number_field_tag :max_budget, params[:max_budget], placeholder:"", class:"form-control custom-input", type:'number', min:'0' %>
+                <%= number_field_tag :max_budget, params[:max_budget], placeholder: "", class: "form-control custom-input", type:'number', min:'0' %>
               </div>
             </div>
             <div class="mb-3">
-              <label for="cleanliness" class="form-label"><i class="fas fa-broom me-2"></i>Cleanliness</label>
-              <%= range_field_tag :cleanliness, params[:cleanliness] || 0, min: 0, max: 3, step: 1, class: "form-range", id: "cleanliness-range" %>
-            </div>
-            <div class="mb-3">
-              <label for="cooking" class="form-label"><i class="fas fa-utensils me-2"></i>Cooking</label>
-              <%= range_field_tag :cooking, params[:cooking] || 0, min: 0, max: 3, step: 1, class: "form-range", id: "cooking-range" %>
+              <label for="rooms" class="form-label"><i class="fas fa-bed me-2"></i>Rooms</label>
+              <%= number_field_tag :rooms, params[:rooms], placeholder: "", class: "form-control custom-input", type: 'number', min: '0' %>
             </div>
             <div class="refine-reset-buttons">
               <%= submit_tag "Refine my search", class: "button-form" %>
@@ -55,8 +56,8 @@
               <div class="col-lg-4 col-md-6 col-sm-12 my-3">
                 <%= link_to user_path(user), class:"card-link" do %>
                   <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px;">
-                      <span class="blue-badge top-10 start-10">Week <%= user.alternance %></span>
+                    <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url_safe %>'); background-size: cover; background-position: center; height: 200px;">
+                      <span class="blue-badge top-10 start-10"><%= user.alternance&.capitalize %> weeks</span>
                       <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
                     </div>
                     <div class="card-body">

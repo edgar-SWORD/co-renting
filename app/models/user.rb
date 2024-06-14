@@ -7,13 +7,18 @@ class User < ApplicationRecord
   has_many :chatrooms, through: :couples
   has_many :messages, through: :chatrooms
 
-  has_many :couples, through: :profile_researches
+  has_many :first_couples, through: :profile_researches
+  has_many :second_couples, through: :profile_researches
   has_one_attached :photo
- 
+
 
   # validates :alternance, presence: true
   # validates :rythm, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def avatar_url_safe
+    avatar_url || ActionController::Base.helpers.asset_path("placeholder.png")
+  end
 end

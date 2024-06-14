@@ -5,7 +5,7 @@
         <%= image_tag "logo_corent.svg", alt: "Corent logo" %>
       <% end %>
       <div class="button-group">
-          <% if user_signed_in? %>
+        <% if user_signed_in? %>
           <%= link_to "CoRenters", users_path, :class => "button-text" %>
           <%= link_to "My Profile", "/users/#{current_user.id}", :class => "button-text" %>
           <%= link_to "Inbox", chatrooms_path, :class => "button-text" %>
