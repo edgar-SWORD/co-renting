@@ -4,7 +4,7 @@
 <% if @user.photo.attached? %>
   <% content_for :meta_image, cl_image_path(@user.photo.key) %>
 <% else %>
-  <% content_for :meta_image, @user.avatar_url %>
+  <% content_for :meta_image, @user.avatar_url_safe %>
 <% end %>
 
 
@@ -15,7 +15,7 @@
       <% if @user.photo.attached? %>
         <%= cl_image_tag @user.photo.key, class: "show-avatar", alt: "avatar" %>
       <% else %>
-        <img class="show-avatar" src="<%= @user.avatar_url %>" alt="<%= @user.first_name %>">
+        <img class="show-avatar" src="<%= @user.avatar_url_safe %>" alt="<%= @user.first_name %>">
       <% end %>
     </div>
   </div>
