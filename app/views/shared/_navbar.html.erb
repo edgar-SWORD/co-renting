@@ -13,7 +13,7 @@
           <% if current_user.photo.attached? %>
             <%= cl_image_tag current_user.photo.key, alt: "Corent logo", :class => "avatar" %>
           <% else %>
-            <%= image_tag "placeholder.png", alt: "Corent logo", :class => "avatar" %>
+            <%= image_tag current_user.avatar_url_safe, alt: "Corent logo", :class => "avatar" %>
           <% end %>
         <% else %>
           <%= link_to "Login", "/users/sign_in", :class => "button-secondary" %>
