@@ -56,7 +56,7 @@
               <div class="col-lg-4 col-md-6 col-sm-12 my-3">
                 <%= link_to user_path(user), class:"card-link" do %>
                   <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url.present? ? user.avatar_url : 'path/to/placeholder-image.jpg' %>'); background-size: cover; background-position: center; height: 200px;">
+                    <div class="card-img-top position-relative" style="background-image: url('<%= user.avatar_url_safe %>'); background-size: cover; background-position: center; height: 200px;">
                       <span class="blue-badge top-10 start-10"><%= user.alternance&.capitalize %> weeks</span>
                       <span class="favorite-icon top-10 end-10"><i class="far fa-heart"></i></span>
                     </div>

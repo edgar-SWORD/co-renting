@@ -1,19 +1,18 @@
 
-  <div class="d-flex">
+<div class="d-flex">
   <% if message.user != current_user %>
-<% if message.user.photo.attached? %>
-    <%= cl_image_tag message.user.avatar_url, class: "profil-picture", alt: "avatar" %>
+    <% if message.user.photo.attached? %>
+      <%= cl_image_tag message.user.photo.key, class: "profil-picture", alt: "avatar" %>
     <% else %>
-    <img class="avatar-img-message" src="<%= message.user.avatar_url %>" alt="<%= message.user.first_name %>">
-  <% end %>
-<%end %>
+      <%= image_tag message.user.avatar_url_safe, class: 'avatar-img-message', alt: message.user.first_name %>
+    <% end %>
+  <%end %>
 
-<div id="message-<%= message.id %>">
-  <small>
-    <strong><%= message.user.first_name %></strong>
-    <i><%= message.created_at.strftime("%b %e at %H:%M") %></i>
-  </small>
-
-  <p><%= message.content %></p>
-</div>
+  <div id="message-<%= message.id %>">
+    <small>
+      <strong><%= message.user.first_name %></strong>
+      <i><%= message.created_at.strftime("%b %e at %H:%M") %></i>
+    </small>
+    <p><%= message.content %></p>
   </div>
+</div>

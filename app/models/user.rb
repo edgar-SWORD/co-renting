@@ -17,4 +17,8 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def avatar_url_safe
+    avatar_url || ActionController::Base.helpers.asset_path("placeholder.png")
+  end
 end
