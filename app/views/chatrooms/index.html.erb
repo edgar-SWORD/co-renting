@@ -2,12 +2,12 @@
 <div class="padding-section-large">
   <div class="container chatroom-list">
     <h1 class="mb-5">Inbox</h1>
-    <div class="row">
+    <div class="row" data-controller="chatroom-index">
       <!-- Inbox List Column -->
-      <div class="col-md-6 mb-5">
+      <div class="col-md-6 mb-5" >
         <% @couples.each do |couple| %>
           <div class="col-12 mb-3">
-            <%= link_to chatroom_path(couple.chatroom), class: "chatroom-link d-flex align-items-center p-3 shadow-sm rounded" do %>
+            <%= link_to chatroom_path(couple.chatroom), class: "chatroom-link d-flex align-items-center p-3 shadow-sm rounded", data: { action:"click->chatroom-index#display" } do %>
               <div class="avatar-container me-3">
                 <% if couple.first_profile.user == current_user %>
                   <%= image_tag(couple.second_profile.user.avatar_url_safe, class: "avatar") %>
@@ -15,7 +15,7 @@
                   <%= image_tag(couple.first_profile.user.avatar_url_safe, class: "avatar") %>
                 <% end %>
               </div>
-              <div class="chatroom-info">
+              <div class="chatroom-info" >
                 <h5 class="chatroom-title mb-1">
                   <% if couple.first_profile.user == current_user %>
                     <%= couple.second_profile.user.first_name %>
@@ -39,35 +39,10 @@
       </div>
 
 
-      <div class="col-md-6">
-        <% if @chatroom && @message %>
-          <div class="container mt-5 chatroom" data-controller="chatroom-subscription"
-               data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
-               data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
-            <div class="messages" data-chatroom-subscription-target="messages">
-              <% @chatroom.messages.each do |message| %>
-                <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
-                  <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
-                    <%= render "messages/message", message: message %>
-                  </div>
-                </div>
-              <% end %>
-            </div>
+      <div class="col-md-6" >
 
-            <%= simple_form_for [@chatroom, @message],
-                html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f| %>
-              <%= f.input :content,
-                  label: false,
-                  placeholder: "Message ##{@chatroom.name}",
-                  wrapper_html: { class: "flex-grow-1 input-chatroom mb-0" } %>
-              <%= f.submit "Send", class: "button-primary mx-2" %>
-            <% end %>
+          <div data-chatroom-index-target="chatroom">
           </div>
-        <% else %>
-          <div class="container mt-5">
-            <p>Select a chatroom to start messaging</p>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
