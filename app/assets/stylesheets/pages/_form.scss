@@ -328,6 +328,7 @@ legend {
 .form-check {
   display: flex;
   flex-direction: row;
+  gap: 1rem;
 }
 
 .alternance-radio-wrap {
@@ -979,5 +980,20 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     background-color: var(--tangerine);
     color: var(--white);
     border: 1px solid var(--tangerine);
+  }
+}
+
+@media (max-width: 767px) {
+  .heading-style-h4 {
+    font-size: 24px;
+  }
+
+  .form {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
   }
 }
