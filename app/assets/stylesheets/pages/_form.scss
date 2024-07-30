@@ -996,4 +996,13 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
   .form-row {
     grid-template-columns: 1fr;
   }
+
+  .form-next-button {
+    position: static !important;
+    margin-bottom: 2rem;
+  }
+
+  .nav {
+    width: 100vw !important;
+  }
 }

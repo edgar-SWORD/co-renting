@@ -11,7 +11,7 @@
           </p>
           <%= form_with url: users_path, method: :get do %>
             <div class="search-wrapper is-hero">
-              <div data-controller="address-autocomplete" data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
+              <div class="address-wrapper"data-controller="address-autocomplete" data-address-autocomplete-api-key-value=<%= ENV["MAPBOX_API_KEY"] %>>
                 <%= text_field_tag :location, params[:location], data: {address_autocomplete_target: "location"}, class: "form-control custom-input d-none", placeholder: "Paris, France" %>
               </div>
               <%= select_tag(:alternance, options_for_select([['Select a rythm', ''],['Even weeks', 'even'], ['Odd weeks', 'odd']], params[:alternance]), placeholder: "Even / Odd", class: "form-control custom-input alternance") %>

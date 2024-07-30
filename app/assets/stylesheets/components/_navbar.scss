@@ -25,3 +25,28 @@
   border-radius: 100%;
   border: 1px solid var(--caribbean);
 }
+
+.md-nav {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .md-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    }
+
+  .dd-nav {
+    display: none !important;
+  }
+
+  .nav-layout-md {
+    justify-content: space-between !important;
+  }
+
+  .btn-nav-dnone {
+    display: none  !important;
+  }
+}
