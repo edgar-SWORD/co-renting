@@ -35,12 +35,11 @@
           <p>I store a lot</p>
         </div>
       </div>
-      <div class="form-group">
+        <%= link_to "Previous", new_flat_perk_path, :class => "form-previous-button button-secondary" %>
         <%= f.submit "Next", class: "form-next-button" %>
-      </div>
     <% end %>
+  </div>
 
 
-    <%= link_to "Previous", new_flat_perk_path, :class => "form-previous-button button-secondary" %>
   </div>
 </div>

@@ -1125,4 +1125,13 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     justify-content: space-between;
     margin-bottom: 2rem;
   }
+
+  #user_intake_user_personality_cleanliness, #user_intake_user_personality_lifestyle, #user_intake_user_personality_sharing, #user_intake_user_personality_cooking, #user_intake_user_personality_storage {
+    min-width: 8rem;
+  }
+
+  .range-input-wrap p {
+    text-align: center;
+  }
+
 }
