@@ -289,7 +289,7 @@
 }
 
 
-.form-next-button, .form-next-button-step3, .form-next-button-step4, .form-next-button-step-5, .form-next-button-step-6 {
+.form-next-button, .form-next-button-step3, .form-next-button-step4, .form-next-button-step5, .form-next-button-step6,  .form-next-button-step8 {
   padding: 12px 24px;
   border-radius: 8px;
   display: flex;
@@ -304,7 +304,7 @@
   right: 80px;
 }
 
-.form-previous-button {
+.form-previous-button, .form-previous-button-step8 {
   position: fixed;
   bottom: 40px;
   left: 80px;
@@ -1065,7 +1065,7 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     position: relative;
   }
 
-  .form-next-button-step4, .form-next-button-step3, .form-next-button-step-5, .form-next-button-step-6 {
+  .form-next-button-step4, .form-next-button-step3, .form-next-button-step5, .form-next-button-step6 {
     margin-bottom: 0px;
     position: absolute;
     bottom: 2rem;
@@ -1109,5 +1109,20 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
 
   .furnish-wrapper {
     width: 100%;
+  }
+
+  .form-previous-button-step8 {
+    position: static;
+  }
+
+  .form-next-button-step8 {
+    margin-bottom: 0px;
+    position: static;
+  }
+
+  .position-between {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
   }
 }
