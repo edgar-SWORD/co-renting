@@ -102,6 +102,7 @@
 
 .input-field-step3 {
   flex-grow: none;
+  color: var(--grey-4) !important;
   margin-right: 1px;
   margin-left: 1px;
 }
@@ -1004,5 +1005,18 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
 
   .nav {
     width: 100vw !important;
+  }
+
+  #btn-children-wrapper {
+    flex-direction: column !important;
+  }
+
+  .child_first_name, .child_last_name, .child_gender, .child_age_range {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .center {
+    margin: 0 auto;
   }
 }
