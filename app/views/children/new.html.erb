@@ -9,20 +9,23 @@
     </div>
 
     <div class="form">
-        <%= simple_form_for @child do |f| %>
-          <div class="form-step3 d-flex flex-row justify-content-around gap-input" id="btn-children-wrapper">
-            <div><%= f.input :first_name, label: false, placeholder: "First name", class: "input-field-step3" %></div>
-            <div><%= f.input :last_name, label: false, placeholder: "Last name", class: "input-field-step3" %></div>
-            <div><%= f.input :gender, collection: ["Boy", "Girl"], label: false, placeholder: "Gender", class: "input-field-step3" %></div>
-            <div><%= f.input :age_range, collection: ["Baby", "Toddler", "Child", "Teenager"], label: false, placeholder: "Age range", class: "input-field-step3" %></div>
-            <div><%= f.submit "Add to family +", class: "button-form center"%></div>
-          </div>
-        <% end %>
-
+      <%= simple_form_for @child do |f| %>
+      <div class="form-step3 d-flex flex-row justify-content-around gap-input" id="btn-children-wrapper">
+        <div><%= f.input :first_name, label: false, placeholder: "First name", class: "input-field-step3" %></div>
+        <div><%= f.input :last_name, label: false, placeholder: "Last name", class: "input-field-step3" %></div>
+        <div class="select-container">
+          <%= f.input :gender, collection: ["Boy", "Girl"], label: false, placeholder: "Gender", class: "input-field-step3" %>
+        </div>
+        <div class="select-container">
+          <%= f.input :age_range, collection: ["Baby", "Toddler", "Child", "Teenager"], label: false, placeholder: "Age range", class: "input-field-step3" %>
+        </div>
+        <div><%= f.submit "Add to family +", class: "button-form center"%></div>
+      </div>
+    <% end %>
 
       <div class="d-flex w-100 justify-content-around mt-3">
         <% if @user.children.empty? %>
-          <div class="children-placeholder">
+          <div class="children-placeholder height-120">
             <div class="children-placeholder-text">
               <h2 class="heading-style-h4 text-color-blue">Your family is empty</h2>
               <p class="text-color-blue">Add a new child to your list</p>
@@ -47,7 +50,6 @@
         <% end %>
       </div>
     </div>
-  </div>
 
    <div class="form-navigation">
     <div class="container">
@@ -58,5 +60,6 @@
 
       </div>
     </div>
+  </div>
   </div>
 </div>
