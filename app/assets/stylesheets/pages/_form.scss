@@ -289,7 +289,7 @@
 }
 
 
-.form-next-button, .form-next-button-step4 {
+.form-next-button, .form-next-button-step3, .form-next-button-step4 {
   padding: 12px 24px;
   border-radius: 8px;
   display: flex;
@@ -1007,6 +1007,10 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     grid-template-columns: 1fr;
   }
 
+  .question-form-wrap {
+    gap: 1.5rem;
+  }
+
   .form-next-button {
     position: static !important;
     margin-bottom: 2rem;
@@ -1057,16 +1061,34 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     position: relative;
   }
 
-  .form-next-button-step4 {
+  .form-next-button-step4, .form-next-button-step3 {
     margin-bottom: 0px;
     position: absolute;
     bottom: 2rem;
     right: 2rem;
   }
+
   .form-previous-button {
     position: absolute;
     bottom: 2rem;
     left: 2rem;
   }
+
+  .rythm-radio-wrap fieldset {
+    flex-direction: column;
+  }
+
+  #user_intake_user_shift_rythm_all_week + label {
+    height: 100px;
+  }
+
+  #user_intake_user_shift_rythm_week-days + label {
+    height: 100px;
+  }
+
+  #user_intake_user_shift_rythm__week-ends + label {
+    height: 100px;
+  }
+
 
 }
