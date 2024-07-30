@@ -289,7 +289,7 @@
 }
 
 
-.form-next-button {
+.form-next-button, .form-next-button-step4 {
   padding: 12px 24px;
   border-radius: 8px;
   display: flex;
@@ -1050,6 +1050,23 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
   .form-navigation {
     position: static;
     margin-bottom: 2rem;
+  }
+
+  .text-area-field {
+    height: 20rem;
+    position: relative;
+  }
+
+  .form-next-button-step4 {
+    margin-bottom: 0px;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+  }
+  .form-previous-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
   }
 
 }
