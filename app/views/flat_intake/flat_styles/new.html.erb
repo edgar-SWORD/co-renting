@@ -1,4 +1,4 @@
-<div class="form-slide">
+<div class="form-slide-step10">
   <div class="question-form-wrap-step3">
     <div class="question-form-header">
       <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 10 / 10</p>
@@ -18,16 +18,17 @@
                   }
               %>
     </div>
-  </div>
 
-   <div class="form-navigation">
-    <div class="container">
-      <div class="form-navigation-layout">
-        <div><%= link_to "Previous",  new_user_intake_user_personality_path, :class => "button-secondary margin-left-auto" %></div>
-        <div>
-          <%= f.submit "Submit", class: "button-primary margin-left-auto" %>
+    <div class="form-navigation">
+      <div class="container">
+        <div class="form-navigation-layout-step10 mt-step10">
+          <div><%= link_to "Previous",  new_user_intake_user_personality_path, :class => "button-secondary margin-left-auto" %></div>
+          <div>
+            <%= f.submit "Submit", class: "button-primary margin-left-auto mb-step10" %>
+          <% end %>
+          </div>
         </div>
       </div>
-      </div>
     </div>
-        <% end %>
+  </div>
+</div>

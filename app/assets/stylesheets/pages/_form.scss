@@ -13,7 +13,7 @@
   border-radius: 0 40rem 40rem 0;
 }
 
-.form-slide {
+.form-slide, .form-slide-step10 {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -144,7 +144,7 @@
   left: 0;
 }
 
-.form-navigation-layout {
+.form-navigation-layout, .form-navigation-layout-step10 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1064,6 +1064,14 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     margin-bottom: 2rem;
   }
 
+  .form-navigation-layout {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
   .text-area-field {
     height: 20rem;
     position: relative;
@@ -1145,5 +1153,35 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     justify-content: space-between;
     position: fixed;
     bottom: 2rem;
+  }
+
+  .form-slide-step10 {
+    display: block;
+    padding-top: 7rem;
+  }
+
+  .style_wrapper {
+    gap: 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  #flat_intake_flat_style_style_bohemian + label, #flat_intake_flat_style_style_industrial + label, #flat_intake_flat_style_style_scandinavian + label, #flat_intake_flat_style_style_art_deco + label, #flat_intake_flat_style_style_vintage + label, #flat_intake_flat_style_style_no_opinion + label {
+    width: 80%;
+  }
+
+  .form-check {
+    justify-content: center;
+  }
+
+  .form-navigation-layout-step10 {
+    padding: 0 0;
+  }
+  .mb-step10 {
+    margin-bottom: 2rem !important;
+  }
+
+  .mt-step10 {
+    margin-top: 2rem !important;
   }
 }
