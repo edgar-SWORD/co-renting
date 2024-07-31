@@ -274,7 +274,6 @@
 }
 
 
-
 .incrementation-text {
   position: absolute;
   bottom: 2rem;
@@ -287,7 +286,6 @@
 .furnish-wrapper {
   width: 50%;
 }
-
 
 .form-next-button, .form-next-button-step3, .form-next-button-step4, .form-next-button-step5, .form-next-button-step6,  .form-next-button-step8 {
   padding: 12px 24px;
@@ -324,12 +322,10 @@ legend {
   display: none;
 }
 
-
 .category-selector {
   position: absolute;
   transform: scale(0);
 }
-
 
 .form-check {
   display: flex;
@@ -1150,7 +1146,7 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
   }
 
   .position-between-step9 {
-    margin-top: 2rem;
+    margin-top: 0px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
