@@ -86,7 +86,7 @@
   <div class="profile-wrap">
     <div class="container">
       <div class="profile-layout">
-        <div class="profile-top u-grid-column-2">
+        <div class="profile-top profile-u-grid-column-2">
           <div class="profile-card">
             <div class="profile-card-description">
               <h2 class="heading-style-h5">Description</h2>
@@ -265,7 +265,7 @@
     </div>
   </div>
     <% if user_signed_in? %>
-      <div class="chat-with d-flex justify-content-between align-items-center" data-action="click->chatroom-toggle#toggle"
+      <div class="chat-with d-flex justify-content-between align-items-center" id="chat-btn" data-action="click->chatroom-toggle#toggle"
         data-chatroom-toggle-target="chatButton" style="right: 4rem; width: 22vw; position: fixed; bottom: 0; height:6vh;">
         <h5>Chat with <%= @other_user_profile.first_name %></h5>
       <i class="fa-solid fa-arrow-up"></i>
