@@ -39,7 +39,7 @@
       <div class="text-card">
         <h2 class="text-color-blue">Long-term Part-time renting</h2>
         <p>Mary lives in Bordeaux but shares custody of her children in Paris. She needs a flat there on even weeks. Recently divorced, Kate plans to leave Paris to go back to Rouen next to her family but cannot afford two houses. She has custody of her kids on odd weeks. Thanks to CoRent, Mary and Kate will be able to meet and rent a flat together to live there alternately.</p>
-        <div class="button-primary">Find a CoRenter</div>
+        <div><%= link_to "Find a CoRenter", new_user_registration_path, class: "button-primary" %></div>
       </div>
       <div class="detail-img-wrap">
         <img src="<%= asset_path('detail-img-1.png') %>" alt="corenting_contract" class="home-detail-img">
@@ -52,7 +52,7 @@
       <div class="text-card">
         <h2 class="text-color-blue">Find the best Co-Renter</h2>
         <p>You don't want your alternating colocation to end up like your marriage. That is why CoRent enables you to find someone who has similar habits and matching needs. Maniac or laid-back? How much storage do you need? Want to share food or toys? Birds of a feather flock together.</p>
-        <div class="button-primary">Find a CoRenter</div>
+        <div><%= link_to "Find a CoRenter", new_user_registration_path, class: "button-primary" %></div>
       </div>
     </div>
   </div>

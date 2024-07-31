@@ -13,8 +13,10 @@
             <%= f.input :location, as: :string, input_html: {class:"input-field", placeholder: "The city your looking for...", data: {map_target: "address"}}, wrapper_html: { class: 'map-input-wrap'}, label: false %>
             <div style="width: 100%; height: 600px;"></div>
           </div>
-        <%= f.submit "Next", class: "form-next-button-step5" %>
+          <div class="position-between-step5">
+            <%= link_to "Previous", new_user_intake_user_shift_path, :class => "form-previous-button button-secondary" %>
+            <%= f.submit "Next", class: "form-next-button-step5" %>
+          </div>
     <% end %>
-    <%= link_to "Previous", new_user_intake_user_shift_path, :class => "form-previous-button button-secondary" %>
   </div>
 </div>

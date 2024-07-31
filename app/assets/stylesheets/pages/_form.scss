@@ -137,14 +137,14 @@
   font-weight: 500;
 }
 
-.form-navigation {
+.form-navigation, .form-navigation-step7 {
   position: fixed;
   bottom: 40px;
   width: 100%;
   left: 0;
 }
 
-.form-navigation-layout, .form-navigation-layout-step10 {
+.form-navigation-layout, .form-navigation-layout-step10, .form-navigation-layout-step2{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1064,6 +1064,15 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     margin-bottom: 2rem;
   }
 
+  .form-navigation-step7 {
+    position: fixed;
+    bottom: 2rem;
+  }
+
+  .form-navigation-layout-step2 {
+    padding: 0 0 !important;
+  }
+
   .form-navigation-layout {
     width: 100%;
     padding: 0 2rem;
@@ -1077,17 +1086,21 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     position: relative;
   }
 
-  .form-next-button-step4, .form-next-button-step3, .form-next-button-step5, .form-next-button-step6 {
+  .form-next-button-step4, .form-next-button-step3, .form-next-button-step5, .form-next-button-step6, .form-next-button-step8 {
     margin-bottom: 0px;
-    position: absolute;
+    position: static;
     bottom: 2rem;
     right: 2rem;
   }
 
   .form-previous-button {
-    position: absolute;
+    position: static;
     bottom: 2rem;
     left: 2rem;
+  }
+
+  .form-previous-button-step8 {
+    position: static;
   }
 
   .rythm-radio-wrap fieldset {
@@ -1123,19 +1136,30 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     width: 100%;
   }
 
-  .form-previous-button-step8 {
-    position: static;
-  }
-
-  .form-next-button-step8 {
-    margin-bottom: 0px;
-    position: static;
-  }
-
   .position-between {
     display: flex;
     justify-content: space-between;
     margin-bottom: 2rem;
+  }
+
+  .position-between-step5 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+  }
+
+  .position-between-step9 {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding: 0 2rem;
+  }
+
+  .position-end {
+    display: flex;
+    justify-content: flex-end;
   }
 
   #user_intake_user_personality_cleanliness, #user_intake_user_personality_lifestyle, #user_intake_user_personality_sharing, #user_intake_user_personality_cooking, #user_intake_user_personality_storage {
@@ -1175,7 +1199,7 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
   }
 
   .form-navigation-layout-step10 {
-    padding: 0 0;
+    padding: 0 1rem;
   }
   .mb-step10 {
     margin-bottom: 2rem !important;
