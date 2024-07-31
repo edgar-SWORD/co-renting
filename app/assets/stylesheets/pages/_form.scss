@@ -394,6 +394,7 @@ legend {
 
 .rythm-radio-wrap {
   margin-top: 1.5rem;
+  padding: 0 1rem;
 }
 
 .rythm-radio-wrap fieldset {
@@ -826,10 +827,6 @@ font-family: 'Inter', sans-serif;
   transition: opacity .2s;
   cursor: pointer;
 }
-
-
-
-
 
 input[type=range]#user_intake_user_personality_cleanliness::-webkit-slider-thumb {
   -webkit-appearance: none;
