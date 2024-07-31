@@ -29,7 +29,7 @@
   margin-top: 16px;
 }
 
-.question-form-wrap {
+.question-form-wrap, .question-form-wrap-step8 {
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -1011,6 +1011,10 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     gap: 1.5rem;
   }
 
+  .question-form-wrap-step8 {
+    gap: 3rem;
+  }
+
   .question-form-title {
     padding: 0 1rem;
   }
@@ -1134,4 +1138,12 @@ input[type=range]#user_intake_user_personality_sharing::-webkit-slider-thumb {
     text-align: center;
   }
 
+  .position-between-step8 {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 2rem;
+  }
 }

@@ -1,5 +1,5 @@
 <div class="form-slide">
-  <div class="question-form-wrap question-4">
+  <div class="question-form-wrap-step8 question-4">
     <div class="question-form-header">
       <p class= "text-color-blue text-weight-semibold text-style-allcaps text-size-small">Question 9 / 10</p>
       <div class="question-form-title">
@@ -35,8 +35,10 @@
           <p>I store a lot</p>
         </div>
       </div>
-        <%= link_to "Previous", new_flat_perk_path, :class => "form-previous-button button-secondary" %>
-        <%= f.submit "Next", class: "form-next-button" %>
+      <div class="position-between-step8">
+        <%= link_to "Previous", new_flat_perk_path, :class => "form-previous-button-step8 button-secondary" %>
+        <%= f.submit "Next", class: "form-next-button-step8" %>
+      </div>
     <% end %>
   </div>
 
